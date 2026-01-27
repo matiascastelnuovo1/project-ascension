@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx0dg2oiaq36"]
+
+[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://assets/personaje.tscn" id="1_e73ws"]
+[ext_resource type="PackedScene" uid="uid://bjlcen0y8318f" path="res://assets/plataforma.tscn" id="2_vbogn"]
+
+[node name="LevelTest" type="Node2D"]
+
+[node name="Personaje" parent="." instance=ExtResource("1_e73ws")]
+position = Vector2(312, 259)
+
+[node name="Plataforma" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(304, 321)
+scale = Vector2(5.3199997, 1)

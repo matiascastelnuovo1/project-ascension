@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx0dg2oiaq36"]
+
+[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://assets/personaje.tscn" id="1_e73ws"]
+[ext_resource type="PackedScene" uid="uid://bjlcen0y8318f" path="res://assets/plataforma.tscn" id="2_vbogn"]
+
+[node name="LevelTest" type="Node2D"]
+position = Vector2(334, 277)
+
+[node name="Personaje" parent="." instance=ExtResource("1_e73ws")]
+position = Vector2(-247, 252)
+
+[node name="Plataforma_Verde" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(-236, 329)
+scale = Vector2(5.3199997, 1)
+color_plataforma = "verde"
+
+[node name="Plataforma_Amarillo" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(227, 334)
+scale = Vector2(9.32, 1)
+color_plataforma = "amarillo"
+
+[node name="Plataforma_Rojo" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(210, 234)
+scale = Vector2(6.160002, 1.0257026)
+color_plataforma = "rojo"
+
+[node name="Plataforma_Verde2" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(331, 171)
+rotation = 1.5707964
+scale = Vector2(7.2545476, 1)
+color_plataforma = "verde"
+
+[node name="Plataforma_Amarillo2" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(666, 134)
+scale = Vector2(9.32, 1)
+color_plataforma = "amarillo"
+
+[node name="Plataforma_Rojo2" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(-18, 277)
+scale = Vector2(6.160002, 1.0257026)
+color_plataforma = "rojo"
+
+[node name="Plataforma_Verde3" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(323, 283)
+scale = Vector2(10, 0.73300004)
+color_plataforma = "verde"
+
+[node name="Plataforma_Rojo3" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(466, 232)
+scale = Vector2(6.160002, 1.0257026)
+color_plataforma = "rojo"
+
+[node name="Plataforma_Verde4" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(597, 72)
+scale = Vector2(5.3199997, 1)
+color_plataforma = "verde"
+
+[node name="Plataforma_Amarillo3" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(658, -37)
+scale = Vector2(9.32, 1)
+color_plataforma = "amarillo"
+
+[node name="Plataforma_Rojo4" parent="." instance=ExtResource("2_vbogn")]
+position = Vector2(664, 17.99997)
+scale = Vector2(6.160002, 1.0257026)
+color_plataforma = "rojo"

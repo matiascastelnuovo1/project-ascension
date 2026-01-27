@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx0dg2oiaq36"]
+[gd_scene load_steps=3 format=3 uid="uid://dlhp2wwid2frr"]
 
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://assets/personaje.tscn" id="1_e73ws"]
-[ext_resource type="PackedScene" uid="uid://bjlcen0y8318f" path="res://assets/plataforma.tscn" id="2_vbogn"]
+[ext_resource type="PackedScene" uid="uid://bg3o6gf85gpv6" path="res://assets/plataforma.tscn" id="2_vbogn"]
 
 [node name="LevelTest" type="Node2D"]
 position = Vector2(334, 277)

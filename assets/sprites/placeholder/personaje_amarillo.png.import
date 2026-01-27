@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3024j8sakqv3"
-path="res://.godot/imported/platform (2).png-97953ceaad2fc89203190e5beb204722.ctex"
+uid="uid://cl3ylfpxau3as"
+path="res://.godot/imported/personaje_amarillo.png-922145111d1eb701a7bd01be4a895ed2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/placeholder/platform (2).png"
-dest_files=["res://.godot/imported/platform (2).png-97953ceaad2fc89203190e5beb204722.ctex"]
+source_file="res://assets/sprites/placeholder/personaje_amarillo.png"
+dest_files=["res://.godot/imported/personaje_amarillo.png-922145111d1eb701a7bd01be4a895ed2.ctex"]
 
 [params]
 

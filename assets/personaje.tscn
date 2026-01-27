@@ -1,16 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://jjlq5pq8jsa5"]
+[gd_scene load_steps=7 format=3 uid="uid://jjlq5pq8jsa5"]
 
 [ext_resource type="Script" uid="uid://d7ky4gv470b3" path="res://scripts/personaje.gd" id="1_ojj8y"]
-[ext_resource type="Texture2D" uid="uid://cum5yqs12pv25" path="res://assets/sprites/placeholder/personaje.png" id="2_bt18g"]
+[ext_resource type="Texture2D" uid="uid://cl3ylfpxau3as" path="res://assets/sprites/placeholder/personaje_amarillo.png" id="2_p5fd7"]
+[ext_resource type="Texture2D" uid="uid://bdl0d4y068h16" path="res://assets/sprites/placeholder/personaje_rojo.png" id="3_jybyp"]
+[ext_resource type="Texture2D" uid="uid://2rwjhvt0rgey" path="res://assets/sprites/placeholder/personaje_verde.png" id="4_gdxc4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yogbf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bt18g")
+"texture": ExtResource("2_p5fd7")
 }],
 "loop": true,
-"name": &"default",
+"name": &"amarillo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jybyp")
+}],
+"loop": true,
+"name": &"rojo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gdxc4")
+}],
+"loop": true,
+"name": &"verde",
 "speed": 5.0
 }]
 
@@ -23,6 +41,7 @@ script = ExtResource("1_ojj8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yogbf")
+animation = &"verde"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_p5fd7")

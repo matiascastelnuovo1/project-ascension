@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cum5yqs12pv25"
-path="res://.godot/imported/personaje.png-32dedbc26fcd06a801f6923411ce9aac.ctex"
+uid="uid://bdl0d4y068h16"
+path="res://.godot/imported/personaje_rojo.png-34c60ed13a8ce0e2b7907d2ff8ca4626.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/placeholder/personaje.png"
-dest_files=["res://.godot/imported/personaje.png-32dedbc26fcd06a801f6923411ce9aac.ctex"]
+source_file="res://assets/sprites/placeholder/personaje_rojo.png"
+dest_files=["res://.godot/imported/personaje_rojo.png-34c60ed13a8ce0e2b7907d2ff8ca4626.ctex"]
 
 [params]
 

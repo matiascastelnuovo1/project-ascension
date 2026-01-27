@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjlcen0y8318f"]
+[gd_scene load_steps=7 format=3 uid="uid://bg3o6gf85gpv6"]
 
 [ext_resource type="Script" uid="uid://cei6ne2i1a46o" path="res://scripts/plataforma.gd" id="1_ogjxy"]
 [ext_resource type="Texture2D" uid="uid://dc15hfk2qihkc" path="res://assets/sprites/placeholder/platforma_amarillo.png" id="2_0n44c"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfkchkf1hybb0"]
 
-[ext_resource type="Script" uid="uid://c7k850erhrgo7" path="res://scripts/hud.gd" id="1_oo0fn"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_oo0fn"]
 [ext_resource type="Texture2D" uid="uid://g7xh61v3ttfo" path="res://assets/sprites/placeholder/coleccionable.png" id="2_5ysmq"]
 
 [node name="Hud" type="Control"]

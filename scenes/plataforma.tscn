@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg3o6gf85gpv6"]
+
+[ext_resource type="Script" uid="uid://cei6ne2i1a46o" path="res://scripts/plataforma.gd" id="1_ogjxy"]
+[ext_resource type="Texture2D" uid="uid://dc15hfk2qihkc" path="res://assets/sprites/placeholder/platforma_amarillo.png" id="2_0n44c"]
+[ext_resource type="Texture2D" uid="uid://chl3ajkjxv4dy" path="res://assets/sprites/placeholder/platforma_rojo.png" id="3_h4sbg"]
+[ext_resource type="Texture2D" uid="uid://4npf0kdhnprw" path="res://assets/sprites/placeholder/platforma_verde.png" id="4_bmfiu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8ope"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0n44c")
+}],
+"loop": true,
+"name": &"amarillo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h4sbg")
+}],
+"loop": true,
+"name": &"rojo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bmfiu")
+}],
+"loop": true,
+"name": &"verde",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n44c"]
+size = Vector2(32, 32)
+
+[node name="Plataforma" type="StaticBody2D"]
+position = Vector2(0, -16)
+script = ExtResource("1_ogjxy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f8ope")
+animation = &"amarillo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0n44c")

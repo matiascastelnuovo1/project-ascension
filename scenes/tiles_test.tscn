@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://b3gpve4rc700e"]
+
+[ext_resource type="Texture2D" uid="uid://c044nk6ce2lc6" path="res://assets/tiles/placeholderPlataformaMadera.png" id="1_qusjh"]
+[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="2_eto3n"]
+[ext_resource type="Texture2D" uid="uid://dpts6yqbmiqof" path="res://assets/tiles/placeholderPlataformaMadera64.png" id="3_5a1ls"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eto3n"]
+texture = ExtResource("1_qusjh")
+texture_region_size = Vector2i(64, 64)
+12:0/size_in_atlas = Vector2i(4, 3)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-97, -33, 105, -32, 103, 8, -98, 10)
+12:0/0/physics_layer_0/polygon_0/one_way = true
+16:0/size_in_atlas = Vector2i(4, 3)
+16:0/0 = 0
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-130, -32, 126, -31, 127, 7, -129, 5)
+16:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/size_in_atlas = Vector2i(10, 3)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-319.00824, -31.40496, 319.5575, -33.122017, 319.5575, 6.0645943, -319.83472, 5.785118)
+
+[sub_resource type="TileSet" id="TileSet_5a1ls"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_eto3n")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_apm6n"]
+texture = ExtResource("1_qusjh")
+texture_region_size = Vector2i(64, 64)
+12:0/size_in_atlas = Vector2i(4, 3)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-99.99999, -33.05785, 104.13223, -33.05785, 103.30577, 8.264465, -98.34711, 7.438015)
+16:0/size_in_atlas = Vector2i(4, 3)
+16:0/0 = 0
+1:0/size_in_atlas = Vector2i(10, 3)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-320.66113, -31.40496, 319.8347, -33.057846, 319.00824, 5.7851257, -321.48758, 4.9586716)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g2evf"]
+texture = ExtResource("3_5a1ls")
+texture_region_size = Vector2i(64, 64)
+
+[sub_resource type="TileSet" id="TileSet_8kbuh"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_apm6n")
+sources/1 = SubResource("TileSetAtlasSource_g2evf")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nhiye"]
+texture = ExtResource("3_5a1ls")
+1:0/size_in_atlas = Vector2i(10, 3)
+1:0/0 = 0
+12:0/size_in_atlas = Vector2i(4, 3)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+16:0/size_in_atlas = Vector2i(4, 3)
+16:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_unwbe"]
+texture = ExtResource("1_qusjh")
+texture_region_size = Vector2i(64, 64)
+1:0/size_in_atlas = Vector2i(10, 3)
+1:0/0 = 0
+12:0/size_in_atlas = Vector2i(4, 3)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-99.173546, -32.231403, 104.13223, -33.05785, 102.47934, 7.438019, -99.99999, 8.264465)
+16:0/size_in_atlas = Vector2i(4, 3)
+16:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cioql"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_nhiye")
+sources/1 = SubResource("TileSetAtlasSource_unwbe")
+
+[node name="Game" type="Node2D"]
+
+[node name="Personaje" type="Node2D" parent="."]
+
+[node name="Personaje" parent="Personaje" instance=ExtResource("2_eto3n")]
+position = Vector2(330, 958)
+collision_layer = 0
+jump_velocity = -500.0
+
+[node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
+zoom = Vector2(1.5, 1.5)
+position_smoothing_enabled = true
+
+[node name="Escenario" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Escenario"]
+position = Vector2(400, 329)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 11, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_5a1ls")
+rendering_quadrant_size = 1
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="Escenario"]
+tile_map_data = PackedByteArray(0, 0, 2, 0, 14, 0, 0, 0, 12, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_8kbuh")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="Escenario"]
+tile_map_data = PackedByteArray(0, 0, 7, 0, 14, 0, 1, 0, 12, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_cioql")

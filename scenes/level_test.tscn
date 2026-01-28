@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlhp2wwid2frr"]
+[gd_scene load_steps=4 format=3 uid="uid://dlhp2wwid2frr"]
 
-[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_e73ws"]
-[ext_resource type="PackedScene" uid="uid://bg3o6gf85gpv6" path="res://scenes/plataforma.tscn" id="2_vbogn"]
+[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://assets/personaje.tscn" id="1_e73ws"]
+[ext_resource type="PackedScene" uid="uid://bg3o6gf85gpv6" path="res://assets/plataforma.tscn" id="2_vbogn"]
+[ext_resource type="PackedScene" uid="uid://bayljn8gca8kq" path="res://assets/condor.tscn" id="3_d5kir"]
 
 [node name="LevelTest" type="Node2D"]
 position = Vector2(334, 277)
@@ -20,7 +21,7 @@ scale = Vector2(9.32, 1)
 color_plataforma = "amarillo"
 
 [node name="Plataforma_Rojo" parent="." instance=ExtResource("2_vbogn")]
-position = Vector2(210, 234)
+position = Vector2(113, 72.000015)
 scale = Vector2(6.160002, 1.0257026)
 color_plataforma = "rojo"
 
@@ -64,3 +65,6 @@ color_plataforma = "amarillo"
 position = Vector2(664, 17.99997)
 scale = Vector2(6.160002, 1.0257026)
 color_plataforma = "rojo"
+
+[node name="Condor" parent="." instance=ExtResource("3_d5kir")]
+position = Vector2(-241, -26)

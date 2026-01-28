@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlhp2wwid2frr"]
+[gd_scene load_steps=6 format=3 uid="uid://dlhp2wwid2frr"]
 
-[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://assets/personaje.tscn" id="1_e73ws"]
-[ext_resource type="PackedScene" uid="uid://bg3o6gf85gpv6" path="res://assets/plataforma.tscn" id="2_vbogn"]
-[ext_resource type="PackedScene" uid="uid://bayljn8gca8kq" path="res://assets/condor.tscn" id="3_d5kir"]
+[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_e73ws"]
+[ext_resource type="PackedScene" uid="uid://bg3o6gf85gpv6" path="res://scenes/plataforma.tscn" id="2_vbogn"]
+[ext_resource type="PackedScene" uid="uid://bayljn8gca8kq" path="res://scenes/condor.tscn" id="3_d5kir"]
+[ext_resource type="PackedScene" uid="uid://yvy0c4k364tf" path="res://scenes/coleccionable.tscn" id="4_plvai"]
+[ext_resource type="PackedScene" uid="uid://cfkchkf1hybb0" path="res://scenes/hud.tscn" id="5_vkcgd"]
 
 [node name="LevelTest" type="Node2D"]
 position = Vector2(334, 277)
@@ -21,7 +23,7 @@ scale = Vector2(9.32, 1)
 color_plataforma = "amarillo"
 
 [node name="Plataforma_Rojo" parent="." instance=ExtResource("2_vbogn")]
-position = Vector2(113, 72.000015)
+position = Vector2(113, 121.000015)
 scale = Vector2(6.160002, 1.0257026)
 color_plataforma = "rojo"
 
@@ -32,7 +34,7 @@ scale = Vector2(7.2545476, 1)
 color_plataforma = "verde"
 
 [node name="Plataforma_Amarillo2" parent="." instance=ExtResource("2_vbogn")]
-position = Vector2(666, 134)
+position = Vector2(280, -17)
 scale = Vector2(9.32, 1)
 color_plataforma = "amarillo"
 
@@ -52,19 +54,37 @@ scale = Vector2(6.160002, 1.0257026)
 color_plataforma = "rojo"
 
 [node name="Plataforma_Verde4" parent="." instance=ExtResource("2_vbogn")]
-position = Vector2(597, 72)
+position = Vector2(-169, 67)
 scale = Vector2(5.3199997, 1)
 color_plataforma = "verde"
 
 [node name="Plataforma_Amarillo3" parent="." instance=ExtResource("2_vbogn")]
-position = Vector2(658, -37)
+position = Vector2(-53, -164)
 scale = Vector2(9.32, 1)
 color_plataforma = "amarillo"
 
 [node name="Plataforma_Rojo4" parent="." instance=ExtResource("2_vbogn")]
-position = Vector2(664, 17.99997)
+position = Vector2(291, -105.99999)
 scale = Vector2(6.160002, 1.0257026)
 color_plataforma = "rojo"
 
 [node name="Condor" parent="." instance=ExtResource("3_d5kir")]
-position = Vector2(-241, -26)
+position = Vector2(-241, -65)
+
+[node name="Coleccionable" parent="." instance=ExtResource("4_plvai")]
+position = Vector2(-94, 209)
+
+[node name="Coleccionable2" parent="." instance=ExtResource("4_plvai")]
+position = Vector2(231, 231)
+
+[node name="Coleccionable3" parent="." instance=ExtResource("4_plvai")]
+position = Vector2(57, 76)
+
+[node name="Coleccionable4" parent="." instance=ExtResource("4_plvai")]
+position = Vector2(-163, -222)
+
+[node name="Hud" parent="." instance=ExtResource("5_vkcgd")]
+offset_left = -336.0
+offset_top = -275.0
+offset_right = -336.0
+offset_bottom = -275.0

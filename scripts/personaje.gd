@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-var base_speed = 200.0
-var base_jump_velocity = -400.0
-var gravity = 1200.0
-var animated_sprite_2d
+@export var base_speed = 200.0
+@export var  base_jump_velocity = -600
 var speed = base_speed
 var jump_velocity = base_jump_velocity
+@export var gravity := 1200.0
+@export var mascara_actual = Global.estado_mascara_actual
+var animated_sprite_2d
 
 func _ready():
 	animated_sprite_2d = $AnimatedSprite2D
@@ -13,7 +14,7 @@ func _ready():
 func _physics_process(delta):
 	# Aplicar gravedad
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity += get_gravity() * delta
 	else:
 		# Saltar automáticamente al tocar el suelo
 		velocity.y = jump_velocity
@@ -50,3 +51,24 @@ func actualizar_stats():
 		Global.ESTADO_MASCARA.AMARILLO:
 			speed = base_speed * 0.8
 			jump_velocity = base_jump_velocity * 0.8
+			
+
+var current_extra_layer: int = 0  # 0 = ninguno, 2 o 3
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("cambiar_mascara"):
+		toggle_collision_layer()
+
+func toggle_collision_layer() -> void:
+	# Reset: siempre layer 1
+	collision_mask = 1
+	
+	if current_extra_layer == 0:
+		current_extra_layer = 2
+	elif current_extra_layer == 2:
+		current_extra_layer = 3
+	else:
+		current_extra_layer = 0
+	
+	set_collision_mask_value(current_extra_layer, true)
+	print("Ahora colisionando con layers: 1 y ", current_extra_layer)

@@ -83,7 +83,6 @@ sources/1 = SubResource("TileSetAtlasSource_unwbe")
 [node name="Personaje" parent="Personaje" instance=ExtResource("2_eto3n")]
 position = Vector2(330, 958)
 collision_layer = 0
-jump_velocity = -500.0
 
 [node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
 zoom = Vector2(1.5, 1.5)

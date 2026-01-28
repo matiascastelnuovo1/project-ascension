@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
-var base_speed = 200.0
-@export var speed := 200.0
-@export var jump_velocity := -400.0
+@export var base_speed = 200.0
+@export var  base_jump_velocity = -600
+var speed = base_speed
+var jump_velocity = base_jump_velocity
 @export var gravity := 1200.0
 @export var mascara_actual = Global.estado_mascara_actual
 var animated_sprite_2d
-var speed = base_speed
-var jump_velocity = base_jump_velocity
 
 func _ready():
 	animated_sprite_2d = $AnimatedSprite2D
@@ -64,10 +63,12 @@ func toggle_collision_layer() -> void:
 	# Reset: siempre layer 1
 	collision_mask = 1
 	
-	if current_extra_layer == 0 or current_extra_layer == 3:
+	if current_extra_layer == 0:
 		current_extra_layer = 2
-	else:
+	elif current_extra_layer == 2:
 		current_extra_layer = 3
+	else:
+		current_extra_layer = 0
 	
 	set_collision_mask_value(current_extra_layer, true)
 	print("Ahora colisionando con layers: 1 y ", current_extra_layer)

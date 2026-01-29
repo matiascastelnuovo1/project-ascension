@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var base_speed = 200.0
+@export var base_speed = 300.0
 @export var  base_jump_velocity = -600
 @export var gravity := 1200.0
 @export var mascara_actual = Global.estado_mascara_actual

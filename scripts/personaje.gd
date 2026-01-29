@@ -10,19 +10,22 @@ var speed = base_speed
 var jump_velocity = base_jump_velocity
 var current_extra_layer: int = 2
 var animated_sprite_2d
+var can_move
+var push_velocity = Vector2.ZERO
 
 func _ready():
 	add_to_group("pers_jugable")
+	can_move = true
 
 func _physics_process(delta):
-	# Aplicar gravedad
+	if not can_move:
+		return
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	#else:
-		## Saltar automáticamente al tocar el suelo
-		#velocity.y = jump_velocity
+	else:
+		velocity.y = jump_velocity
 
-	# Movimiento horizontal
 	var direction := Input.get_axis("moverse_izquierda", "moverse_derecha")
 	velocity.x = direction * speed
 	
@@ -75,3 +78,21 @@ func cambiar_collision_layer() -> void:
 	
 	set_collision_mask_value(current_extra_layer, true)
 	print("Ahora colisionando con layers: 1 y ", current_extra_layer)
+
+func push(from_position: Vector2):
+	can_move = false
+	
+	var dir = (global_position - from_position).normalized()
+	
+	var tween := create_tween()
+	
+	tween.tween_property(
+		self,
+		"global_position",
+		global_position + dir * 80,
+		0.25
+	)
+	
+	tween.finished.connect(func():
+		can_move = true
+	)

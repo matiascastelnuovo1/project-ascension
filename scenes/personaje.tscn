@@ -1,12 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://jjlq5pq8jsa5"]
+[gd_scene load_steps=9 format=3 uid="uid://jjlq5pq8jsa5"]
 
 [ext_resource type="Script" uid="uid://d7ky4gv470b3" path="res://scripts/personaje.gd" id="1_ojj8y"]
+[ext_resource type="Texture2D" uid="uid://bhyk6jh2w082b" path="res://assets/sprites/personaje/Personaje Luna - placeholder.png" id="2_b1pmb"]
 [ext_resource type="Texture2D" uid="uid://cl3ylfpxau3as" path="res://assets/sprites/placeholder/personaje_amarillo.png" id="2_p5fd7"]
+[ext_resource type="Texture2D" uid="uid://kwakdcwdi508" path="res://assets/sprites/personaje/Personaje Sol - placeholder.png" id="3_4h8dm"]
 [ext_resource type="Texture2D" uid="uid://bdl0d4y068h16" path="res://assets/sprites/placeholder/personaje_rojo.png" id="3_jybyp"]
 [ext_resource type="Texture2D" uid="uid://2rwjhvt0rgey" path="res://assets/sprites/placeholder/personaje_verde.png" id="4_gdxc4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yogbf"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b1pmb")
+}],
+"loop": true,
+"name": &"Luna",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4h8dm")
+}],
+"loop": true,
+"name": &"Sol",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_p5fd7")
@@ -33,20 +51,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5fd7"]
-size = Vector2(10, 31)
+size = Vector2(47, 100)
 
 [node name="Personaje" type="CharacterBody2D"]
 position = Vector2(0, -16)
 script = ExtResource("1_ojj8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -48)
 sprite_frames = SubResource("SpriteFrames_yogbf")
-animation = &"verde"
+animation = &"Sol"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(-0.5, -34)
 shape = SubResource("RectangleShape2D_p5fd7")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

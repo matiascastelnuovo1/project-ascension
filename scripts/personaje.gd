@@ -10,6 +10,7 @@ var animated_sprite_2d
 
 func _ready():
 	animated_sprite_2d = $AnimatedSprite2D
+	add_to_group("pers_jugable")
 
 func _physics_process(delta):
 	# Aplicar gravedad

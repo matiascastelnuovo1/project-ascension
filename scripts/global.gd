@@ -2,6 +2,8 @@ extends Node
 
 enum ESTADO_MASCARA {VERDE,ROJO,AMARILLO}
 var estado_mascara_actual = ESTADO_MASCARA.VERDE
+var mascaras_agarradas = 0
+
 func cambiar_mascara():
 	match estado_mascara_actual:
 		ESTADO_MASCARA.VERDE:

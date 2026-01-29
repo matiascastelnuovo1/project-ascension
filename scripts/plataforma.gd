@@ -15,22 +15,15 @@ func _physics_process(delta):
 
 func checkear_estado():
 	match Global.estado_mascara_actual:
-		Global.ESTADO_MASCARA.AMARILLO:
+		Global.ESTADOS_MASCARA.SOL:
 			if color_plataforma == "amarillo":
 				animated_sprite_2d.modulate.a = 1
 				collision_shape_2d.disabled = false
 			else:
 				animated_sprite_2d.modulate.a = 0.5
 				collision_shape_2d.disabled = true
-		Global.ESTADO_MASCARA.ROJO:
+		Global.ESTADOS_MASCARA.LUNA:
 			if color_plataforma == "rojo":
-				animated_sprite_2d.modulate.a = 1
-				collision_shape_2d.disabled = false
-			else:
-				animated_sprite_2d.modulate.a = 0.5
-				collision_shape_2d.disabled = true
-		Global.ESTADO_MASCARA.VERDE:
-			if color_plataforma == "verde":
 				animated_sprite_2d.modulate.a = 1
 				collision_shape_2d.disabled = false
 			else:
@@ -40,7 +33,5 @@ func checkear_estado():
 func colorear_plataforma(color_plataforma):
 	if color_plataforma == "amarillo":
 		animated_sprite_2d.play("amarillo")
-	if color_plataforma == "verde":
-		animated_sprite_2d.play("verde")
 	if color_plataforma == "rojo":
 		animated_sprite_2d.play("rojo")

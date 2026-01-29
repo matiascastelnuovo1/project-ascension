@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_e73ws"]
 [ext_resource type="PackedScene" uid="uid://bg3o6gf85gpv6" path="res://scenes/plataforma.tscn" id="2_vbogn"]
-[ext_resource type="PackedScene" uid="uid://bayljn8gca8kq" path="res://scenes/condor.tscn" id="3_d5kir"]
+[ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="3_d5kir"]
 [ext_resource type="PackedScene" uid="uid://yvy0c4k364tf" path="res://scenes/coleccionable.tscn" id="4_plvai"]
 [ext_resource type="PackedScene" uid="uid://cfkchkf1hybb0" path="res://scenes/hud.tscn" id="5_vkcgd"]
 
@@ -23,7 +23,7 @@ scale = Vector2(9.32, 1)
 color_plataforma = "amarillo"
 
 [node name="Plataforma_Rojo" parent="." instance=ExtResource("2_vbogn")]
-position = Vector2(113, 121.000015)
+position = Vector2(111, 121.000015)
 scale = Vector2(6.160002, 1.0257026)
 color_plataforma = "rojo"
 

@@ -44,22 +44,19 @@ func _physics_process(delta):
 
 func controlador_animacion_mascara():
 	match Global.estado_mascara_actual:
-		Global.ESTADO_MASCARA.SOL:
+		Global.ESTADOS_MASCARA.SOL:
 			animated_sprite.play("Sol")
-		Global.ESTADO_MASCARA.LUNA:
+		Global.ESTADOS_MASCARA.LUNA:
 			animated_sprite.play("Luna")
 
 func actualizar_stats():
 	match Global.estado_mascara_actual:
-		Global.ESTADO_MASCARA.SOL:
+		Global.ESTADOS_MASCARA.SOL:
 			speed = base_speed
 			jump_velocity = base_jump_velocity
-		Global.ESTADO_MASCARA.LUNA:
+		Global.ESTADOS_MASCARA.LUNA:
 			speed = base_speed * 1.6
 			jump_velocity = base_jump_velocity * 1.6
-		#Global.ESTADO_MASCARA.AMARILLO:
-			#speed = base_speed * 0.8
-			#jump_velocity = base_jump_velocity * 0.8
 			
 
 func _input(event: InputEvent) -> void:

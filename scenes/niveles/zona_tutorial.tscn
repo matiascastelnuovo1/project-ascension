@@ -1,0 +1,138 @@
+[gd_scene load_steps=16 format=3 uid="uid://d0xa7bft3b1f"]
+
+[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_1cfot"]
+[ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_mdpm6"]
+[ext_resource type="Texture2D" uid="uid://c044nk6ce2lc6" path="res://assets/tiles/placeholderPlataformaMadera.png" id="3_tmah2"]
+[ext_resource type="Texture2D" uid="uid://dslnnem5ld7or" path="res://assets/tiles/placeholder montaña v2.png" id="4_mxc42"]
+[ext_resource type="Texture2D" uid="uid://bs2rm6bj1nt1j" path="res://assets/tiles/placeholderPlataformaPuebloSol.png" id="5_h6ax4"]
+[ext_resource type="Texture2D" uid="uid://c176huvd5e2km" path="res://assets/tiles/placeholderPlataformaPuebloLuna.png" id="6_holac"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4jxy"]
+texture = ExtResource("3_tmah2")
+texture_region_size = Vector2i(64, 64)
+12:0/size_in_atlas = Vector2i(4, 3)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-97, -33, 105, -32, 103, 8, -98, 10)
+12:0/0/physics_layer_0/polygon_0/one_way = true
+16:0/size_in_atlas = Vector2i(4, 3)
+16:0/0 = 0
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-130, -32, 126, -31, 127, 7, -129, 5)
+16:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/size_in_atlas = Vector2i(10, 3)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-319.00824, -31.40496, 319.5575, -33.122017, 319.5575, 6.0645943, -319.83472, 5.785118)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpg56"]
+texture = ExtResource("4_mxc42")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-82.686005, -16.326534, 81.36935, -16.063206, 21.066498, 20.803165, -32, 18.169851)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-28.966433, -16.063202, 28.966434, -16.063202, 18.696514, -3.1599731, 6.5832787, -3.9499664, -0.52666473, 6.0566177, -7.6366043, 6.846611)
+
+[sub_resource type="TileSet" id="TileSet_0l6i4"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_m4jxy")
+sources/1 = SubResource("TileSetAtlasSource_lpg56")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2wv7u"]
+texture = ExtResource("5_h6ax4")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(6, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-90.082634, -16.528923, 83.47107, -19.83471, 78.51239, 16.528923, -76.8595, 16.528923)
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.226469, -17.116528, 26.596455, -17.116528, 26.596455, 6.5832806, -19.749838, 7.899935)
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b8ar5"]
+texture = ExtResource("6_holac")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(6, 2)
+0:0/0 = 0
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_i5dhe"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_2wv7u")
+sources/1 = SubResource("TileSetAtlasSource_b8ar5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mluu3"]
+texture = ExtResource("6_holac")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(6, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-85.370834, -16.794266, 80.23925, -19.593304, 77.906715, 9.330147, -0.7899933, 13.693222, -74.64116, 11.662682)
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.699806, -16.853195, 27.123116, -17.116528, 21.593159, 10.796581, -0.7899933, 13.693222, -19.74984, 8.68993)
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oforp"]
+texture = ExtResource("5_h6ax4")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(6, 2)
+0:0/0 = 0
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nxpyu"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/4 = SubResource("TileSetAtlasSource_mluu3")
+sources/5 = SubResource("TileSetAtlasSource_oforp")
+
+[node name="ZonaTutorial" type="Node2D"]
+
+[node name="Personaje" type="Node2D" parent="."]
+
+[node name="Personaje" parent="Personaje" instance=ExtResource("1_1cfot")]
+position = Vector2(330, 958)
+collision_layer = 0
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(386, 640)
+limit_left = 0
+limit_right = 768
+limit_bottom = 1280
+position_smoothing_enabled = true
+
+[node name="Plataformas" type="Node2D" parent="."]
+script = ExtResource("2_mdpm6")
+
+[node name="PlataformasNeutrales" type="TileMapLayer" parent="Plataformas"]
+position = Vector2(400, 329)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 11, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_0l6i4")
+rendering_quadrant_size = 1
+
+[node name="PlataformasSol" type="TileMapLayer" parent="Plataformas"]
+tile_map_data = PackedByteArray(0, 0, 5, 0, 28, 0, 0, 0, 6, 0, 0, 0, 0, 0, 16, 0, 28, 0, 1, 0, 6, 0, 2, 0, 0, 0, 16, 0, 23, 0, 0, 0, 6, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_i5dhe")
+
+[node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]
+tile_map_data = PackedByteArray(0, 0, 16, 0, 28, 0, 4, 0, 6, 0, 0, 0, 0, 0, 5, 0, 23, 0, 4, 0, 6, 0, 0, 0, 0, 0, 5, 0, 28, 0, 5, 0, 6, 0, 2, 0, 0, 0, 16, 0, 23, 0, 5, 0, 6, 0, 2, 0, 0, 0)
+tile_set = SubResource("TileSet_nxpyu")

@@ -1,14 +1,16 @@
 extends Node
 
-enum ESTADO_MASCARA {VERDE,ROJO,AMARILLO}
-var estado_mascara_actual = ESTADO_MASCARA.VERDE
+signal cambio_mascara(nueva_mascara: int)
+
 var mascaras_agarradas = 0
+enum ESTADOS_MASCARA {SOL,LUNA}
+var estado_mascara_actual = ESTADOS_MASCARA.SOL
 
 func cambiar_mascara():
 	match estado_mascara_actual:
-		ESTADO_MASCARA.VERDE:
-			estado_mascara_actual = ESTADO_MASCARA.ROJO
-		ESTADO_MASCARA.ROJO:
-			estado_mascara_actual = ESTADO_MASCARA.AMARILLO
-		ESTADO_MASCARA.AMARILLO:
-			estado_mascara_actual = ESTADO_MASCARA.VERDE
+		ESTADOS_MASCARA.SOL:
+			estado_mascara_actual = ESTADOS_MASCARA.LUNA
+		ESTADOS_MASCARA.LUNA:
+			estado_mascara_actual = ESTADOS_MASCARA.SOL
+			
+	cambio_mascara.emit(estado_mascara_actual)

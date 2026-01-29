@@ -46,7 +46,8 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-90.082634, -16.528923, 83.47107, -19.83471, 78.51239, 16.528923, -76.8595, 16.528923)
 6:0/size_in_atlas = Vector2i(2, 2)
 6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.226469, -17.116528, 26.596455, -17.116528, 26.596455, 6.5832806, -19.749838, 7.899935)
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0/physics_layer_0/polygon_0/one_way = true
 6:2/size_in_atlas = Vector2i(2, 2)
 6:2/0 = 0
 0:2/size_in_atlas = Vector2i(6, 2)
@@ -113,8 +114,9 @@ position = Vector2(330, 958)
 collision_layer = 0
 collision_mask = 3
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(386, 640)
+[node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
+position = Vector2(0, -45)
+limit_enabled = false
 limit_left = 0
 limit_right = 768
 limit_bottom = 1280
@@ -130,7 +132,7 @@ tile_set = SubResource("TileSet_0l6i4")
 rendering_quadrant_size = 1
 
 [node name="PlataformasSol" type="TileMapLayer" parent="Plataformas"]
-tile_map_data = PackedByteArray(0, 0, 5, 0, 28, 0, 0, 0, 6, 0, 0, 0, 0, 0, 16, 0, 28, 0, 1, 0, 6, 0, 2, 0, 0, 0, 16, 0, 23, 0, 0, 0, 6, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 5, 0, 28, 0, 0, 0, 6, 0, 0, 0, 0, 0, 16, 0, 28, 0, 1, 0, 6, 0, 2, 0, 0, 0, 16, 0, 23, 0, 0, 0, 6, 0, 0, 0, 0, 0, 5, 0, 23, 0, 1, 0, 6, 0, 2, 0, 0, 0)
 tile_set = SubResource("TileSet_i5dhe")
 
 [node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]

@@ -48,17 +48,17 @@ Grupo Still Pink
 
 Programacion:
 Martin Gabriel Grane
-
+Matias Castelnuovo 
 
 Arte:
-
+Ivan Pereyra
+Anabella Lopez Luque
 
 Audio y Musica:
-
+Bautista Krotter
 
 Game Design:
-
-"
+Agustin Bosco"
 
 [connection signal="pressed" from="BotonJugar" to="." method="_on_boton_jugar_pressed"]
 [connection signal="pressed" from="BotonSalir" to="." method="_on_boton_salir_pressed"]

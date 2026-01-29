@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bayljn8gca8kq"]
+[gd_scene load_steps=4 format=3 uid="uid://dg1m4q8lpl1xn"]
 
 [ext_resource type="Script" uid="uid://dt2v5eoi3j06n" path="res://scripts/condor.gd" id="1_3mwo2"]
 [ext_resource type="Texture2D" uid="uid://dbloau4ja1bbe" path="res://assets/sprites/placeholder/condor.png" id="2_abxlo"]

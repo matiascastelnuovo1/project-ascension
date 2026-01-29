@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-enum ESTADO {activo, innactivo}
 var animated_sprite_2d
 var collision_shape_2d
 @export var color_plataforma: String

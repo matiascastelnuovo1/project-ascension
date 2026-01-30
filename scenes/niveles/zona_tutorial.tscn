@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0xa7bft3b1f"]
+[gd_scene load_steps=16 format=4 uid="uid://d0xa7bft3b1f"]
 
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_1cfot"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_mdpm6"]
@@ -20,7 +20,8 @@ texture_region_size = Vector2i(64, 64)
 16:0/0/physics_layer_0/polygon_0/one_way = true
 1:0/size_in_atlas = Vector2i(10, 3)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-319.00824, -31.40496, 319.5575, -33.122017, 319.5575, 6.0645943, -319.83472, 5.785118)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-319.5575, -32.655514, 319.5575, -33.122017, 32, 32, -32, 32)
+1:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpg56"]
 texture = ExtResource("4_mxc42")
@@ -43,7 +44,8 @@ texture = ExtResource("5_h6ax4")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(6, 2)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-90.082634, -16.528923, 83.47107, -19.83471, 78.51239, 16.528923, -76.8595, 16.528923)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-86.7427, -17.075333, 76.4975, -19.124374, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_0/one_way = true
 6:0/size_in_atlas = Vector2i(2, 2)
 6:0/0 = 0
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -77,10 +79,12 @@ texture = ExtResource("6_holac")
 texture_region_size = Vector2i(32, 32)
 0:0/size_in_atlas = Vector2i(6, 2)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-85.370834, -16.794266, 80.23925, -19.593304, 77.906715, 9.330147, -0.7899933, 13.693222, -74.64116, 11.662682)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-86.7427, -17.758347, 75.13147, -19.124374, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_0/one_way = true
 6:0/size_in_atlas = Vector2i(2, 2)
 6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.699806, -16.853195, 27.123116, -17.116528, 21.593159, 10.796581, -0.7899933, 13.693222, -19.74984, 8.68993)
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0/physics_layer_0/polygon_0/one_way = true
 6:2/size_in_atlas = Vector2i(2, 2)
 6:2/0 = 0
 0:2/size_in_atlas = Vector2i(6, 2)
@@ -115,7 +119,7 @@ collision_layer = 0
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
-position = Vector2(0, -45)
+position = Vector2(4, -27)
 limit_enabled = false
 limit_left = 0
 limit_right = 768
@@ -127,14 +131,15 @@ script = ExtResource("2_mdpm6")
 
 [node name="PlataformasNeutrales" type="TileMapLayer" parent="Plataformas"]
 position = Vector2(400, 329)
-tile_map_data = PackedByteArray(0, 0, 255, 255, 11, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAD//wsAAAABAAAAAAD8/wkAAAAMAAAAAAAAAAcAAAAMAAAAAAAAAAUAAAAQAAAAAAAEAAMAAAAMAAAAAAD8/wAAAAAQAAAAAAABAP7/AAAQAAAAAAADAP7/AAAQAAAAAAD+//z/AAAMAAAAAAABAPj/AAAMAAAAAAD7//f/AAAMAAAAAAD9//X/AAAQAAAAAAAAAPP/AAAMAAAAAAAAAPD/AAAMAAAAAAD//+7/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_0l6i4")
 rendering_quadrant_size = 1
 
 [node name="PlataformasSol" type="TileMapLayer" parent="Plataformas"]
-tile_map_data = PackedByteArray(0, 0, 5, 0, 28, 0, 0, 0, 6, 0, 0, 0, 0, 0, 16, 0, 28, 0, 1, 0, 6, 0, 2, 0, 0, 0, 16, 0, 23, 0, 0, 0, 6, 0, 0, 0, 0, 0, 5, 0, 23, 0, 1, 0, 6, 0, 2, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAOAA0AAAAAAAAAAAAQAP//AQAGAAIAAAARAP//AQAGAAIAAAAUAP3/AQAGAAIAAAAVAP3/AQAGAAIAAAAXAAwAAQAGAAIAAAATAO7/AAAGAAAAAAAXAOz/AAAGAAAAAAAIAO7/AQAGAAIAAAA=")
 tile_set = SubResource("TileSet_i5dhe")
 
 [node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]
-tile_map_data = PackedByteArray(0, 0, 16, 0, 28, 0, 4, 0, 6, 0, 0, 0, 0, 0, 5, 0, 23, 0, 4, 0, 6, 0, 0, 0, 0, 0, 5, 0, 28, 0, 5, 0, 6, 0, 2, 0, 0, 0, 16, 0, 23, 0, 5, 0, 6, 0, 2, 0, 0, 0)
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAOAA0ABQAAAAIAAAAXAAwABAAGAAAAAAAQAP//BAAGAAAAAAARAP//BAAGAAAAAAAUAP3/BAAGAAAAAAAVAP3/BAAGAAAAAAAIAO7/BAAGAAAAAAATAO7/BQAGAAIAAAAXAOz/BQAGAAIAAAA=")
 tile_set = SubResource("TileSet_nxpyu")

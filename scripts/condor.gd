@@ -1,27 +1,28 @@
-extends CharacterBody2D
+extends Area2D
 
 @export var speed: float = 100.0
 @export var left_limit: float = 0.0
 @export var right_limit: float = 1152.0
 var sprite
-var direction := 1  # 1 = derecha, -1 = izquierda
+var direction = Vector2.RIGHT
 
 func _ready():
 	sprite = $Sprite2D
-	if direction == 1:
+	if direction == Vector2.RIGHT:
 		sprite.flip_h = true
-	if direction == -1:
+	if direction == Vector2.LEFT:
 		sprite.flip_h = false
 
-func _physics_process(delta):
-	velocity.x = speed * direction
+func _process(delta):
+	position += speed * direction * delta
 
-	# Cambiar dirección al llegar a los límites
 	if global_position.x <= left_limit:
-		direction = 1
+		direction = Vector2.RIGHT
 		sprite.flip_h = true
 	elif global_position.x >= right_limit:
-		direction = -1
+		direction = Vector2.LEFT
 		sprite.flip_h = false
-	
-	move_and_slide()
+
+func _on_body_entered(body):
+	if body.is_in_group("pers_jugable"):
+		body.push(global_position)

@@ -120,6 +120,7 @@ collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
 position = Vector2(4, -27)
+limit_enabled = false
 limit_left = 0
 limit_right = 768
 limit_bottom = 1280

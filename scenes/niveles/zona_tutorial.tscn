@@ -2639,6 +2639,7 @@ sources/4 = SubResource("TileSetAtlasSource_mluu3")
 sources/5 = SubResource("TileSetAtlasSource_oforp")
 
 [node name="ZonaTutorial" type="Node2D"]
+position = Vector2(52, -290)
 
 [node name="Fondo" type="Node2D" parent="."]
 

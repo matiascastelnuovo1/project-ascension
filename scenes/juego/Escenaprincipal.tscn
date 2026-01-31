@@ -23,7 +23,7 @@ metadata/_edit_vertical_guides_ = [768.0]
 position = Vector2(1, -2215)
 
 [node name="ZonaTutorial" parent="." instance=ExtResource("1_oblc7")]
-position = Vector2(0, 1)
+position = Vector2(0, -27)
 
 [node name="ZonaCielo" parent="." instance=ExtResource("2_t5kfq")]
 position = Vector2(-6, -5653)

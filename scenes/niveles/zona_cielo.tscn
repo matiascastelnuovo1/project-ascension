@@ -131,12 +131,6 @@ tile_map_data = PackedByteArray("AAAQABwABgAGAAAAAAAMABkABwAGAAIAAAABABkABgAGAAA
 enabled = false
 tile_set = SubResource("TileSet_nxpyu")
 
-[node name="Placeholdercielosol" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(403, -770.00006)
-scale = Vector2(1.0390625, 1.6026087)
-texture = ExtResource("7_1m77t")
-
 [node name="Condor2" parent="." instance=ExtResource("8_v08ya")]
 position = Vector2(-21, 69)
 
@@ -145,3 +139,12 @@ position = Vector2(-18, -351)
 
 [node name="Condor4" parent="." instance=ExtResource("8_v08ya")]
 position = Vector2(-13, -1488)
+
+[node name="Fondo" type="Node2D" parent="."]
+
+[node name="Placeholdercielosol" type="Sprite2D" parent="Fondo"]
+visible = false
+z_index = -1
+position = Vector2(403, -770.00006)
+scale = Vector2(1.0390625, 1.6026087)
+texture = ExtResource("7_1m77t")

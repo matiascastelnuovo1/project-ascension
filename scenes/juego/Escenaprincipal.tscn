@@ -22,13 +22,48 @@ metadata/_edit_vertical_guides_ = [768.0]
 [node name="FmodBankLoader" type="FmodBankLoader" parent="Sonido"]
 bank_paths = ["res://assets/sounds/Fmod bankLoader/Desktop/Master.bank", "res://assets/sounds/Fmod bankLoader/Desktop/Master.strings.bank"]
 
-[node name="musicaIntermedia" type="Node2D" parent="Sonido"]
+[node name="musicaInicio" type="Node2D" parent="Sonido"]
+position = Vector2(-121, -79)
 
-[node name="Area2D" type="Area2D" parent="Sonido/musicaIntermedia"]
+[node name="AreaInicio2D" type="Area2D" parent="Sonido/musicaInicio"]
 position = Vector2(560, 980)
+collision_mask = 513
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonido/musicaIntermedia/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonido/musicaInicio/AreaInicio2D"]
 shape = SubResource("RectangleShape2D_t5kfq")
+disabled = true
+
+[node name="FmodMusicaInicioEmitter2D" type="FmodEventEmitter2D" parent="Sonido/musicaInicio"]
+event_name = "event:/Music/Base 1"
+event_guid = "{ff58fa08-ec72-47ab-a3cb-5dda364f8499}"
+volume = 0.1
+
+[node name="musicaCielo" type="Node2D" parent="Sonido"]
+position = Vector2(-266, -29)
+
+[node name="AreaCielo2D" type="Area2D" parent="Sonido/musicaCielo"]
+position = Vector2(560, 980)
+collision_mask = 513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonido/musicaCielo/AreaCielo2D"]
+shape = SubResource("RectangleShape2D_t5kfq")
+disabled = true
+
+[node name="FmodMusicaCieloEmitter2D" type="FmodEventEmitter2D" parent="Sonido/musicaCielo"]
+event_name = "event:/Music/Base 1"
+event_guid = "{ff58fa08-ec72-47ab-a3cb-5dda364f8499}"
+volume = 0.1
+
+[node name="musicaIntermedia" type="Node2D" parent="Sonido"]
+position = Vector2(101, -166)
+
+[node name="AreaIntermedia2D" type="Area2D" parent="Sonido/musicaIntermedia"]
+position = Vector2(560, 980)
+collision_mask = 513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonido/musicaIntermedia/AreaIntermedia2D"]
+shape = SubResource("RectangleShape2D_t5kfq")
+disabled = true
 
 [node name="FmodMusicaIntermediaEmitter2D" type="FmodEventEmitter2D" parent="Sonido/musicaIntermedia"]
 event_name = "event:/Music/Base 1"
@@ -39,7 +74,7 @@ volume = 0.1
 
 [node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
 position = Vector2(330, 958)
-collision_layer = 0
+collision_layer = 512
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
@@ -99,4 +134,6 @@ position = Vector2(-40, -5654)
 [node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
 position = Vector2(0, -2233)
 
-[connection signal="body_entered" from="Sonido/musicaIntermedia/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Sonido/musicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]
+[connection signal="body_entered" from="Sonido/musicaCielo/AreaCielo2D" to="." method="_on_area_cielo_2d_body_entered"]
+[connection signal="body_entered" from="Sonido/musicaIntermedia/AreaIntermedia2D" to="." method="_on_area_intermedia_2d_body_entered"]

@@ -133,7 +133,7 @@ tile_set = SubResource("TileSet_nxpyu")
 
 [node name="Placeholdercielosol" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(405, -807)
+position = Vector2(403, -770.00006)
 scale = Vector2(1.0390625, 1.6026087)
 texture = ExtResource("7_1m77t")
 

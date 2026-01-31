@@ -17,21 +17,30 @@ position = Vector2(378, 287)
 scale = Vector2(7.90625, 7.90625)
 texture = ExtResource("1_yqeox")
 
-[node name="BotonJugar" type="Button" parent="."]
-layout_mode = 0
-offset_left = 314.0
-offset_top = 516.0
-offset_right = 432.0
-offset_bottom = 578.0
+[node name="VBoxContainerOpciones" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -206.5
+offset_right = 85.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="BotonJugar" type="Button" parent="VBoxContainerOpciones"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "JUGAR"
 icon_alignment = 1
 
-[node name="BotonSalir" type="Button" parent="."]
-layout_mode = 0
-offset_left = 314.0
-offset_top = 619.0
-offset_right = 432.0
-offset_bottom = 681.0
+[node name="BotonSalir" type="Button" parent="VBoxContainerOpciones"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "SALIR"
 icon_alignment = 1
 
@@ -60,5 +69,5 @@ Bautista Krotter
 Game Design:
 Agustin Bosco"
 
-[connection signal="pressed" from="BotonJugar" to="." method="_on_boton_jugar_pressed"]
-[connection signal="pressed" from="BotonSalir" to="." method="_on_boton_salir_pressed"]
+[connection signal="pressed" from="VBoxContainerOpciones/BotonJugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainerOpciones/BotonSalir" to="." method="_on_boton_salir_pressed"]

@@ -5,7 +5,7 @@ extends Node2D
 @onready var fmod_musica_cielo_emitter: FmodEventEmitter2D = $Sonido/MusicaCielo/FmodMusicaCieloEmitter2D
 @onready var collision_inicio_shape: CollisionShape2D = $Sonido/MusicaInicio/AreaInicio2D/CollisionInicioShape2D
 @onready var collision_intermedia_shape: CollisionShape2D = $Sonido/MusicaIntermedia/AreaIntermedia2D/CollisionIntermedioShape2D
-@onready var collision_cielo_shape: CollisionShape2D = $Sonido/usicaCielo/AreaCielo2D/CollisionCieloShape2D
+@onready var collision_cielo_shape: CollisionShape2D = $Sonido/MusicaCielo/AreaCielo2D/CollisionCieloShape2D
 
 func _on_area_inicio_2d_body_entered(body: Node2D) -> void:
 	print("entro inicio")

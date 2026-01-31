@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlhp2wwid2frr"]
+[gd_scene load_steps=8 format=3 uid="uid://dlhp2wwid2frr"]
 
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_e73ws"]
 [ext_resource type="PackedScene" uid="uid://bg3o6gf85gpv6" path="res://scenes/plataforma.tscn" id="2_vbogn"]
@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://yvy0c4k364tf" path="res://scenes/coleccionable.tscn" id="4_plvai"]
 [ext_resource type="PackedScene" uid="uid://cfkchkf1hybb0" path="res://scenes/hud.tscn" id="5_vkcgd"]
 [ext_resource type="PackedScene" uid="uid://dl7a80o40da1u" path="res://scenes/pared_invisible.tscn" id="6_yvmk3"]
+[ext_resource type="PackedScene" uid="uid://db257fd7dya32" path="res://scenes/menu_pausa.tscn" id="7_r2no1"]
 
 [node name="LevelTest" type="Node2D"]
 position = Vector2(334, 277)
 
 [node name="Personaje" parent="." instance=ExtResource("1_e73ws")]
-position = Vector2(314, 23)
+position = Vector2(-247, 146)
 
 [node name="Plataforma_Amarillo" parent="." instance=ExtResource("2_vbogn")]
 position = Vector2(227, 333)
@@ -81,3 +82,5 @@ scale = Vector2(1, 29.84)
 [node name="ParedInvisible2" parent="." instance=ExtResource("6_yvmk3")]
 position = Vector2(429, 295)
 scale = Vector2(1, 29.84)
+
+[node name="MenuPausa" parent="." instance=ExtResource("7_r2no1")]

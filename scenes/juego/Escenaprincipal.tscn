@@ -79,7 +79,7 @@ position = Vector2(101, -166)
 [node name="FmodMusicaIntermediaEmitter2D" type="FmodEventEmitter2D" parent="Sonido/MusicaIntermedia"]
 event_name = "event:/Music/Base 2"
 event_guid = "{c45c0c69-2aac-4e35-a075-a7ce5e7a9902}"
-volume = 0.1
+volume = 0.2
 
 [node name="AreaIntermedia2D" type="Area2D" parent="Sonido/MusicaIntermedia"]
 position = Vector2(312, -683)

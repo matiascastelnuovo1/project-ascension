@@ -1,11 +1,74 @@
+<<<<<<< HEAD
 [gd_scene load_steps=5 format=3 uid="uid://ccx3bywimcqef"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://ccx3bywimcqef"]
+>>>>>>> fa97156 (WIP: primeros temas integrados)
 
+[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scenes/juego/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://ptr7gpwwup1b" path="res://scenes/niveles/zona_intermedia.tscn" id="3_o0bim"]
 
-[node name="Escenaprincipal" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5kfq"]
+size = Vector2(90, 59)
+
+[node name="EscenaPrincipal" type="Node2D"]
+script = ExtResource("1_o0bim")
+metadata/_edit_vertical_guides_ = [768.0]
+
+[node name="Sonido" type="Node2D" parent="."]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="Sonido"]
+bank_paths = ["res://assets/sounds/Fmod bankLoader/Desktop/Master.bank", "res://assets/sounds/Fmod bankLoader/Desktop/Master.strings.bank"]
+
+[node name="musicaIntermedia" type="Node2D" parent="Sonido"]
+
+[node name="Area2D" type="Area2D" parent="Sonido/musicaIntermedia"]
+position = Vector2(560, 980)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sonido/musicaIntermedia/Area2D"]
+shape = SubResource("RectangleShape2D_t5kfq")
+
+[node name="FmodMusicaIntermediaEmitter2D" type="FmodEventEmitter2D" parent="Sonido/musicaIntermedia"]
+event_name = "event:/Music/Base 1"
+event_guid = "{ff58fa08-ec72-47ab-a3cb-5dda364f8499}"
+volume = 0.1
+
+[node name="Personaje" type="Node2D" parent="."]
+
+[node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
+position = Vector2(330, 958)
+collision_layer = 0
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
+position = Vector2(4, -27)
+limit_enabled = false
+limit_left = 0
+limit_right = 768
+limit_bottom = 1280
+position_smoothing_enabled = true
+
+[node name="FmodListener2D" type="FmodListener2D" parent="Personaje/Personaje/Camera2D"]
+position = Vector2(-4, -86)
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Personaje/Personaje/Camera2D"]
+event_name = "event:/Fxs/Jump"
+event_guid = "{1d6394e6-cfd0-4530-8911-29c5d8d46d72}"
+volume = 0.1
+position = Vector2(-330, -958)
+
+[node name="StepsEmitter" type="FmodEventEmitter2D" parent="Personaje/Personaje"]
+event_name = "event:/Fxs/Step"
+event_guid = "{a95d0b0e-b8c7-4575-ab87-176361debfa1}"
+volume = 0.1
+position = Vector2(-330, -958)
+
+[node name="MaskChangeEmitter" type="FmodEventEmitter2D" parent="Personaje/Personaje"]
+event_name = "event:/Fxs/Change mask"
+event_guid = "{508c6461-473e-434b-a862-7c2ba27aeb01}"
+volume = 0.5
 
 [node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
 position = Vector2(1, -2215)
@@ -30,3 +93,10 @@ limit_left = 0
 limit_right = 768
 limit_bottom = 1280
 position_smoothing_enabled = true
+[node name="ZonaTutorial" parent="." instance=ExtResource("2_t5kfq")]
+position = Vector2(-40, -5654)
+
+[node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
+position = Vector2(0, -2233)
+
+[connection signal="body_entered" from="Sonido/musicaIntermedia/Area2D" to="." method="_on_area_2d_body_entered"]

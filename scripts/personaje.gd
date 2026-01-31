@@ -5,6 +5,9 @@ extends CharacterBody2D
 @export var gravity := 1200.0
 @export var mascara_actual = Global.estado_mascara_actual
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var fmod_jump_emitter: FmodEventEmitter2D = $Camera2D/FmodEventEmitter2D
+@onready var fmod_walk_emitter: FmodEventEmitter2D = $StepsEmitter
+@onready var fmod_mask_change_emitter: FmodEventEmitter2D = $MaskChangeEmitter
 
 var speed = base_speed
 var jump_velocity = base_jump_velocity
@@ -12,6 +15,8 @@ var current_extra_layer: int = 2
 var animated_sprite_2d
 var can_move
 var mascara_actual_animaciones
+var footStepTimerReset = .4
+var footStepTimer = 0
 
 func _ready():
 	add_to_group("pers_jugable")
@@ -30,8 +35,15 @@ func _physics_process(delta):
 	var direction := Input.get_axis("moverse_izquierda", "moverse_derecha")
 	velocity.x = direction * speed
 	
+	if direction != 0 and is_on_floor():
+		if footStepTimer <= 0:
+			fmod_walk_emitter.play()
+			footStepTimer = footStepTimerReset
+		footStepTimer -= delta
+	
 	if Input.is_action_just_pressed("salto") and is_on_floor():
 		velocity.y = jump_velocity
+		fmod_jump_emitter.play()
 	
 	#Seccion de animaciones
 	if is_on_floor():
@@ -51,6 +63,7 @@ func _physics_process(delta):
 		animated_sprite.flip_h = true
 	
 	if Input.is_action_just_pressed("cambiar_mascara"):
+		fmod_mask_change_emitter.play()
 		Global.cambiar_mascara()
 		controlador_animacion_mascara()
 	

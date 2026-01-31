@@ -2654,7 +2654,7 @@ tile_set = SubResource("TileSet_mxc42")
 [node name="Plataformas" type="Node2D" parent="."]
 script = ExtResource("2_mdpm6")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Plataformas"]
+[node name="PlataformasNeutrales" type="TileMapLayer" parent="Plataformas"]
 position = Vector2(400, 329)
 tile_map_data = PackedByteArray("AAD//wsAAAABAAAAAAD8/wkAAAAMAAAAAAAAAAcAAAAMAAAAAAD7/wAAAAAMAAAAAAD///H/AAAMAAAAAAD//+7/AAAMAAAAAAAAAAUAAAAQAAAAAAAEAAMAAAAMAAAAAAADAAMAAAAMAAAAAAAAAP7/AAAQAAAAAAAEAP7/AAAQAAAAAAAEAPz/AAAMAAAAAAAAAPX/AAAMAAAAAAD7//P/AAAQAAAAAAD//+z/AAABAAAAAAAFAOz/AAAMAAAAAAD5/+z/AAAMAAAAAAA=")
 tile_set = SubResource("TileSet_0l6i4")

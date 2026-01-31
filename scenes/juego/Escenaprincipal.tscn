@@ -1,11 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccx3bywimcqef"]
+[gd_scene load_steps=9 format=3 uid="uid://cjcyn0hedtufs"]
 
+[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scenes/juego/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://ptr7gpwwup1b" path="res://scenes/niveles/zona_intermedia.tscn" id="3_o0bim"]
 
-[node name="Escenaprincipal" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0bim"]
+size = Vector2(557.25, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j68o"]
+size = Vector2(611, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfhxn"]
+size = Vector2(757.5, 32)
+
+[node name="EscenaPrincipal" type="Node2D"]
+script = ExtResource("1_o0bim")
+metadata/_edit_vertical_guides_ = [768.0]
 
 [node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
 position = Vector2(1, -2215)
@@ -16,11 +28,64 @@ position = Vector2(0, 1)
 [node name="ZonaCielo" parent="." instance=ExtResource("2_t5kfq")]
 position = Vector2(-6, -5653)
 
+[node name="Sonido" type="Node2D" parent="."]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="Sonido"]
+bank_paths = ["res://assets/sounds/Fmod bankLoader/Desktop/Master.bank", "res://assets/sounds/Fmod bankLoader/Desktop/Master.strings.bank"]
+
+[node name="musicaInicio" type="Node2D" parent="Sonido"]
+position = Vector2(-121, -79)
+
+[node name="AreaInicio2D" type="Area2D" parent="Sonido/musicaInicio"]
+position = Vector2(333, 1144)
+collision_mask = 512
+
+[node name="CollisionInicioShape2D" type="CollisionShape2D" parent="Sonido/musicaInicio/AreaInicio2D"]
+position = Vector2(165, -32)
+shape = SubResource("RectangleShape2D_o0bim")
+
+[node name="FmodMusicaInicioEmitter2D" type="FmodEventEmitter2D" parent="Sonido/musicaInicio"]
+event_name = "event:/Music/Base 1"
+event_guid = "{ff58fa08-ec72-47ab-a3cb-5dda364f8499}"
+volume = 0.1
+
+[node name="musicaCielo" type="Node2D" parent="Sonido"]
+position = Vector2(-266, -29)
+
+[node name="FmodMusicaCieloEmitter2D" type="FmodEventEmitter2D" parent="Sonido/musicaCielo"]
+event_name = "event:/Music/Base 3"
+event_guid = "{db053d4f-7510-49d5-8d5b-bd58665b0bf0}"
+volume = 0.3
+
+[node name="AreaCielo2D" type="Area2D" parent="Sonido/musicaCielo"]
+position = Vector2(266, 29)
+collision_mask = 512
+
+[node name="CollisionCieloShape2D" type="CollisionShape2D" parent="Sonido/musicaCielo/AreaCielo2D"]
+position = Vector2(393, -4594)
+shape = SubResource("RectangleShape2D_6j68o")
+
+[node name="musicaIntermedia" type="Node2D" parent="Sonido"]
+position = Vector2(101, -166)
+
+[node name="FmodMusicaIntermediaEmitter2D" type="FmodEventEmitter2D" parent="Sonido/musicaIntermedia"]
+event_name = "event:/Music/Base 2"
+event_guid = "{c45c0c69-2aac-4e35-a075-a7ce5e7a9902}"
+volume = 0.1
+
+[node name="AreaIntermedia2D" type="Area2D" parent="Sonido/musicaIntermedia"]
+position = Vector2(312, -683)
+collision_mask = 512
+
+[node name="CollisionIntermedioShape2D" type="CollisionShape2D" parent="Sonido/musicaIntermedia/AreaIntermedia2D"]
+position = Vector2(-29, -90)
+shape = SubResource("RectangleShape2D_sfhxn")
+
 [node name="Personaje" type="Node2D" parent="."]
 
 [node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
-position = Vector2(408, 974)
-collision_layer = 0
+position = Vector2(330, 958)
+collision_layer = 512
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
@@ -30,3 +95,27 @@ limit_left = 0
 limit_right = 768
 limit_bottom = 1280
 position_smoothing_enabled = true
+
+[node name="FmodListener2D" type="FmodListener2D" parent="Personaje/Personaje/Camera2D"]
+position = Vector2(-4, -86)
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Personaje/Personaje/Camera2D"]
+event_name = "event:/Fxs/Jump"
+event_guid = "{1d6394e6-cfd0-4530-8911-29c5d8d46d72}"
+volume = 0.1
+position = Vector2(-330, -958)
+
+[node name="StepsEmitter" type="FmodEventEmitter2D" parent="Personaje/Personaje"]
+event_name = "event:/Fxs/Step"
+event_guid = "{a95d0b0e-b8c7-4575-ab87-176361debfa1}"
+volume = 0.1
+position = Vector2(-330, -958)
+
+[node name="MaskChangeEmitter" type="FmodEventEmitter2D" parent="Personaje/Personaje"]
+event_name = "event:/Fxs/Change mask"
+event_guid = "{508c6461-473e-434b-a862-7c2ba27aeb01}"
+volume = 0.5
+
+[connection signal="body_entered" from="Sonido/musicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]
+[connection signal="body_entered" from="Sonido/musicaCielo/AreaCielo2D" to="." method="_on_area_cielo_2d_body_entered"]
+[connection signal="body_entered" from="Sonido/musicaIntermedia/AreaIntermedia2D" to="." method="_on_area_intermedia_2d_body_entered"]

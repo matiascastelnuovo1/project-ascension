@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://ptr7gpwwup1b"]
+[gd_scene load_steps=20 format=4 uid="uid://ptr7gpwwup1b"]
 
 [ext_resource type="Texture2D" uid="uid://bgiq2jomkd13w" path="res://assets/tiles/fondomontaña.png" id="1_xptrt"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_xptrt"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://beafgy4fawls5" path="res://assets/tiles/placeholderPlataformaMontañaluna.png" id="5_gtn2w"]
 [ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="6_42f5t"]
 [ext_resource type="Texture2D" uid="uid://8r2m1arxuhgn" path="res://assets/tiles/placeholderPlataformaMontañaSol.png" id="6_a1nvx"]
+[ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_uaw7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uaw7l"]
 texture = ExtResource("1_xptrt")
@@ -785,3 +786,11 @@ position = Vector2(-14, -1472)
 
 [node name="Condor2" parent="." instance=ExtResource("6_42f5t")]
 position = Vector2(-17, -1965)
+
+[node name="ParedInvisibleIzquierda" parent="." instance=ExtResource("8_uaw7l")]
+position = Vector2(-10, -2212)
+scale = Vector2(1, 12)
+
+[node name="ParedInvisibleDerecha" parent="." instance=ExtResource("8_uaw7l")]
+position = Vector2(778, -2212)
+scale = Vector2(1, 12)

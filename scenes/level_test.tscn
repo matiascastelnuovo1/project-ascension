@@ -50,7 +50,7 @@ scale = Vector2(6.160002, 1.0257026)
 color_plataforma = "rojo"
 
 [node name="Condor" parent="." instance=ExtResource("3_d5kir")]
-position = Vector2(-241, -65)
+position = Vector2(-237, -15)
 
 [node name="Coleccionable" parent="." instance=ExtResource("4_plvai")]
 position = Vector2(-94, 209)

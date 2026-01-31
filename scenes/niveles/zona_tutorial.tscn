@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://d0xa7bft3b1f"]
+[gd_scene load_steps=24 format=4 uid="uid://d0xa7bft3b1f"]
 
 [ext_resource type="Texture2D" uid="uid://bsmchmn6pvc2m" path="res://assets/tiles/fondopueblo.png" id="1_tmah2"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_mdpm6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dslnnem5ld7or" path="res://assets/tiles/placeholder montaña v2.png" id="4_mxc42"]
 [ext_resource type="Texture2D" uid="uid://bs2rm6bj1nt1j" path="res://assets/tiles/placeholderPlataformaPuebloSol.png" id="5_h6ax4"]
 [ext_resource type="Texture2D" uid="uid://c176huvd5e2km" path="res://assets/tiles/placeholderPlataformaPuebloLuna.png" id="6_holac"]
+[ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_mxc42"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxc42"]
 texture = ExtResource("1_tmah2")
@@ -2639,6 +2640,7 @@ sources/4 = SubResource("TileSetAtlasSource_mluu3")
 sources/5 = SubResource("TileSetAtlasSource_oforp")
 
 [node name="ZonaTutorial" type="Node2D"]
+position = Vector2(52, -290)
 
 [node name="Fondo" type="Node2D" parent="."]
 
@@ -2669,3 +2671,11 @@ position = Vector2(0, -1)
 tile_map_data = PackedByteArray("AAAXAAoABAAGAAAAAAAFAOn/BAAGAAAAAAATAOn/BQAGAAIAAAAXAOX/BQAGAAIAAAALAA4ABQAAAAIAAAARAP7/BAAGAAAAAAASAP7/BAAGAAAAAAAVAPv/BAAGAAAAAAAWAPv/BAAGAAAAAAARAPj/BAAGAAAAAAASAPj/BAAGAAAAAAA=")
 enabled = false
 tile_set = SubResource("TileSet_nxpyu")
+
+[node name="ParedInvisibleDerecha" parent="." instance=ExtResource("8_mxc42")]
+position = Vector2(810, -805)
+scale = Vector2(1, 7.2)
+
+[node name="ParedInvisibleIzquierda" parent="." instance=ExtResource("8_mxc42")]
+position = Vector2(-10, -801)
+scale = Vector2(1, 7.2)

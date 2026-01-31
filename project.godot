@@ -69,3 +69,8 @@ salto={
 2d_physics/layer_3="Plataformas de luna"
 2d_physics/layer_5="Detector de texto"
 2d_physics/layer_10="Capa de jugador"
+
+[physics]
+
+common/physics_jitter_fix=0.0
+common/physics_interpolation=true

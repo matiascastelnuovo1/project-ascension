@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Projecto ascension"
-run/main_scene="uid://dlhp2wwid2frr"
+run/main_scene="uid://ccx3bywimcqef"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

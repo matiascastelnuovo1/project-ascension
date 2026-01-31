@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccx3bywimcqef"]
+
+[ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
+[ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
+[ext_resource type="PackedScene" uid="uid://ptr7gpwwup1b" path="res://scenes/niveles/zona_intermedia.tscn" id="3_o0bim"]
+
+[node name="Escenaprincipal" type="Node2D"]
+
+[node name="ZonaTutorial2" parent="." instance=ExtResource("1_oblc7")]
+position = Vector2(0, -41)
+
+[node name="ZonaTutorial" parent="." instance=ExtResource("2_t5kfq")]
+position = Vector2(-6, -5482)
+
+[node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
+position = Vector2(1, -2061)

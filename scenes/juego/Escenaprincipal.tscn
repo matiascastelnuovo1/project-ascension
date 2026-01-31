@@ -1,16 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccx3bywimcqef"]
+[gd_scene load_steps=5 format=3 uid="uid://ccx3bywimcqef"]
 
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
+[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://ptr7gpwwup1b" path="res://scenes/niveles/zona_intermedia.tscn" id="3_o0bim"]
 
 [node name="Escenaprincipal" type="Node2D"]
 
-[node name="ZonaTutorial2" parent="." instance=ExtResource("1_oblc7")]
+[node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
+position = Vector2(1, -2215)
+
+[node name="ZonaTutorial" parent="." instance=ExtResource("1_oblc7")]
 position = Vector2(0, 1)
 
-[node name="ZonaTutorial" parent="." instance=ExtResource("2_t5kfq")]
+[node name="ZonaCielo" parent="." instance=ExtResource("2_t5kfq")]
 position = Vector2(-6, -5653)
 
-[node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
-position = Vector2(0, -2233)
+[node name="Personaje" type="Node2D" parent="."]
+
+[node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
+position = Vector2(408, 974)
+collision_layer = 0
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
+position = Vector2(4, -27)
+limit_enabled = false
+limit_left = 0
+limit_right = 768
+limit_bottom = 1280
+position_smoothing_enabled = true

@@ -1,8 +1,8 @@
 extends Area2D
 
 @export var speed: float = 100.0
-@export var left_limit: float = 0.0
-@export var right_limit: float = 1152.0
+@export var left_limit: float = -151.0
+@export var right_limit: float = 920.0
 var sprite
 var direction = Vector2.RIGHT
 

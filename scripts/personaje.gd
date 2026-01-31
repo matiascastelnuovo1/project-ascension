@@ -61,9 +61,9 @@ func _physics_process(delta):
 
 	# Flip sprite
 	if direction > 0:
-		animated_sprite.flip_h = true
-	elif direction < 0:		
 		animated_sprite.flip_h = false
+	elif direction < 0:		
+		animated_sprite.flip_h = true
 	
 	if Input.is_action_just_pressed("cambiar_mascara"):
 		fmod_mask_change_emitter.play()

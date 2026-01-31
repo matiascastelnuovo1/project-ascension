@@ -25,26 +25,24 @@ expand_margin_bottom = 5.0
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_xfcq2")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="AreaTutorial1" type="Area2D" parent="."]
+position = Vector2(20, -3)
 collision_layer = 17
-collision_mask = 513
+collision_mask = 512
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(598, 928)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTutorial1"]
+position = Vector2(-80, 73)
 shape = SubResource("CircleShape2D_b6ub8")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
-follow_viewport_enabled = true
-
-[node name="TextoTutorial" type="RichTextLabel" parent="Area2D/CanvasLayer"]
+[node name="TextoTutorial1" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(250, 50)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 509.0
-offset_top = 771.0
-offset_right = -9.0
-offset_bottom = -459.0
+offset_left = 21.0
+offset_top = -187.0
+offset_right = 271.0
+offset_bottom = -137.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 4
@@ -55,9 +53,7 @@ bbcode_enabled = true
 text = "Aca va a aparecer tu texto."
 fit_content = true
 scroll_active = false
-visible_characters = 60
-visible_ratio = 4.285714
 metadata/_edit_use_anchors_ = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_tutorial_1_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_tutorial_1_body_exited"]
+[connection signal="body_entered" from="AreaTutorial1" to="." method="_on_area_tutorial_1_body_entered"]
+[connection signal="body_exited" from="AreaTutorial1" to="." method="_on_area_tutorial_1_body_exited"]

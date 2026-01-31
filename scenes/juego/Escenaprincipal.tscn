@@ -7,10 +7,10 @@
 [node name="Escenaprincipal" type="Node2D"]
 
 [node name="ZonaTutorial2" parent="." instance=ExtResource("1_oblc7")]
-position = Vector2(0, -41)
+position = Vector2(0, 1)
 
 [node name="ZonaTutorial" parent="." instance=ExtResource("2_t5kfq")]
-position = Vector2(-6, -5482)
+position = Vector2(-6, -5653)
 
 [node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
-position = Vector2(1, -2061)
+position = Vector2(0, -2233)

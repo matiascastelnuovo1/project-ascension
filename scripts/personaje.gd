@@ -11,9 +11,15 @@ var jump_velocity = base_jump_velocity
 var current_extra_layer: int = 2
 var animated_sprite_2d
 var can_move
+var mascara_actual_animaciones
 
 func _ready():
 	add_to_group("pers_jugable")
+	match Global.estado_mascara_actual:
+		Global.ESTADOS_MASCARA.SOL:
+			mascara_actual_animaciones = "sol_"
+		Global.ESTADOS_MASCARA.LUNA:
+			mascara_actual_animaciones = "luna_"
 
 func _physics_process(delta):
 	# Aplicar gravedad
@@ -27,6 +33,17 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("salto") and is_on_floor():
 		velocity.y = jump_velocity
 	
+	#Seccion de animaciones
+	if is_on_floor():
+		if velocity.x != 0:
+			animated_sprite.play(str(mascara_actual_animaciones + "bailando"))
+		else:
+			animated_sprite.play(str(mascara_actual_animaciones + "idle"))
+	else:
+		if animated_sprite.animation != mascara_actual_animaciones + "saltando":
+			animated_sprite.play(mascara_actual_animaciones + "saltando")
+
+
 	# Flip sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
@@ -42,9 +59,9 @@ func _physics_process(delta):
 func controlador_animacion_mascara():
 	match Global.estado_mascara_actual:
 		Global.ESTADOS_MASCARA.SOL:
-			animated_sprite.play("Sol")
+			mascara_actual_animaciones = "sol_"
 		Global.ESTADOS_MASCARA.LUNA:
-			animated_sprite.play("Luna")
+			mascara_actual_animaciones = "luna_"
 
 func actualizar_stats():
 	match Global.estado_mascara_actual:

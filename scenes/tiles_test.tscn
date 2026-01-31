@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b3gpve4rc700e"]
+[gd_scene load_steps=18 format=4 uid="uid://b3gpve4rc700e"]
 
 [ext_resource type="Texture2D" uid="uid://c044nk6ce2lc6" path="res://assets/tiles/placeholderPlataformaMadera.png" id="1_qusjh"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_8kbuh"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bs2rm6bj1nt1j" path="res://assets/tiles/placeholderPlataformaPuebloSol.png" id="3_g2evf"]
 [ext_resource type="Texture2D" uid="uid://c176huvd5e2km" path="res://assets/tiles/placeholderPlataformaPuebloLuna.png" id="5_8kbuh"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eto3n"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ckxf7"]
 texture = ExtResource("1_qusjh")
 texture_region_size = Vector2i(64, 64)
 12:0/size_in_atlas = Vector2i(4, 3)
@@ -26,7 +26,7 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_eto3n")
+sources/0 = SubResource("TileSetAtlasSource_ckxf7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cioql"]
 texture = ExtResource("3_g2evf")
@@ -121,6 +121,9 @@ sources/1 = SubResource("TileSetAtlasSource_unwbe")
 sources/2 = SubResource("TileSetAtlasSource_1wtui")
 sources/3 = SubResource("TileSetAtlasSource_8kbuh")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wtui"]
+radius = 78.160095
+
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -130,9 +133,7 @@ position_smoothing_enabled = true
 [node name="Personaje" type="Node2D" parent="."]
 
 [node name="Personaje" parent="Personaje" instance=ExtResource("2_eto3n")]
-position = Vector2(330, 958)
-collision_layer = 0
-collision_mask = 3
+position = Vector2(581, 67)
 
 [node name="Plataformas" type="Node2D" parent="."]
 script = ExtResource("2_8kbuh")
@@ -151,3 +152,32 @@ tile_set = SubResource("TileSet_8kbuh")
 tile_map_data = PackedByteArray("AAAPAB0AAgAAAAAAAAAFABoAAgAGAAAAAAAOABYAAgAGAAAAAAAFAB0AAwAAAAIAAAAOABoAAwAGAAIAAAAFABYAAwAGAAIAAAA=")
 enabled = false
 tile_set = SubResource("TileSet_cioql")
+
+[node name="Tutorial" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Tutorial"]
+collision_layer = 17
+collision_mask = 513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tutorial/Area2D"]
+position = Vector2(598, 928)
+shape = SubResource("CircleShape2D_1wtui")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Tutorial/Area2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial/Area2D/CanvasLayer"]
+custom_minimum_size = Vector2(250, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 507.0
+offset_top = 757.0
+offset_right = -11.0
+offset_bottom = -473.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "sdsadadsadsaew"
+fit_content = true
+visible_characters = 60
+visible_ratio = 4.285714

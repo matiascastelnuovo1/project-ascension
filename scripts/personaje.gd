@@ -13,7 +13,9 @@ var animated_sprite_2d
 var can_move
 
 func _ready():
-	add_to_group("pers_jugable")
+	set_collision_layer_value(5, true)	
+	#print("Area2D layer: ", collision_layer)
+	#print("Area2D mask: ", collision_mask)
 
 func _physics_process(delta):
 	# Aplicar gravedad
@@ -61,16 +63,20 @@ func _input(event: InputEvent) -> void:
 		cambiar_collision_layer()
 
 func cambiar_collision_layer() -> void:
-	collision_mask = 1
-	print("Antes venia con_", current_extra_layer)
+	# Desactivar la layer actual (2 o 3)
+	set_collision_mask_value(current_extra_layer, false)
 	
+	# Cambiar entre 2 y 3
 	if current_extra_layer == 2:
 		current_extra_layer = 3
 	else:
 		current_extra_layer = 2
 	
+	# Activar la nueva
 	set_collision_mask_value(current_extra_layer, true)
-	print("Ahora colisionando con layers: 1 y ", current_extra_layer)
+	#print("Ahora colisionando con layer ", current_extra_layer)
+	
+# Funcion de empuje de enemigo
 func push(from_position: Vector2):
 	can_move = false	
 	var dir = (global_position - from_position).normalized()	

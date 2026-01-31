@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="3_d5kir"]
 [ext_resource type="PackedScene" uid="uid://yvy0c4k364tf" path="res://scenes/coleccionable.tscn" id="4_plvai"]
 [ext_resource type="PackedScene" uid="uid://cfkchkf1hybb0" path="res://scenes/hud.tscn" id="5_vkcgd"]
-[ext_resource type="PackedScene" uid="uid://dl7a80o40da1u" path="res://scenes/pared_invisible.tscn" id="6_yvmk3"]
+[ext_resource type="PackedScene" path="res://scenes/pared_invisible.tscn" id="6_yvmk3"]
 
 [node name="LevelTest" type="Node2D"]
 position = Vector2(334, 277)
@@ -49,7 +49,7 @@ scale = Vector2(6.160002, 1.0257026)
 color_plataforma = "rojo"
 
 [node name="Condor" parent="." instance=ExtResource("3_d5kir")]
-position = Vector2(-241, -65)
+position = Vector2(-237, -15)
 
 [node name="Coleccionable" parent="." instance=ExtResource("4_plvai")]
 position = Vector2(-94, 209)

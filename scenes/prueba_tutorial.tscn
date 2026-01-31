@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4tacj8mdpkax"]
+
+[ext_resource type="Texture2D" uid="uid://c044nk6ce2lc6" path="res://assets/tiles/placeholderPlataformaMadera.png" id="1_txfoc"]
+[ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="2_1a3w8"]
+[ext_resource type="PackedScene" uid="uid://brewfmmn64stb" path="res://scenes/tutoriales/tutorial_1.tscn" id="2_dy3nq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dy3nq"]
+texture = ExtResource("1_txfoc")
+texture_region_size = Vector2i(64, 64)
+12:0/size_in_atlas = Vector2i(4, 3)
+12:0/0 = 0
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-97, -33, 105, -32, 103, 8, -98, 10)
+12:0/0/physics_layer_0/polygon_0/one_way = true
+16:0/size_in_atlas = Vector2i(4, 3)
+16:0/0 = 0
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-130, -32, 126, -31, 127, 7, -129, 5)
+16:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/size_in_atlas = Vector2i(10, 3)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-319.00824, -31.40496, 319.5575, -33.122017, 319.5575, 6.0645943, -319.83472, 5.785118)
+
+[sub_resource type="TileSet" id="TileSet_3v2pi"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_dy3nq")
+
+[node name="PruebaTutorial" type="Node2D"]
+
+[node name="Tutorial" parent="." instance=ExtResource("2_dy3nq")]
+position = Vector2(-142, 17)
+tutorial_text = "Llega a la cima y logra el favor de los dioses!!"
+
+[node name="PlataformasNeutrales" type="TileMapLayer" parent="."]
+position = Vector2(420, 329)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 11, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_3v2pi")
+rendering_quadrant_size = 1
+
+[node name="Personaje" parent="." instance=ExtResource("2_1a3w8")]
+position = Vector2(206, 966)
+
+[node name="Camera2D" type="Camera2D" parent="Personaje"]
+position = Vector2(0, -45)
+limit_enabled = false
+limit_left = 0
+limit_right = 768
+limit_bottom = 1280
+position_smoothing_enabled = true

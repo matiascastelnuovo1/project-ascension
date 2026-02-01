@@ -1,12 +1,15 @@
-[gd_scene load_steps=20 format=4 uid="uid://ptr7gpwwup1b"]
+[gd_scene load_steps=28 format=4 uid="uid://ptr7gpwwup1b"]
 
 [ext_resource type="Texture2D" uid="uid://bgiq2jomkd13w" path="res://assets/tiles/fondomontaña.png" id="1_xptrt"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_xptrt"]
 [ext_resource type="Texture2D" uid="uid://c044nk6ce2lc6" path="res://assets/tiles/placeholderPlataformaMadera.png" id="3_uaw7l"]
 [ext_resource type="Texture2D" uid="uid://dslnnem5ld7or" path="res://assets/tiles/placeholder montaña v2.png" id="4_l3hq6"]
+[ext_resource type="Texture2D" uid="uid://fycrgjo6uyhg" path="res://assets/tiles/TSPlataformaMontaña.png" id="5_a1nvx"]
 [ext_resource type="Texture2D" uid="uid://beafgy4fawls5" path="res://assets/tiles/placeholderPlataformaMontañaluna.png" id="5_gtn2w"]
+[ext_resource type="Texture2D" uid="uid://b6hm86gaof0v3" path="res://assets/tiles/TSMontañaSol.png" id="6_4jtio"]
 [ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="6_42f5t"]
 [ext_resource type="Texture2D" uid="uid://8r2m1arxuhgn" path="res://assets/tiles/placeholderPlataformaMontañaSol.png" id="6_a1nvx"]
+[ext_resource type="Texture2D" uid="uid://vf6po21fjqyv" path="res://assets/tiles/TSMontañaLuna.png" id="7_nl14p"]
 [ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_uaw7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uaw7l"]
@@ -677,12 +680,49 @@ texture_region_size = Vector2i(32, 32)
 6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.534573, -16.250168, 26.530273, -15.240795, 18.79921, -2.8676758, 11.789337, -4.4608307, -6.0539856, 7.6471367)
 6:0/0/physics_layer_0/polygon_0/one_way = true
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_er76g"]
+texture = ExtResource("5_a1nvx")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(6, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-74.38016, -13.223145, 75.20662, -14.049591, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0/physics_layer_0/polygon_0/one_way = true
+
 [sub_resource type="TileSet" id="TileSet_er76g"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_4jtio")
 sources/1 = SubResource("TileSetAtlasSource_nl14p")
+sources/2 = SubResource("TileSetAtlasSource_er76g")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwsdv"]
+texture = ExtResource("6_4jtio")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(6, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-79.65769, -15.612907, 79.33906, -14.975643, 38.87295, -5.098091, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-26, -18, 27, -17, 16, 0, 16, 8, -16, 2)
+6:0/0/physics_layer_0/polygon_0/one_way = true
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ncv5"]
+texture = ExtResource("7_nl14p")
+texture_region_size = Vector2i(32, 32)
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1rjpr"]
 texture = ExtResource("5_gtn2w")
@@ -718,6 +758,8 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_1rjpr")
 sources/3 = SubResource("TileSetAtlasSource_jmyta")
+sources/0 = SubResource("TileSetAtlasSource_qwsdv")
+sources/1 = SubResource("TileSetAtlasSource_0ncv5")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2rwd"]
 texture = ExtResource("6_a1nvx")
@@ -747,12 +789,34 @@ texture_region_size = Vector2i(32, 32)
 0:2/size_in_atlas = Vector2i(6, 2)
 0:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ia0o"]
+texture = ExtResource("7_nl14p")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(6, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-80.16528, -14.876038, 76.03305, -14.876038, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0iq73"]
+texture = ExtResource("6_4jtio")
+texture_region_size = Vector2i(32, 32)
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_0ncv5"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_i2rwd")
 sources/1 = SubResource("TileSetAtlasSource_5yjmo")
+sources/2 = SubResource("TileSetAtlasSource_2ia0o")
+sources/3 = SubResource("TileSetAtlasSource_0iq73")
 
 [node name="ZonaIntermedia" type="Node2D"]
 metadata/_edit_vertical_guides_ = [768.0]
@@ -768,16 +832,16 @@ script = ExtResource("2_xptrt")
 
 [node name="PlataformasNeutrales" type="TileMapLayer" parent="Plataformas"]
 position = Vector2(477, 591)
-tile_map_data = PackedByteArray("AADy/wgAAQAGAAAAAAAGAMz/AQAGAAAAAAAFAAQAAQAGAAAAAAAIAOP/AQAGAAAAAAAAAOD/AQAGAAAAAAD0/+D/AQAAAAAAAAD3/9H/AQAGAAAAAAAHANj/AQAGAAAAAAAHAMz/AQAGAAAAAAD//8H/AQAGAAAAAAAAALL/AQAAAAAAAAD//6z/AQAGAAAAAAD+/6z/AQAGAAAAAAD9/6P/AQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADy/wgAAgAGAAAAAAAGAMz/AgAGAAAAAAAFAAQAAgAGAAAAAAAIAOP/AgAGAAAAAAAAAOD/AgAGAAAAAAD0/+D/AgAAAAAAAAD3/9H/AgAGAAAAAAAHANj/AgAGAAAAAAAHAMz/AgAGAAAAAAD//8H/AgAGAAAAAAAAALL/AgAAAAAAAAD//6z/AgAGAAAAAAD+/6z/AgAGAAAAAAD9/6P/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_er76g")
 rendering_quadrant_size = 1
 
 [node name="PlataformasSol" type="TileMapLayer" parent="Plataformas"]
-tile_map_data = PackedByteArray("AAAQACIAAwAAAAAAAAAHAB4AAwAAAAAAAAAGABgAAgAGAAIAAAAOAA8AAwAAAAAAAAAFAAwAAgAAAAIAAAADAAcAAwAAAAAAAAADAAIAAwAAAAAAAAALAP7/AgAAAAIAAAATAPr/AwAAAAAAAAAPAOP/AwAAAAAAAAAXABIAAwAGAAAAAAAHAO//AwAGAAAAAAAQANv/AgAGAAIAAAAPANv/AgAGAAIAAAAWAND/AwAGAAAAAAAPAM3/AwAAAAAAAAADAMn/AwAGAAAAAAAAAMT/AwAGAAAAAAAHAMb/AgAGAAIAAAAVAMH/AgAGAAIAAAACAOv/AgAAAAIAAAAAAOb/AgAGAAIAAAABAOb/AgAGAAIAAAANABgAAgAGAAIAAAAQALr/AgAGAAIAAAALANf/AgAAAAIAAAAAANv/AwAGAAAAAAA=")
+tile_map_data = PackedByteArray("AAAQACIAAAAAAAAAAAAHAB4AAAAAAAAAAAAGABgAAQAGAAIAAAAOAA8AAAAAAAAAAAAFAAwAAQAAAAIAAAADAAcAAAAAAAAAAAADAAIAAAAAAAAAAAALAP7/AQAAAAIAAAATAPr/AAAAAAAAAAAPAOP/AAAAAAAAAAAXABIAAAAGAAAAAAAHAO//AAAGAAAAAAAQANv/AQAGAAIAAAAPANv/AQAGAAIAAAAWAND/AAAGAAAAAAAPAM3/AAAAAAAAAAADAMn/AAAGAAAAAAAAAMT/AAAGAAAAAAAHAMb/AQAGAAIAAAAVAMH/AQAGAAIAAAACAOv/AQAAAAIAAAAAAOb/AQAGAAIAAAABAOb/AQAGAAIAAAANABgAAQAGAAIAAAAQALr/AQAGAAIAAAALANf/AQAAAAIAAAAAANv/AAAGAAAAAAABAM3/AQAGAAIAAAA=")
 tile_set = SubResource("TileSet_qwsdv")
 
 [node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]
-tile_map_data = PackedByteArray("AAAQACIAAAAAAAIAAAAHAB4AAAAAAAIAAAAGABgAAQAGAAAAAAAOAA8AAAAAAAIAAAAFAAwAAQAAAAAAAAADAAcAAAAAAAIAAAADAAIAAAAAAAIAAAATAPr/AAAAAAIAAAALAP7/AQAAAAAAAAAPAOP/AAAAAAIAAAANABgAAQAGAAAAAAAXABIAAAAGAAIAAAAHAO//AAAGAAIAAAACAOv/AQAAAAAAAAAAAOb/AQAGAAAAAAABAOb/AQAGAAAAAAAQANv/AQAGAAAAAAAPANv/AQAGAAAAAAABAM3/AQAGAAAAAAAVAMH/AQAGAAAAAAAHAMb/AQAGAAAAAAAWAND/AAAGAAIAAAAPAM3/AAAAAAIAAAADAMn/AAAGAAIAAAAAAMT/AAAGAAIAAAAQALr/AQAGAAAAAAAAANv/AAAGAAIAAAALANf/AQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAQACIAAwAAAAIAAAAHAB4AAwAAAAIAAAAGABgAAgAGAAAAAAAOAA8AAwAAAAIAAAAFAAwAAgAAAAAAAAADAAcAAwAAAAIAAAADAAIAAwAAAAIAAAATAPr/AwAAAAIAAAALAP7/AgAAAAAAAAAPAOP/AwAAAAIAAAANABgAAgAGAAAAAAAXABIAAwAGAAIAAAAHAO//AwAGAAIAAAACAOv/AgAAAAAAAAAAAOb/AgAGAAAAAAABAOb/AgAGAAAAAAAQANv/AgAGAAAAAAAPANv/AgAGAAAAAAABAM3/AgAGAAAAAAAVAMH/AgAGAAAAAAAHAMb/AgAGAAAAAAAWAND/AwAGAAIAAAAPAM3/AwAAAAIAAAADAMn/AwAGAAIAAAAAAMT/AwAGAAIAAAAQALr/AgAGAAAAAAAAANv/AwAGAAIAAAALANf/AgAAAAAAAAA=")
 enabled = false
 tile_set = SubResource("TileSet_0ncv5")
 

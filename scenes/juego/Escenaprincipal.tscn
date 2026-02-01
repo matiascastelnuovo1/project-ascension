@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjcyn0hedtufs"]
+[gd_scene load_steps=27 format=3 uid="uid://cjcyn0hedtufs"]
 
 [ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scenes/juego/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
@@ -12,6 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://b815vksto1toj" path="res://scenes/tutoriales/tutorial_4.tscn" id="9_orxr0"]
 [ext_resource type="PackedScene" uid="uid://b1gg1x82jf5o7" path="res://scenes/tutoriales/tutorial_5.tscn" id="10_h40go"]
 [ext_resource type="PackedScene" uid="uid://cum5p8tylehnv" path="res://scenes/tutoriales/tutorial_6.tscn" id="11_jqamj"]
+[ext_resource type="Texture2D" uid="uid://cy2rvgqu0hv1l" path="res://assets/sprites/personajes_tutorial/Multitud - Cropped.png" id="13_rb5em"]
+[ext_resource type="Texture2D" uid="uid://be86stcmqtp2b" path="res://assets/sprites/personajes_tutorial/spritesheet - Shaman.png" id="13_trypt"]
+[ext_resource type="Texture2D" uid="uid://bctescn1i3qdf" path="res://assets/sprites/personajes_tutorial/spritesheet - Guia.png" id="14_27rmh"]
+[ext_resource type="Texture2D" uid="uid://csq01mdvy7en5" path="res://assets/sprites/personajes_tutorial/Espiritu-Zorro v2.png" id="16_d1ni3"]
+[ext_resource type="Texture2D" uid="uid://2et7q0huwt7e" path="res://assets/sprites/personajes_tutorial/Espiritu condor.png" id="17_q0ci4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0bim"]
 size = Vector2(557.25, 34)
@@ -22,6 +27,50 @@ size = Vector2(611, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfhxn"]
 size = Vector2(757.5, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yd3ww"]
+atlas = ExtResource("13_trypt")
+region = Rect2(0, 1, 128, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2tcj"]
+atlas = ExtResource("13_trypt")
+region = Rect2(0, 131, 128, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ulh4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yd3ww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2tcj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_norlk"]
+atlas = ExtResource("14_27rmh")
+region = Rect2(0, 0, 128, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trypt"]
+atlas = ExtResource("14_27rmh")
+region = Rect2(0, 130, 128, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d1ni3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_norlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trypt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="EscenaPrincipal" type="Node2D"]
 script = ExtResource("1_o0bim")
 metadata/_edit_vertical_guides_ = [769.0, 923.0, -151.0, 0.0]
@@ -31,7 +80,7 @@ metadata/_edit_horizontal_guides_ = [1280.0]
 position = Vector2(1, -2215)
 
 [node name="ZonaTutorial" parent="." instance=ExtResource("1_oblc7")]
-position = Vector2(0, -27)
+position = Vector2(2, 7)
 
 [node name="ZonaCielo" parent="." instance=ExtResource("2_t5kfq")]
 position = Vector2(-6, -5653)
@@ -79,7 +128,7 @@ position = Vector2(101, -166)
 [node name="FmodMusicaIntermediaEmitter2D" type="FmodEventEmitter2D" parent="Sonido/MusicaIntermedia"]
 event_name = "event:/Music/Base 2"
 event_guid = "{c45c0c69-2aac-4e35-a075-a7ce5e7a9902}"
-volume = 0.1
+volume = 0.2
 
 [node name="AreaIntermedia2D" type="Area2D" parent="Sonido/MusicaIntermedia"]
 position = Vector2(312, -683)
@@ -91,17 +140,59 @@ shape = SubResource("RectangleShape2D_sfhxn")
 
 [node name="SonidoCondor" type="Node2D" parent="Sonido"]
 
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="chaman2" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(365, -4664)
+sprite_frames = SubResource("SpriteFrames_ulh4j")
+autoplay = "default"
+frame = 1
+frame_progress = 0.29542923
+
+[node name="MultitudCropped" type="Sprite2D" parent="Node2D"]
+position = Vector2(99, 1001)
+texture = ExtResource("13_rb5em")
+
+[node name="MultitudCropped2" type="Sprite2D" parent="Node2D"]
+position = Vector2(709, 1000)
+texture = ExtResource("13_rb5em")
+
+[node name="guia" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(616, 479)
+sprite_frames = SubResource("SpriteFrames_d1ni3")
+autoplay = "default"
+frame = 1
+frame_progress = 0.71695
+
+[node name="chaman" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(473, 159)
+sprite_frames = SubResource("SpriteFrames_ulh4j")
+autoplay = "default"
+frame = 1
+frame_progress = 0.29542923
+
+[node name="EspirituZorroV2" type="Sprite2D" parent="Node2D"]
+position = Vector2(741, -1544)
+scale = Vector2(2.125, 2.109375)
+texture = ExtResource("16_d1ni3")
+flip_h = true
+
+[node name="EspirituCondor" type="Sprite2D" parent="Node2D"]
+position = Vector2(743, -3349)
+texture = ExtResource("17_q0ci4")
+
 [node name="Personaje" type="Node2D" parent="."]
 
 [node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
-position = Vector2(592, 992)
+position = Vector2(527, 1037)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
 position = Vector2(1, -37)
-limit_left = 0
-limit_right = 768
-limit_bottom = 1340
+limit_left = -1
+limit_top = -9999981
+limit_right = 767
+limit_bottom = 1359
 limit_smoothed = true
 position_smoothing_enabled = true
 
@@ -127,13 +218,13 @@ volume = 0.5
 
 [node name="Tutoriales" type="Node2D" parent="."]
 
-[node name="Tutorial1" parent="Tutoriales" instance=ExtResource("6_6j68o")]
-position = Vector2(448, 874)
-tutorial_text = "Asciende, baila y vuelve a ascender, pues los espíritus te esperan para encomendarte una tarea de suma importancia (pulsa las flechas izquierda y derecha para moverte y la barra espaciadora para saltar)."
-
 [node name="Tutorial2" parent="Tutoriales" instance=ExtResource("7_sfhxn")]
 position = Vector2(632, 360)
 tutorial_text = "La máscara que llevas puesta te ayudará a pedir ayuda a los espíritus del sol. Mientras la lleves puesta, te reconocerán como aliado."
+
+[node name="Tutorial1" parent="Tutoriales/Tutorial2" instance=ExtResource("6_6j68o")]
+position = Vector2(-184, 514)
+tutorial_text = "Asciende, baila y vuelve a ascender, pues los espíritus te esperan para encomendarte una tarea de suma importancia (pulsa las flechas izquierda y derecha para moverte y la barra espaciadora para saltar)."
 
 [node name="Tutorial3" parent="Tutoriales" instance=ExtResource("8_vty2h")]
 position = Vector2(469, 46)

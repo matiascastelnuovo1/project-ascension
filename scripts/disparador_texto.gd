@@ -91,7 +91,6 @@ func _handle_label_execution_hide(body: Node2D) -> void:
 	hide_tutorial()
 	
 func _handle_label_execution(body: Node2D) -> void:
-	print("Entró: ", body.name)
 	if not body.is_in_group("player"):
 		return
 	

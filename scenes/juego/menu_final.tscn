@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcye7me0fnpxx"]
+
+[ext_resource type="Texture2D" uid="uid://b1wm6y1mqptqc" path="res://assets/sprites/placeholder/placeholdercielosol.png" id="1_wb74w"]
+[ext_resource type="Script" uid="uid://d0032sqyfssy2" path="res://scenes/juego/menu_final.gd" id="1_x3q58"]
+[ext_resource type="Texture2D" uid="uid://cf574r6i1n6qh" path="res://assets/sprites/logos/sol.png" id="6_xb6vt"]
+[ext_resource type="AudioStream" uid="uid://c0cfq207t8406" path="res://assets/sounds/Chaca Still pink.wav" id="7_53afd"]
+[ext_resource type="FontFile" uid="uid://c2fuxti4l5yqk" path="res://assets/fonts/Jersey10-Regular.ttf" id="7_jgjdv"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_x3q58")
+
+[node name="Sprite2DFondo" type="Sprite2D" parent="."]
+position = Vector2(386.00003, 1258)
+scale = Vector2(1.0992584, 1.0992584)
+texture = ExtResource("1_wb74w")
+
+[node name="Sprite2DSol" type="Sprite2D" parent="."]
+position = Vector2(385, 235)
+scale = Vector2(2.2262487, 2.2262487)
+texture = ExtResource("6_xb6vt")
+
+[node name="MenuPrincipal" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextoFinal" type="RichTextLabel" parent="MenuPrincipal"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = -5.1375
+anchor_right = 0.425
+anchor_bottom = -5.1375
+offset_left = 134.0
+offset_top = 627.5
+offset_right = 634.0
+offset_bottom = 705.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_jgjdv")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "Felicidades! El ritual ha sido completado. Eres el nuevo guardian del sol!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="VBoxContainerOpciones" type="VBoxContainer" parent="MenuPrincipal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 255.5
+offset_top = 531.5
+offset_right = 472.5
+offset_bottom = 716.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="BotonJugar" type="Button" parent="MenuPrincipal/VBoxContainerOpciones"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "VOLVER A JUGAR"
+icon_alignment = 1
+
+[node name="BotonSalir" type="Button" parent="MenuPrincipal/VBoxContainerOpciones"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "SALIR"
+icon_alignment = 1
+
+[node name="Sonido" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="Sonido"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sonido"]
+stream = ExtResource("7_53afd")
+volume_db = -5.0
+autoplay = true
+
+[connection signal="pressed" from="MenuPrincipal/VBoxContainerOpciones/BotonJugar" to="." method="_on_boton_jugar_pressed"]
+[connection signal="pressed" from="MenuPrincipal/VBoxContainerOpciones/BotonSalir" to="." method="_on_boton_salir_pressed"]

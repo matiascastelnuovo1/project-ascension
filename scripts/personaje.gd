@@ -26,8 +26,6 @@ func _ready():
 		Global.ESTADOS_MASCARA.LUNA:
 			mascara_actual_animaciones = "luna_"
 	set_collision_layer_value(5, true)	
-	#print("Area2D layer: ", collision_layer)
-	#print("Area2D mask: ", collision_mask)
 
 func _physics_process(delta):
 	# Aplicar gravedad
@@ -105,7 +103,6 @@ func cambiar_collision_layer() -> void:
 	
 	# Activar la nueva
 	set_collision_mask_value(current_extra_layer, true)
-	#print("Ahora colisionando con layer ", current_extra_layer)
 	
 # Funcion de empuje de enemigo
 func push(from_position: Vector2):

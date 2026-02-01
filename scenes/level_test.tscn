@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_e73ws"]
 [ext_resource type="PackedScene" uid="uid://bg3o6gf85gpv6" path="res://scenes/plataforma.tscn" id="2_vbogn"]
 [ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="3_d5kir"]
-[ext_resource type="PackedScene" uid="uid://yvy0c4k364tf" path="res://scenes/coleccionables/coleccionable1.tscn" id="4_plvai"]
+[ext_resource type="PackedScene" path="res://scenes/coleccionables/coleccionable1.tscn" id="4_plvai"]
 [ext_resource type="PackedScene" uid="uid://cfkchkf1hybb0" path="res://scenes/hud.tscn" id="5_vkcgd"]
 [ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="6_yvmk3"]
-[ext_resource type="PackedScene" path="res://scenes/menu_pausa.tscn" id="7_r2no1"]
+[ext_resource type="PackedScene" uid="uid://dqwxaw2qyo86v" path="res://scenes/juego/menu_pausa.tscn" id="7_r2no1"]
 
 [node name="LevelTest" type="Node2D"]
 position = Vector2(334, 277)

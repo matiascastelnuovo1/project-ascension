@@ -846,7 +846,7 @@ enabled = false
 tile_set = SubResource("TileSet_0ncv5")
 
 [node name="Condor" parent="." instance=ExtResource("6_42f5t")]
-position = Vector2(-14, -1472)
+position = Vector2(777, -1472)
 
 [node name="Condor2" parent="." instance=ExtResource("6_42f5t")]
 position = Vector2(-17, -1965)

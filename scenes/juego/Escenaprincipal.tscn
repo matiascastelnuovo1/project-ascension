@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cjcyn0hedtufs"]
+[gd_scene load_steps=31 format=3 uid="uid://cjcyn0hedtufs"]
 
 [ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scenes/juego/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
@@ -11,9 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://b815vksto1toj" path="res://scenes/tutoriales/tutorial_4.tscn" id="9_orxr0"]
 [ext_resource type="PackedScene" uid="uid://b1gg1x82jf5o7" path="res://scenes/tutoriales/tutorial_5.tscn" id="10_h40go"]
 [ext_resource type="PackedScene" uid="uid://cum5p8tylehnv" path="res://scenes/tutoriales/tutorial_6.tscn" id="11_jqamj"]
+[ext_resource type="PackedScene" uid="uid://yvy0c4k364tf" path="res://scenes/coleccionables/coleccionable1.tscn" id="12_27rmh"]
+[ext_resource type="PackedScene" uid="uid://budt8r7s7navi" path="res://scenes/coleccionables/coleccionable2.tscn" id="13_norlk"]
 [ext_resource type="Texture2D" uid="uid://cy2rvgqu0hv1l" path="res://assets/sprites/personajes_tutorial/Multitud - Cropped.png" id="13_rb5em"]
 [ext_resource type="Texture2D" uid="uid://be86stcmqtp2b" path="res://assets/sprites/personajes_tutorial/spritesheet - Shaman.png" id="13_trypt"]
 [ext_resource type="Texture2D" uid="uid://bctescn1i3qdf" path="res://assets/sprites/personajes_tutorial/spritesheet - Guia.png" id="14_27rmh"]
+[ext_resource type="PackedScene" uid="uid://df8k78ltjtjj4" path="res://scenes/coleccionables/coleccionable3.tscn" id="14_trypt"]
+[ext_resource type="PackedScene" uid="uid://d3pkyxkytc1yg" path="res://scenes/coleccionables/coleccionable4.tscn" id="15_d1ni3"]
+[ext_resource type="PackedScene" uid="uid://m6dvuih7i73g" path="res://scenes/tutoriales/tutorial_7.tscn" id="15_trypt"]
 [ext_resource type="Texture2D" uid="uid://csq01mdvy7en5" path="res://assets/sprites/personajes_tutorial/Espiritu-Zorro v2.png" id="16_d1ni3"]
 [ext_resource type="Texture2D" uid="uid://2et7q0huwt7e" path="res://assets/sprites/personajes_tutorial/Espiritu condor.png" id="17_q0ci4"]
 
@@ -106,7 +111,7 @@ event_guid = "{ff58fa08-ec72-47ab-a3cb-5dda364f8499}"
 volume = 0.1
 
 [node name="MusicaCielo" type="Node2D" parent="Sonido"]
-position = Vector2(-266, -29)
+position = Vector2(-253, -45)
 
 [node name="FmodMusicaCieloEmitter2D" type="FmodEventEmitter2D" parent="Sonido/MusicaCielo"]
 event_name = "event:/Music/Base 3"
@@ -122,7 +127,7 @@ position = Vector2(393, -4594)
 shape = SubResource("RectangleShape2D_6j68o")
 
 [node name="MusicaIntermedia" type="Node2D" parent="Sonido"]
-position = Vector2(101, -182)
+position = Vector2(97, -320)
 
 [node name="FmodMusicaIntermediaEmitter2D" type="FmodEventEmitter2D" parent="Sonido/MusicaIntermedia"]
 event_name = "event:/Music/Base 2"
@@ -163,7 +168,7 @@ position = Vector2(632, 360)
 tutorial_text = "La máscara que llevas puesta te ayudará a pedir ayuda a los espíritus del sol. Mientras la lleves puesta, te reconocerán como aliado."
 
 [node name="Tutorial3" parent="Tutoriales" instance=ExtResource("8_vty2h")]
-position = Vector2(469, 46)
+position = Vector2(488, 68)
 tutorial_text = "Los espíritus de la luna están dispuestos a ayudarte siempre y cuando uses la máscara que representa a su protector (presiona X para cambiar de máscara)."
 
 [node name="Tutorial4" parent="Tutoriales" instance=ExtResource("9_orxr0")]
@@ -176,54 +181,56 @@ tutorial_text = "Mis descendientes te pondrán a prueba. Debes demostrar que ere
 
 [node name="Tutorial6" parent="Tutoriales" instance=ExtResource("11_jqamj")]
 position = Vector2(369, -4760)
-tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirá avanzar a partir de ahora... De casualidad no has visto mi mascara por ahi verdad? "
+tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirá avanzar a partir de ahora.... De casualidad no te cruzaste con mi mascara durante tu recorrido?"
 
 [node name="Tutorial7" parent="Tutoriales" instance=ExtResource("15_trypt")]
+visible = false
 position = Vector2(369, -4760)
 tutorial_text = "you are now at the final steps of your journey, only the help of the sun and the moon will allow you advance from now on...You might be wondering how I got up here. I used the elevator."
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="NPCs" type="Node2D" parent="."]
 
-[node name="chaman2" type="AnimatedSprite2D" parent="Node2D"]
+[node name="chaman2" type="AnimatedSprite2D" parent="NPCs"]
 position = Vector2(365, -4664)
 sprite_frames = SubResource("SpriteFrames_ulh4j")
 autoplay = "default"
 frame = 1
 frame_progress = 0.29542923
 
-[node name="MultitudCropped" type="Sprite2D" parent="Node2D"]
+[node name="MultitudCropped" type="Sprite2D" parent="NPCs"]
 position = Vector2(99, 1001)
 texture = ExtResource("13_rb5em")
 
-[node name="MultitudCropped2" type="Sprite2D" parent="Node2D"]
+[node name="MultitudCropped2" type="Sprite2D" parent="NPCs"]
 position = Vector2(709, 1000)
 texture = ExtResource("13_rb5em")
 
-[node name="guia" type="AnimatedSprite2D" parent="Node2D"]
+[node name="guia" type="AnimatedSprite2D" parent="NPCs"]
 position = Vector2(616, 479)
 sprite_frames = SubResource("SpriteFrames_d1ni3")
 autoplay = "default"
 frame = 1
 frame_progress = 0.71695
 
-[node name="chaman" type="AnimatedSprite2D" parent="Node2D"]
+[node name="chaman" type="AnimatedSprite2D" parent="NPCs"]
 position = Vector2(473, 159)
 sprite_frames = SubResource("SpriteFrames_ulh4j")
 autoplay = "default"
 frame = 1
 frame_progress = 0.29542923
 
-[node name="EspirituZorroV2" type="Sprite2D" parent="Node2D"]
+[node name="EspirituZorroV2" type="Sprite2D" parent="NPCs"]
 position = Vector2(741, -1544)
 scale = Vector2(2.125, 2.109375)
 texture = ExtResource("16_d1ni3")
 flip_h = true
 
-[node name="EspirituCondor" type="Sprite2D" parent="Node2D"]
+[node name="EspirituCondor" type="Sprite2D" parent="NPCs"]
 position = Vector2(743, -3349)
 texture = ExtResource("17_q0ci4")
 
 [node name="Personaje" type="Node2D" parent="."]
+position = Vector2(186, 6)
 
 [node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
 position = Vector2(527, 1037)
@@ -250,7 +257,7 @@ position = Vector2(-330, -958)
 [node name="StepsEmitter" type="FmodEventEmitter2D" parent="Personaje/Personaje"]
 event_name = "event:/Fxs/Step"
 event_guid = "{a95d0b0e-b8c7-4575-ab87-176361debfa1}"
-volume = 0.1
+volume = 0.3
 position = Vector2(-330, -958)
 
 [node name="MaskChangeEmitter" type="FmodEventEmitter2D" parent="Personaje/Personaje"]
@@ -258,34 +265,7 @@ event_name = "event:/Fxs/Change mask"
 event_guid = "{508c6461-473e-434b-a862-7c2ba27aeb01}"
 volume = 0.5
 
-[node name="Tutoriales" type="Node2D" parent="."]
-
-[node name="Tutorial2" parent="Tutoriales" instance=ExtResource("7_sfhxn")]
-position = Vector2(632, 360)
-tutorial_text = "La máscara que llevas puesta te ayudará a pedir ayuda a los espíritus del sol. Mientras la lleves puesta, te reconocerán como aliado."
-
-[node name="Tutorial1" parent="Tutoriales/Tutorial2" instance=ExtResource("6_6j68o")]
-position = Vector2(-184, 514)
-tutorial_text = "Asciende, baila y vuelve a ascender, pues los espíritus te esperan para encomendarte una tarea de suma importancia (pulsa las flechas izquierda y derecha para moverte y la barra espaciadora para saltar)."
-
-[node name="Tutorial3" parent="Tutoriales" instance=ExtResource("8_vty2h")]
-position = Vector2(469, 46)
-tutorial_text = "Los espíritus de la luna están dispuestos a ayudarte siempre y cuando uses la máscara que representa a su protector (presiona X para cambiar de máscara)."
-
-[node name="Tutorial4" parent="Tutoriales" instance=ExtResource("9_orxr0")]
-position = Vector2(626, -1579)
-tutorial_text = "A veces, el sol y la luna tienen que cooperar para enfrentar retos que no pueden superar por separado."
-
-[node name="Tutorial5" parent="Tutoriales" instance=ExtResource("10_h40go")]
-position = Vector2(671, -3384)
-tutorial_text = "Mis descendientes te pondrán a prueba. Debes demostrar que eres capaz de asumir esta responsabilidad."
-
-[node name="Tutorial6" parent="Tutoriales" instance=ExtResource("11_jqamj")]
-position = Vector2(369, -4760)
-tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirá avanzar a partir de ahora."
-
-[node name="Condor" parent="." instance=ExtResource("7_fgaxr")]
-position = Vector2(236, 824)
+[node name="Tutoriales2" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="Sonido/MusicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaCielo/AreaCielo2D" to="." method="_on_area_cielo_2d_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://d0xa7bft3b1f"]
+[gd_scene load_steps=32 format=4 uid="uid://d0xa7bft3b1f"]
 
 [ext_resource type="Texture2D" uid="uid://bsmchmn6pvc2m" path="res://assets/tiles/fondopueblo.png" id="1_tmah2"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_mdpm6"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dslnnem5ld7or" path="res://assets/tiles/placeholder montaña v2.png" id="4_mxc42"]
 [ext_resource type="Texture2D" uid="uid://bs2rm6bj1nt1j" path="res://assets/tiles/placeholderPlataformaPuebloSol.png" id="5_h6ax4"]
 [ext_resource type="Texture2D" uid="uid://c176huvd5e2km" path="res://assets/tiles/placeholderPlataformaPuebloLuna.png" id="6_holac"]
-[ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_mxc42"]
 [ext_resource type="Texture2D" uid="uid://du8n6q5uy5k4d" path="res://assets/tiles/TSPlataformaPueblo.png" id="6_mxc42"]
+[ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_mxc42"]
 [ext_resource type="Texture2D" uid="uid://diyjb6atnfrw6" path="res://assets/tiles/TSPuebloSol.png" id="9_holac"]
 [ext_resource type="Texture2D" uid="uid://b15nwsna5r0iy" path="res://assets/tiles/TSPuebloLuna.png" id="10_m4jxy"]
 
@@ -2749,6 +2749,7 @@ tile_set = SubResource("TileSet_i5dhe")
 [node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]
 position = Vector2(0, -1)
 tile_map_data = PackedByteArray("AAAXAAoAAQAEAAAAAAAFAOn/AQAEAAAAAAATAOn/AAAGAAIAAAAXAOX/AAAGAAIAAAALAA4AAAAAAAIAAAARAP7/AQAEAAAAAAASAP7/AQAEAAAAAAAVAPv/AQAEAAAAAAAWAPv/AQAEAAAAAAARAPj/AQAEAAAAAAASAPj/AQAEAAAAAAA=")
+enabled = false
 tile_set = SubResource("TileSet_nxpyu")
 
 [node name="ParedInvisibleDerecha" parent="." instance=ExtResource("8_mxc42")]

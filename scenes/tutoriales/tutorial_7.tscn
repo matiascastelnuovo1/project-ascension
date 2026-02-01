@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cum5p8tylehnv"]
+[gd_scene load_steps=5 format=3 uid="uid://m6dvuih7i73g"]
 
-[ext_resource type="Script" uid="uid://b1guifqtwkos8" path="res://scripts/disparador_texto.gd" id="1_0sx2h"]
-[ext_resource type="FontFile" uid="uid://c2fuxti4l5yqk" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_ptpsh"]
+[ext_resource type="FontFile" uid="uid://c2fuxti4l5yqk" path="res://assets/fonts/Jersey10-Regular.ttf" id="1_d7obr"]
+[ext_resource type="Script" uid="uid://b1guifqtwkos8" path="res://scripts/disparador_texto.gd" id="1_nio78"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0sx2h"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nio78"]
 radius = 78.160095
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl6n0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7icsm"]
 content_margin_left = 5.0
 content_margin_top = 5.0
 content_margin_right = 5.0
@@ -22,19 +22,19 @@ expand_margin_top = 5.0
 expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 
-[node name="Tutorial6" type="Node2D"]
-script = ExtResource("1_0sx2h")
+[node name="Tutorial7" type="Node2D"]
+script = ExtResource("1_nio78")
 
-[node name="AreaTutorial6" type="Area2D" parent="."]
+[node name="AreaTutorial7" type="Area2D" parent="."]
 position = Vector2(108, 2)
 collision_layer = 17
 collision_mask = 512
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTutorial6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTutorial7"]
 position = Vector2(-80, 73)
-shape = SubResource("CircleShape2D_0sx2h")
+shape = SubResource("CircleShape2D_nio78")
 
-[node name="TextoTutorial6" type="RichTextLabel" parent="."]
+[node name="TextoTutorial7" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(250, 50)
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,11 +46,13 @@ offset_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("1_ptpsh")
+theme_override_fonts/normal_font = ExtResource("1_d7obr")
 theme_override_font_sizes/normal_font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_hl6n0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7icsm")
 bbcode_enabled = true
-text = "Aca va a aparecer tu texto."
+text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirán avanzar a partir de ahora...
+Quizás te preguntes cómo he llegado hasta aquí.
+He usado el elevador para chamanes, por supuesto."
 fit_content = true
 scroll_active = false
 metadata/_edit_use_anchors_ = true
@@ -65,5 +67,5 @@ event_name = "event:/Fxs/text globe out"
 event_guid = "{5388f9c7-ea11-4b41-91cd-c8307ff85c4f}"
 volume = 0.5
 
-[connection signal="body_entered" from="AreaTutorial6" to="." method="_on_area_tutorial_6_body_entered"]
-[connection signal="body_exited" from="AreaTutorial6" to="." method="_on_area_tutorial_6_body_exited"]
+[connection signal="body_entered" from="AreaTutorial7" to="." method="_on_area_tutorial_7_body_entered"]
+[connection signal="body_exited" from="AreaTutorial7" to="." method="_on_area_tutorial_7_body_exited"]

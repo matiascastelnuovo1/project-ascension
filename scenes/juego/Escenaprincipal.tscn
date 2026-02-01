@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://ptr7gpwwup1b" path="res://scenes/niveles/zona_intermedia.tscn" id="3_o0bim"]
 [ext_resource type="PackedScene" uid="uid://brewfmmn64stb" path="res://scenes/tutoriales/tutorial_1.tscn" id="6_6j68o"]
-[ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="7_fgaxr"]
 [ext_resource type="PackedScene" uid="uid://ddtrx5r1nlwgl" path="res://scenes/tutoriales/tutorial_2.tscn" id="7_sfhxn"]
 [ext_resource type="PackedScene" uid="uid://b55n5t1sii5pj" path="res://scenes/tutoriales/tutorial_3.tscn" id="8_vty2h"]
 [ext_resource type="PackedScene" uid="uid://b815vksto1toj" path="res://scenes/tutoriales/tutorial_4.tscn" id="9_orxr0"]
@@ -76,14 +75,14 @@ script = ExtResource("1_o0bim")
 metadata/_edit_vertical_guides_ = [769.0, 923.0, -151.0, 0.0]
 metadata/_edit_horizontal_guides_ = [1280.0]
 
+[node name="ZonaCielo" parent="." instance=ExtResource("2_t5kfq")]
+position = Vector2(-6, -5653)
+
 [node name="ZonaIntermedia" parent="." instance=ExtResource("3_o0bim")]
 position = Vector2(1, -2215)
 
 [node name="ZonaTutorial" parent="." instance=ExtResource("1_oblc7")]
 position = Vector2(2, 7)
-
-[node name="ZonaCielo" parent="." instance=ExtResource("2_t5kfq")]
-position = Vector2(-6, -5653)
 
 [node name="Sonido" type="Node2D" parent="."]
 
@@ -123,7 +122,7 @@ position = Vector2(393, -4594)
 shape = SubResource("RectangleShape2D_6j68o")
 
 [node name="MusicaIntermedia" type="Node2D" parent="Sonido"]
-position = Vector2(101, -166)
+position = Vector2(101, -182)
 
 [node name="FmodMusicaIntermediaEmitter2D" type="FmodEventEmitter2D" parent="Sonido/MusicaIntermedia"]
 event_name = "event:/Music/Base 2"
@@ -138,7 +137,50 @@ collision_mask = 512
 position = Vector2(-29, -90)
 shape = SubResource("RectangleShape2D_sfhxn")
 
-[node name="SonidoCondor" type="Node2D" parent="Sonido"]
+[node name="Coleccionables" type="Node2D" parent="."]
+position = Vector2(-515, 0)
+
+[node name="Coleccionable1" parent="Coleccionables" instance=ExtResource("12_27rmh")]
+position = Vector2(1267, -925)
+
+[node name="Coleccionable2" parent="Coleccionables" instance=ExtResource("13_norlk")]
+position = Vector2(573, -2684)
+
+[node name="Coleccionable3" parent="Coleccionables" instance=ExtResource("14_trypt")]
+position = Vector2(549, -3450)
+
+[node name="Coleccionable4" parent="Coleccionables" instance=ExtResource("15_d1ni3")]
+position = Vector2(556, -4166)
+
+[node name="Tutoriales" type="Node2D" parent="."]
+
+[node name="Tutorial1" parent="Tutoriales" instance=ExtResource("6_6j68o")]
+position = Vector2(448, 874)
+tutorial_text = "Asciende, baila y vuelve a ascender, pues los espíritus te esperan para encomendarte una tarea de suma importancia (pulsa las flechas izquierda y derecha para moverte y la barra espaciadora para saltar)."
+
+[node name="Tutorial2" parent="Tutoriales" instance=ExtResource("7_sfhxn")]
+position = Vector2(632, 360)
+tutorial_text = "La máscara que llevas puesta te ayudará a pedir ayuda a los espíritus del sol. Mientras la lleves puesta, te reconocerán como aliado."
+
+[node name="Tutorial3" parent="Tutoriales" instance=ExtResource("8_vty2h")]
+position = Vector2(469, 46)
+tutorial_text = "Los espíritus de la luna están dispuestos a ayudarte siempre y cuando uses la máscara que representa a su protector (presiona X para cambiar de máscara)."
+
+[node name="Tutorial4" parent="Tutoriales" instance=ExtResource("9_orxr0")]
+position = Vector2(626, -1579)
+tutorial_text = "A veces, el sol y la luna tienen que cooperar para enfrentar retos que no pueden superar por separado."
+
+[node name="Tutorial5" parent="Tutoriales" instance=ExtResource("10_h40go")]
+position = Vector2(671, -3384)
+tutorial_text = "Mis descendientes te pondrán a prueba. Debes demostrar que eres capaz de asumir esta responsabilidad."
+
+[node name="Tutorial6" parent="Tutoriales" instance=ExtResource("11_jqamj")]
+position = Vector2(369, -4760)
+tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirá avanzar a partir de ahora... De casualidad no has visto mi mascara por ahi verdad? "
+
+[node name="Tutorial7" parent="Tutoriales" instance=ExtResource("15_trypt")]
+position = Vector2(369, -4760)
+tutorial_text = "you are now at the final steps of your journey, only the help of the sun and the moon will allow you advance from now on...You might be wondering how I got up here. I used the elevator."
 
 [node name="Node2D" type="Node2D" parent="."]
 

@@ -5,9 +5,9 @@ extends Area2D
 @export var right_limit: float = 920.0
 var sprite
 var direction = Vector2.RIGHT
+@onready var sonido_condor_emitter: FmodEventEmitter2D = $FmodSonidoCondorEmitter2D
 
 func _ready():
-	print("Mis grupos: ", get_groups())
 	sprite = $Sprite2D
 	if direction == Vector2.RIGHT:
 		sprite.flip_h = true
@@ -27,3 +27,4 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		body.push(global_position)
+		sonido_condor_emitter.play()

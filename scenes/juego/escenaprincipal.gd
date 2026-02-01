@@ -8,20 +8,17 @@ extends Node2D
 @onready var collision_cielo_shape: CollisionShape2D = $Sonido/MusicaCielo/AreaCielo2D/CollisionCieloShape2D
 
 func _on_area_inicio_2d_body_entered(body: Node2D) -> void:
-	print("entro inicio")
 	fmod_musica_inicio_emitter.play()
 	collision_inicio_shape.set_deferred("disabled", true)
 	pass
 
 func _on_area_intermedia_2d_body_entered(body: Node2D) -> void:
-	print("entro intermedio")
 	fmod_musica_intermedia_emitter.play()
 	fmod_musica_inicio_emitter.stop()
 	collision_intermedia_shape.set_deferred("disabled", true)
 	pass
 
 func _on_area_cielo_2d_body_entered(body: Node2D) -> void:
-	#print("entro cielo")
 	fmod_musica_cielo_emitter.play()
 	fmod_musica_intermedia_emitter.stop()
 	collision_cielo_shape.set_deferred("disabled", true)

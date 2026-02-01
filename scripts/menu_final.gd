@@ -1,6 +1,6 @@
-extends Control
+extends Node
 
-func _on_boton_jugar_pressed() -> void:
+func _on_boton_volver_a_jugar_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/juego/Escenaprincipal.tscn")
 	Global.mascaras_agarradas = 0
 

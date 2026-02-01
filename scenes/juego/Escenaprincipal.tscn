@@ -182,12 +182,11 @@ tutorial_text = "Mis descendientes te pondrán a prueba. Debes demostrar que ere
 
 [node name="Tutorial6" parent="Tutoriales" instance=ExtResource("11_jqamj")]
 position = Vector2(369, -4760)
-tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirá avanzar a partir de ahora.... De casualidad no te cruzaste con mi mascara durante tu recorrido?"
+tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirá avanzar a partir de ahora... De casualidad no te cruzaste con mi mascara durante tu recorrido?"
 
 [node name="Tutorial7" parent="Tutoriales" instance=ExtResource("15_trypt")]
-visible = false
 position = Vector2(369, -4760)
-tutorial_text = "you are now at the final steps of your journey, only the help of the sun and the moon will allow you advance from now on...You might be wondering how I got up here. I used the elevator."
+tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirán avanzar a partir de ahora... Quizás te preguntes cómo he llegado hasta aquí. He usado el ascensor para chamanes, por supuesto."
 
 [node name="NPCs" type="Node2D" parent="."]
 

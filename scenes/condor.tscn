@@ -18,4 +18,8 @@ texture = ExtResource("2_kk4la")
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_gyxsc")
 
+[node name="FmodSonidoCondorEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Fxs/Condor"
+event_guid = "{80078d5a-f875-494b-9a52-dd19bdfe7f5f}"
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

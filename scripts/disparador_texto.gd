@@ -2,20 +2,24 @@ extends Node2D
 
 @export var tutorial_text: String = "Presiona espacio para saltar..."
 @export var duration: float = 0.8
+@export var tutorialNumero: int
+
+@onready var fmod_pop_in_text_emitter: FmodEventEmitter2D= $FmodOpenTextEmitter2D
+@onready var fmod_pop_out_text_emitter: FmodEventEmitter2D= $FmodCloseTextEmitter2D
+
+@onready var label1 = get_node_or_null("TextoTutorial1")
+@onready var label2 = get_node_or_null("TextoTutorial2") 
+@onready var label3 = get_node_or_null("TextoTutorial3")
+@onready var label4 = get_node_or_null("TextoTutorial4")
+@onready var label5 = get_node_or_null("TextoTutorial5")
+@onready var label6 = get_node_or_null("TextoTutorial6")
+@onready var label7 = get_node_or_null("TextoTutorial7")
+
 var currentLabel: RichTextLabel
-
-@onready var label1: RichTextLabel = $TextoTutorial1
-@onready var label2: RichTextLabel = $TextoTutorial2
-@onready var label3: RichTextLabel = $TextoTutorial3
-@onready var label4: RichTextLabel = $TextoTutorial4
-@onready var label5: RichTextLabel = $TextoTutorial5
-@onready var label6: RichTextLabel = $TextoTutorial6
-
 var already_triggered: bool = false
 var tween: Tween
 
-func _ready() -> void:
-	
+func _ready() -> void:	
 	if label1 != null:
 		currentLabel = label1
 		label1.visible = false
@@ -45,9 +49,13 @@ func _ready() -> void:
 		currentLabel = label6
 		label6.visible = false
 		label6.visible_characters = 0
+		
+	if label7 != null:
+		currentLabel = label7
+		label7.visible = false
+		label7.visible_characters = 0
 	
 func show_tutorial() -> void:
-	#bubble.visible = true
 	currentLabel.visible = true
 	currentLabel.text = tutorial_text
 	currentLabel.visible_characters = 0
@@ -56,7 +64,7 @@ func show_tutorial() -> void:
 		tween.kill()
 	
 	#var total_duration = tutorial_text.length() * text_speed
-	
+	fmod_pop_in_text_emitter.play()
 	tween = create_tween()
 	tween.tween_property(currentLabel, "visible_characters", tutorial_text.length(), duration)
 
@@ -68,6 +76,7 @@ func hide_tutorial() -> void:
 	fade_tween.tween_property(currentLabel, "modulate:a", 0.0, 0.3)
 	#fade_tween.tween_property(bubble, "modulate:a", 0.0, 0.3)
 	already_triggered = false
+	fmod_pop_out_text_emitter.play()
 	fade_tween.finished.connect(func():
 		currentLabel.visible = false
 		#bubble.visible = false
@@ -136,7 +145,15 @@ func _on_area_tutorial_5_body_exited(body: Node2D) -> void:
 	_handle_label_execution_hide(body)
 
 func _on_area_tutorial_6_body_entered(body: Node2D) -> void:
-	_handle_label_execution(body)
+	if Global.mascaras_agarradas != 4:
+		_handle_label_execution(body)
 
 func _on_area_tutorial_6_body_exited(body: Node2D) -> void:
+	_handle_label_execution_hide(body)
+
+func _on_area_tutorial_7_body_entered(body: Node2D) -> void:	
+	if Global.mascaras_agarradas == 4:
+		_handle_label_execution(body)
+
+func _on_area_tutorial_7_body_exited(body: Node2D) -> void:
 	_handle_label_execution_hide(body)

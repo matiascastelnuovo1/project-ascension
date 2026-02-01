@@ -15,7 +15,7 @@ General/banks_path="res://assets/sounds/Fmod bankLoader/Desktop"
 [application]
 
 config/name="Projecto ascension"
-run/main_scene="uid://cjcyn0hedtufs"
+run/main_scene="uid://d00a2mdcmc3i7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 

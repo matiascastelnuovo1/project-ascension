@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wi8p407euogk"
-path="res://.godot/imported/logo_still_pink.png-6db0b14838dd70d590c90ec1aec690fd.ctex"
+uid="uid://q6lir8ldc4sw"
+path="res://.godot/imported/inti_sombra.png-5ec000dec419ce8438ba50543270c5b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/logo_still_pink.png"
-dest_files=["res://.godot/imported/logo_still_pink.png-6db0b14838dd70d590c90ec1aec690fd.ctex"]
+source_file="res://assets/sprites/logos/inti_sombra.png"
+dest_files=["res://.godot/imported/inti_sombra.png-5ec000dec419ce8438ba50543270c5b6.ctex"]
 
 [params]
 

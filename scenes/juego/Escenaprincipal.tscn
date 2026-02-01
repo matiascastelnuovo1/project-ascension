@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cjcyn0hedtufs"]
+[gd_scene load_steps=28 format=3 uid="uid://cjcyn0hedtufs"]
 
 [ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scenes/juego/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cum5p8tylehnv" path="res://scenes/tutoriales/tutorial_6.tscn" id="11_jqamj"]
 [ext_resource type="PackedScene" uid="uid://yvy0c4k364tf" path="res://scenes/coleccionables/coleccionable1.tscn" id="12_27rmh"]
 [ext_resource type="PackedScene" uid="uid://budt8r7s7navi" path="res://scenes/coleccionables/coleccionable2.tscn" id="13_norlk"]
+[ext_resource type="Script" uid="uid://bcbxqbjqgp3eq" path="res://scripts/menu_pausa.gd" id="11_q0ci4"]
 [ext_resource type="Texture2D" uid="uid://cy2rvgqu0hv1l" path="res://assets/sprites/personajes_tutorial/Multitud - Cropped.png" id="13_rb5em"]
 [ext_resource type="Texture2D" uid="uid://be86stcmqtp2b" path="res://assets/sprites/personajes_tutorial/spritesheet - Shaman.png" id="13_trypt"]
 [ext_resource type="Texture2D" uid="uid://bctescn1i3qdf" path="res://assets/sprites/personajes_tutorial/spritesheet - Guia.png" id="14_27rmh"]
@@ -233,17 +234,18 @@ texture = ExtResource("17_q0ci4")
 position = Vector2(186, 6)
 
 [node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
-position = Vector2(527, 1037)
+position = Vector2(637, 1039)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
-position = Vector2(1, -37)
+position = Vector2(-129, -138)
 limit_left = -1
 limit_top = -9999981
 limit_right = 767
 limit_bottom = 1359
 limit_smoothed = true
 position_smoothing_enabled = true
+script = ExtResource("11_q0ci4")
 
 [node name="FmodListener2D" type="FmodListener2D" parent="Personaje/Personaje/Camera2D"]
 position = Vector2(-4, -86)

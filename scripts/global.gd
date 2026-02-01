@@ -6,6 +6,10 @@ var mascaras_agarradas = 0
 enum ESTADOS_MASCARA {SOL,LUNA}
 var estado_mascara_actual = ESTADOS_MASCARA.SOL
 
+func restaurar_estado_global():
+	mascaras_agarradas = 0
+	estado_mascara_actual = ESTADOS_MASCARA.SOL
+
 func cambiar_mascara():
 	match estado_mascara_actual:
 		ESTADOS_MASCARA.SOL:

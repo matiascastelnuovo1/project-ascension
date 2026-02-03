@@ -1,13 +1,11 @@
 extends Node2D
 
 @export var color_plataforma: String
-var plataformas_neutrales: TileMapLayer
 var plataformas_sol: TileMapLayer
 var plataformas_luna: TileMapLayer
 @export var mascara_asociada: Global.ESTADOS_MASCARA = Global.ESTADOS_MASCARA.SOL
 
 func _ready():
-	plataformas_neutrales = $PlataformasNeutrales
 	plataformas_sol = $PlataformasSol
 	plataformas_luna = $PlataformasLuna
 	Global.cambio_mascara.connect(_on_cambio_mascara)

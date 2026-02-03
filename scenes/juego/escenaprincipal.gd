@@ -8,7 +8,6 @@ extends Node2D
 @onready var collision_cielo_shape: CollisionShape2D = $Sonido/MusicaCielo/AreaCielo2D/CollisionCieloShape2D
 
 func _input(event: InputEvent) -> void:
-	print(event)
 		
 	if Input.is_action_just_pressed("quit"):		
 		get_tree().change_scene_to_file("res://scenes/juego/menu.tscn")

@@ -29,7 +29,8 @@ func _on_area_cielo_2d_body_entered(body: Node2D) -> void:
 	collision_cielo_shape.set_deferred("disabled", true)
 	pass
 
+#Comente esto para probar el juego. Es como que no encuentra una variable
+"""
 func hide_pause():
-	#menu_pausa.hide()
-	pass
-	
+	menu_pausa.hide()
+"""

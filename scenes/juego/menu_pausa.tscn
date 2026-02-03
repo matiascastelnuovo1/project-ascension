@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bcbxqbjqgp3eq" path="res://scripts/menu_pausa.gd" id="1_58vqf"]
 
 [node name="Control" type="Control"]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

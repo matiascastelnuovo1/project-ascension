@@ -31,5 +31,6 @@ func _on_area_cielo_2d_body_entered(body: Node2D) -> void:
 	pass
 
 func hide_pause():
-	menu_pausa.hide()
+	#menu_pausa.hide()
+	pass
 	

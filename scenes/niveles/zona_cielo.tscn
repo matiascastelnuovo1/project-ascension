@@ -67,8 +67,6 @@ position = Vector2(404, -2610)
 scale = Vector2(1.836025, 2.2198627)
 texture = ExtResource("3_6vnsa")
 
-[node name="Fondo2" type="Node2D" parent="."]
-
 [node name="Plataformas" type="Node2D" parent="."]
 script = ExtResource("2_1m77t")
 

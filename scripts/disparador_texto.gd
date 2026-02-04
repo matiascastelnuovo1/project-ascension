@@ -74,14 +74,13 @@ func hide_tutorial() -> void:
 	
 	var fade_tween = create_tween()
 	fade_tween.tween_property(currentLabel, "modulate:a", 0.0, 0.3)
-	#fade_tween.tween_property(bubble, "modulate:a", 0.0, 0.3)
+	
 	already_triggered = false
 	fmod_pop_out_text_emitter.play()
+	
 	fade_tween.finished.connect(func():
 		currentLabel.visible = false
-		#bubble.visible = false
 		currentLabel.modulate.a = 1.0
-		#bubble.modulate.a = 1.0
 	)
 
 func _handle_label_execution_hide(body: Node2D) -> void:

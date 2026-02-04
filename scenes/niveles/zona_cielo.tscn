@@ -1,12 +1,56 @@
-[gd_scene load_steps=9 format=3 uid="uid://tk7lron16y5m"]
+[gd_scene load_steps=17 format=3 uid="uid://tk7lron16y5m"]
 
 [ext_resource type="Script" uid="uid://cme6wcw56xfh" path="res://scenes/niveles/zona_cielo.gd" id="1_075jw"]
 [ext_resource type="Script" uid="uid://dtdcnwkx0d37n" path="res://scripts/swapCielo.gd" id="1_sp75x"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_1m77t"]
 [ext_resource type="Texture2D" uid="uid://cj6n0wwwv41dl" path="res://assets/sprites/logos/Sol 01.png" id="3_6vnsa"]
+[ext_resource type="Texture2D" uid="uid://1wx6mtufxrjp" path="res://assets/tiles/TSCieloSol.png" id="5_sp75x"]
+[ext_resource type="Texture2D" uid="uid://boqkn2p1dnjqp" path="res://assets/tiles/TSCieloLuna.png" id="6_6vnsa"]
 [ext_resource type="Texture2D" uid="uid://b1wm6y1mqptqc" path="res://assets/sprites/placeholder/placeholdercielosol.png" id="7_1m77t"]
 [ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_tvx35"]
 [ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="8_v08ya"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvx35"]
+texture = ExtResource("6_6vnsa")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sp75x"]
+texture = ExtResource("5_sp75x")
+texture_region_size = Vector2i(64, 64)
+0:1/size_in_atlas = Vector2i(3, 1)
+0:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6vnsa"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_tvx35")
+sources/1 = SubResource("TileSetAtlasSource_sp75x")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vnsa"]
+texture = ExtResource("5_sp75x")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_075jw"]
+texture = ExtResource("6_6vnsa")
+texture_region_size = Vector2i(64, 64)
+0:1/size_in_atlas = Vector2i(3, 1)
+0:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p7p13"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_6vnsa")
+sources/1 = SubResource("TileSetAtlasSource_075jw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vnsa"]
 size = Vector2(412, 124)
@@ -30,6 +74,12 @@ texture = ExtResource("3_6vnsa")
 
 [node name="Plataformas" type="Node2D" parent="."]
 script = ExtResource("2_1m77t")
+
+[node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]
+tile_set = SubResource("TileSet_6vnsa")
+
+[node name="PlataformasSol" type="TileMapLayer" parent="Plataformas"]
+tile_set = SubResource("TileSet_p7p13")
 
 [node name="Condor" parent="." instance=ExtResource("8_v08ya")]
 position = Vector2(796, 725)

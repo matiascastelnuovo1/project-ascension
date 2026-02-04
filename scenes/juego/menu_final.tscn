@@ -65,13 +65,15 @@ theme_override_constants/separation = 25
 
 [node name="BotonJugar" type="Button" parent="MenuPrincipal/VBoxContainerOpciones"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_fonts/font = ExtResource("7_jgjdv")
+theme_override_font_sizes/font_size = 29
 text = "VOLVER A JUGAR"
 icon_alignment = 1
 
 [node name="BotonSalir" type="Button" parent="MenuPrincipal/VBoxContainerOpciones"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 26
+theme_override_fonts/font = ExtResource("7_jgjdv")
+theme_override_font_sizes/font_size = 29
 text = "SALIR"
 icon_alignment = 1
 

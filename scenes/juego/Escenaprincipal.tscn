@@ -270,6 +270,7 @@ volume = 0.5
 [node name="Tutoriales2" type="Node2D" parent="."]
 
 [node name="CanvasLayerMenuPausa" type="CanvasLayer" parent="."]
+process_mode = 2
 offset = Vector2(400, 400)
 transform = Transform2D(1, 0, 0, 1, 400, 400)
 

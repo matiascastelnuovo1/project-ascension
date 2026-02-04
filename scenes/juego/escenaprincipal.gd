@@ -23,7 +23,9 @@ func _input(event: InputEvent) -> void:
 		show_pause()
 	#
 	if Input.is_action_just_pressed("quit"):		
-		get_tree().change_scene_to_file("res://scenes/juego/menu.tscn")
+		#Saque este codigo de aca y lo reemplace por otro
+		#get_tree().change_scene_to_file("res://scenes/juego/menu.tscn")
+		show_pause()
 
 func _on_area_inicio_2d_body_entered(body: Node2D) -> void:
 	fmod_musica_inicio_emitter.play()

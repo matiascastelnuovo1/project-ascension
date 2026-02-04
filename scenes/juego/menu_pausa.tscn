@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqwxaw2qyo86v"]
+[gd_scene load_steps=3 format=3 uid="uid://dqwxaw2qyo86v"]
 
 [ext_resource type="Script" uid="uid://bcbxqbjqgp3eq" path="res://scripts/menu_pausa.gd" id="1_58vqf"]
+[ext_resource type="FontFile" uid="uid://c2fuxti4l5yqk" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_85y73"]
 
 [node name="Control" type="Control"]
 process_mode = 2
@@ -29,6 +30,7 @@ theme_override_constants/separation = 25
 
 [node name="LabelTexto" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_85y73")
 theme_override_font_sizes/font_size = 36
 text = "PAUSA"
 horizontal_alignment = 1
@@ -37,11 +39,13 @@ vertical_alignment = 1
 [node name="ButtonContinuar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_85y73")
 theme_override_font_sizes/font_size = 36
 text = "CONTINUAR"
 
 [node name="ButtonSalir" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_85y73")
 theme_override_font_sizes/font_size = 36
 text = "SALIR"
 

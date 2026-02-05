@@ -327,8 +327,6 @@ script = ExtResource("1_ojj8y")
 position = Vector2(0, -66.5)
 sprite_frames = SubResource("SpriteFrames_yogbf")
 animation = &"luna_saltando"
-frame = 4
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -52.5)

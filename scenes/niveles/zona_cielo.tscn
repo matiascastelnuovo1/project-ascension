@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tk7lron16y5m"]
+[gd_scene load_steps=17 format=4 uid="uid://tk7lron16y5m"]
 
 [ext_resource type="Script" uid="uid://cme6wcw56xfh" path="res://scenes/niveles/zona_cielo.gd" id="1_075jw"]
 [ext_resource type="Script" uid="uid://dtdcnwkx0d37n" path="res://scripts/swapCielo.gd" id="1_sp75x"]
@@ -15,7 +15,11 @@ texture = ExtResource("6_6vnsa")
 texture_region_size = Vector2i(64, 64)
 0:0/size_in_atlas = Vector2i(3, 1)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-73.38161, -16.934216, 75.07503, -18.063164, 46.851334, 18.063164, -49.109226, 18.62764, -72.252655, 0)
+0:0/0/physics_layer_0/polygon_0/one_way = true
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-27.094746, -15.805267, 24.272377, -17.498692, 20.885529, 6.2092133, -12.982903, 9.596054, -18.063164, 4.515789)
+3:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sp75x"]
 texture = ExtResource("5_sp75x")
@@ -34,10 +38,13 @@ sources/1 = SubResource("TileSetAtlasSource_sp75x")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vnsa"]
 texture = ExtResource("5_sp75x")
 texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-22.01448, -18.62764, 24.836845, -18.063164, 17.498688, 5.080265, -15.240799, 6.2092133)
+3:0/0/physics_layer_0/polygon_0/one_way = true
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-73.946075, -18.063164, 75.07503, -17.498692, 53.625015, 13.547371, -50.80265, 13.547371)
+0:0/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_075jw"]
 texture = ExtResource("6_6vnsa")
@@ -76,22 +83,25 @@ texture = ExtResource("3_6vnsa")
 script = ExtResource("2_1m77t")
 
 [node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]
+tile_map_data = PackedByteArray("AAAIAA4AAAADAAAAAAAGAAwAAQADAAEAAAAAAAwAAAADAAAAAAAAAAoAAQADAAEAAAAEAAgAAAAAAAAAAAAHAAcAAAADAAAAAAAIAAcAAAADAAAAAAALAAYAAQADAAEAAAABAAMAAQAAAAEAAAADAAEAAQADAAEAAAAEAAEAAQADAAEAAAAGAAQAAAAAAAAAAAAJAAAAAAAAAAAAAAALAP7/AQADAAEAAAAIAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAAAPz/AQADAAEAAAAJAPj/AQAAAAEAAAALAPb/AAADAAAAAAAJAPT/AQADAAEAAAAHAPL/AAADAAAAAAAFAPD/AQADAAEAAAADAO7/AAADAAAAAAAGAO3/AQADAAEAAAAKAOz/AAADAAAAAAALAOz/AAADAAAAAAAFAOr/AQAAAAEAAAACAOn/AAADAAAAAAAAAOf/AQADAAEAAAACAOX/AAADAAAAAAADAOX/AAADAAAAAAAFAOP/AQADAAEAAAAGAOH/AAADAAAAAAAFAN7/AAADAAAAAAAEAOD/AQADAAEAAAAJAN3/AQADAAEAAAALANv/AAADAAAAAAADANr/AQAAAAEAAAAGANr/AQAAAAEAAAAJANr/AQAAAAEAAAAEANj/AQAAAAEAAAAHANj/AQAAAAEAAAAGANb/AQAAAAEAAAALAAQAAQADAAEAAAAFAPr/AQADAAEAAAA=")
+enabled = false
 tile_set = SubResource("TileSet_6vnsa")
 
 [node name="PlataformasSol" type="TileMapLayer" parent="Plataformas"]
+tile_map_data = PackedByteArray("AAAIAA4AAQADAAEAAAAAAAwAAQADAAEAAAAEAAgAAQAAAAEAAAAHAAcAAQADAAEAAAAIAAcAAQADAAEAAAAGAAQAAQAAAAEAAAAJAAAAAQAAAAEAAAAIAP3/AQAAAAEAAAAEAP3/AQAAAAEAAAALAPb/AQADAAEAAAAHAPL/AQADAAEAAAADAO7/AQADAAEAAAAKAOz/AQADAAEAAAALAOz/AQADAAEAAAACAOn/AQADAAEAAAACAOX/AQADAAEAAAADAOX/AQADAAEAAAAGAOH/AQADAAEAAAAFAN7/AQADAAEAAAALANv/AQADAAEAAAAGAAwAAAADAAAAAAAAAAoAAAADAAAAAAALAAYAAAADAAAAAAABAAMAAAAAAAAAAAADAAEAAAADAAAAAAAEAAEAAAADAAAAAAAAAPz/AAADAAAAAAAJAPj/AAAAAAAAAAAJAPT/AAADAAAAAAAFAPD/AAADAAAAAAAGAO3/AAADAAAAAAAFAOr/AAAAAAAAAAAAAOf/AAADAAAAAAAFAOP/AAADAAAAAAAEAOD/AAADAAAAAAAJAN3/AAADAAAAAAADANr/AAAAAAAAAAAGANr/AAAAAAAAAAAJANr/AAAAAAAAAAAEANj/AAAAAAAAAAAHANj/AAAAAAAAAAAGANb/AAAAAAAAAAALAAQAAAADAAAAAAALAP7/AAADAAAAAAAFAPr/AAADAAAAAAA=")
 tile_set = SubResource("TileSet_p7p13")
 
 [node name="Condor" parent="." instance=ExtResource("8_v08ya")]
-position = Vector2(796, 725)
+position = Vector2(797, 732)
 
 [node name="Condor2" parent="." instance=ExtResource("8_v08ya")]
-position = Vector2(-21, 69)
+position = Vector2(-18, 147)
 
 [node name="Condor3" parent="." instance=ExtResource("8_v08ya")]
-position = Vector2(810, -351)
+position = Vector2(806, -272)
 
 [node name="Condor4" parent="." instance=ExtResource("8_v08ya")]
-position = Vector2(-13, -1488)
+position = Vector2(-13, -1497)
 
 [node name="ParedInvisibleIzquierda" parent="." instance=ExtResource("8_tvx35")]
 position = Vector2(-6, -2710.0002)

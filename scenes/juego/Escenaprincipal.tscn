@@ -1,6 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://cjcyn0hedtufs"]
+[gd_scene load_steps=34 format=3 uid="uid://cjcyn0hedtufs"]
 
-[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scenes/juego/escenaprincipal.gd" id="1_o0bim"]
+[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scripts/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://csq01mdvy7en5" path="res://assets/sprites/personajes_tutorial/Espiritu-Zorro v2.png" id="16_d1ni3"]
 [ext_resource type="Texture2D" uid="uid://2et7q0huwt7e" path="res://assets/sprites/personajes_tutorial/Espiritu condor.png" id="17_q0ci4"]
 [ext_resource type="PackedScene" uid="uid://dqwxaw2qyo86v" path="res://scenes/juego/menu_pausa.tscn" id="23_2obws"]
+[ext_resource type="Script" uid="uid://bf888o1roe4uy" path="res://scripts/condor_teledirigido.gd" id="24_jagll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0bim"]
 size = Vector2(557.25, 34)
@@ -275,6 +276,9 @@ offset = Vector2(400, 400)
 transform = Transform2D(1, 0, 0, 1, 400, 400)
 
 [node name="MenuPausa" parent="CanvasLayerMenuPausa" instance=ExtResource("23_2obws")]
+
+[node name="CondorTeledirigido" type="Node2D" parent="."]
+script = ExtResource("24_jagll")
 
 [connection signal="body_entered" from="Sonido/MusicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaCielo/AreaCielo2D" to="." method="_on_area_cielo_2d_body_entered"]

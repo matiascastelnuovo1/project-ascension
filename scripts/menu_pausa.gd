@@ -1,11 +1,5 @@
 extends Node
 
-"""
-# Comente este codigo de aca porque no me ayudaba mucho
-# Lo cambie por lo que esta mas abajo
-@onready var main = $"../../../.."
-"""
-
 @onready var main = get_tree().current_scene
 
 func _on_button_continuar_pressed() -> void:

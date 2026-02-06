@@ -47,6 +47,6 @@ func _on_area_cielo_2d_body_entered(body: Node2D) -> void:
 	fmod_musica_cielo_emitter.play()
 	fmod_musica_intermedia_emitter.stop()
 	collision_cielo_shape.set_deferred("disabled", true)
-	pass
+	Global.cruzo_cielo = true
 
 #

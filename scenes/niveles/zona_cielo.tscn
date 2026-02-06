@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://tk7lron16y5m"]
 
-[ext_resource type="Script" uid="uid://cme6wcw56xfh" path="res://scenes/niveles/zona_cielo.gd" id="1_075jw"]
+[ext_resource type="Script" uid="uid://cme6wcw56xfh" path="res://scripts/zona_cielo.gd" id="1_075jw"]
 [ext_resource type="Script" uid="uid://dtdcnwkx0d37n" path="res://scripts/swapCielo.gd" id="1_sp75x"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_1m77t"]
 [ext_resource type="Texture2D" uid="uid://cj6n0wwwv41dl" path="res://assets/sprites/logos/Sol 01.png" id="3_6vnsa"]

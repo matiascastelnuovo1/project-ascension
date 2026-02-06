@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal movimiento_personaje()
+
 @export var base_speed = 300.0
 @export var  base_jump_velocity = -600
 @export var gravity := 1200.0
@@ -28,9 +30,13 @@ func _ready():
 	set_collision_layer_value(5, true)	
 
 func _physics_process(delta):
+	print(is_on_floor())
 	# Aplicar gravedad
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	else:
+		
+		pass
 
 	# Movimiento horizontal
 	var direction := Input.get_axis("moverse_izquierda", "moverse_derecha")

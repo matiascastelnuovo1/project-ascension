@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://cjcyn0hedtufs"]
 
-[ext_resource type="Script" path="res://scripts/escenaprincipal.gd" id="1_o0bim"]
+[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scripts/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
@@ -234,7 +234,7 @@ texture = ExtResource("17_q0ci4")
 position = Vector2(186, 6)
 
 [node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
-position = Vector2(316, 1001)
+position = Vector2(221, -5006)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]

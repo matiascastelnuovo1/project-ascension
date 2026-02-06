@@ -1,14 +1,137 @@
-[gd_scene load_steps=17 format=4 uid="uid://tk7lron16y5m"]
+[gd_scene load_steps=20 format=4 uid="uid://tk7lron16y5m"]
 
 [ext_resource type="Script" uid="uid://cme6wcw56xfh" path="res://scripts/zona_cielo.gd" id="1_075jw"]
 [ext_resource type="Script" uid="uid://dtdcnwkx0d37n" path="res://scripts/swapCielo.gd" id="1_sp75x"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_1m77t"]
 [ext_resource type="Texture2D" uid="uid://cj6n0wwwv41dl" path="res://assets/sprites/logos/Sol 01.png" id="3_6vnsa"]
+[ext_resource type="Texture2D" uid="uid://iwk5ci071cxn" path="res://assets/tiles/nochetileset.png" id="5_6vnsa"]
 [ext_resource type="Texture2D" uid="uid://1wx6mtufxrjp" path="res://assets/tiles/TSCieloSol.png" id="5_sp75x"]
 [ext_resource type="Texture2D" uid="uid://boqkn2p1dnjqp" path="res://assets/tiles/TSCieloLuna.png" id="6_6vnsa"]
 [ext_resource type="Texture2D" uid="uid://b1wm6y1mqptqc" path="res://assets/sprites/placeholder/placeholdercielosol.png" id="7_1m77t"]
 [ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_tvx35"]
 [ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="8_v08ya"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7p13"]
+texture = ExtResource("5_6vnsa")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+11:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+11:4/0 = 0
+15:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0hxo0"]
+sources/0 = SubResource("TileSetAtlasSource_p7p13")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tvx35"]
 texture = ExtResource("6_6vnsa")
@@ -78,6 +201,10 @@ texture = ExtResource("7_1m77t")
 position = Vector2(404, -2610)
 scale = Vector2(1.836025, 2.2198627)
 texture = ExtResource("3_6vnsa")
+
+[node name="FondoLuna" type="TileMapLayer" parent="Fondo"]
+position = Vector2(6, 0)
+tile_set = SubResource("TileSet_0hxo0")
 
 [node name="Plataformas" type="Node2D" parent="."]
 script = ExtResource("2_1m77t")

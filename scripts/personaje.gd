@@ -70,6 +70,10 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
+#Desaparece progresivamente
+func fade_out():
+	create_tween().tween_property(self, "modulate:a", 0.0, 1.5)
+
 func controlador_animacion_mascara():
 	match Global.estado_mascara_actual:
 		Global.ESTADOS_MASCARA.SOL:

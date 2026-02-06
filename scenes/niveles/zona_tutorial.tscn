@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://d0xa7bft3b1f"]
+[gd_scene load_steps=40 format=4 uid="uid://d0xa7bft3b1f"]
 
 [ext_resource type="Texture2D" uid="uid://bsmchmn6pvc2m" path="res://assets/tiles/fondopueblo.png" id="1_tmah2"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_mdpm6"]
@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://bs2rm6bj1nt1j" path="res://assets/tiles/placeholderPlataformaPuebloSol.png" id="5_h6ax4"]
 [ext_resource type="Texture2D" uid="uid://c176huvd5e2km" path="res://assets/tiles/placeholderPlataformaPuebloLuna.png" id="6_holac"]
 [ext_resource type="Texture2D" uid="uid://du8n6q5uy5k4d" path="res://assets/tiles/TSPlataformaPueblo.png" id="6_mxc42"]
+[ext_resource type="Texture2D" uid="uid://dcf7o6dsmepi0" path="res://assets/tiles/altTSPlataformaMadera.png" id="7_2wv7u"]
 [ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_mxc42"]
 [ext_resource type="Texture2D" uid="uid://diyjb6atnfrw6" path="res://assets/tiles/TSPuebloSol.png" id="9_holac"]
 [ext_resource type="Texture2D" uid="uid://b15nwsna5r0iy" path="res://assets/tiles/TSPuebloLuna.png" id="10_m4jxy"]
+[ext_resource type="Texture2D" uid="uid://c4wi4pb0o42h2" path="res://assets/tiles/altTSPuebloSol.png" id="11_b8ar5"]
+[ext_resource type="Texture2D" uid="uid://cqys0vvhmkayi" path="res://assets/tiles/altTSPuebloLuna.png" id="13_i5dhe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxc42"]
 texture = ExtResource("1_tmah2")
@@ -2581,6 +2584,21 @@ texture_region_size = Vector2i(64, 64)
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-44.865112, -16.018303, 44.05034, -16.025932, 26.333115, 7.181759, -23.939196, 8.052277)
 4:0/0/physics_layer_0/polygon_0/one_way = true
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ob0c0"]
+texture = ExtResource("7_2wv7u")
+texture_region_size = Vector2i(64, 64)
+0:0/size_in_atlas = Vector2i(3, 1)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-77.89739, -15.240795, 77.33292, -15.805267, 23.143425, 8.46711, -24.836853, 7.3381577)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.836853, -16.369743, 25.965797, -14.676323, 23.143425, 8.46711, -24.836853, 7.3381577)
+3:0/0/physics_layer_0/polygon_0/one_way = true
+4:0/size_in_atlas = Vector2i(2, 1)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45.722385, -14.676323, 47.415802, -15.240795, 23.143425, 8.46711, -24.836853, 7.3381577)
+4:0/0/physics_layer_0/polygon_0/one_way = true
+
 [sub_resource type="TileSet" id="TileSet_0l6i4"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
@@ -2588,6 +2606,7 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_m4jxy")
 sources/1 = SubResource("TileSetAtlasSource_lpg56")
 sources/2 = SubResource("TileSetAtlasSource_0l6i4")
+sources/3 = SubResource("TileSetAtlasSource_ob0c0")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2wv7u"]
 texture = ExtResource("5_h6ax4")
@@ -2633,6 +2652,18 @@ texture_region_size = Vector2i(32, 32)
 6:2/size_in_atlas = Vector2i(2, 2)
 6:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qy420"]
+texture = ExtResource("11_b8ar5")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(6, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78.54654, -15.709309, 81.96162, -15.026295, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0/physics_layer_0/polygon_0/one_way = true
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxpyu"]
 texture = ExtResource("10_m4jxy")
 texture_region_size = Vector2i(32, 32)
@@ -2640,6 +2671,14 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 4:0/size_in_atlas = Vector2i(2, 2)
 4:0/0 = 0
+0:2/size_in_atlas = Vector2i(4, 2)
+0:2/0 = 0
+4:2/size_in_atlas = Vector2i(2, 2)
+4:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v46pp"]
+texture = ExtResource("13_i5dhe")
+texture_region_size = Vector2i(32, 32)
 0:2/size_in_atlas = Vector2i(4, 2)
 0:2/0 = 0
 4:2/size_in_atlas = Vector2i(2, 2)
@@ -2653,6 +2692,8 @@ sources/0 = SubResource("TileSetAtlasSource_2wv7u")
 sources/1 = SubResource("TileSetAtlasSource_b8ar5")
 sources/2 = SubResource("TileSetAtlasSource_i5dhe")
 sources/4 = SubResource("TileSetAtlasSource_nxpyu")
+sources/3 = SubResource("TileSetAtlasSource_qy420")
+sources/5 = SubResource("TileSetAtlasSource_v46pp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1t7m"]
 texture = ExtResource("9_holac")
@@ -2681,6 +2722,26 @@ texture_region_size = Vector2i(32, 32)
 4:0/0/physics_layer_0/polygon_0/one_way = true
 4:2/size_in_atlas = Vector2i(2, 2)
 4:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_syayi"]
+texture = ExtResource("13_i5dhe")
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(4, 2)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45.87964, -16.192816, 47.80736, -14.650642, 16, 16, -16, 16)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-27.373566, -14.650642, 27.37357, -14.650642, 16, 16, -16, 16)
+4:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j0rr4"]
+texture = ExtResource("11_b8ar5")
+texture_region_size = Vector2i(32, 32)
+0:2/size_in_atlas = Vector2i(6, 2)
+0:2/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mluu3"]
 texture = ExtResource("6_holac")
@@ -2718,6 +2779,8 @@ sources/4 = SubResource("TileSetAtlasSource_mluu3")
 sources/5 = SubResource("TileSetAtlasSource_oforp")
 sources/0 = SubResource("TileSetAtlasSource_s1t7m")
 sources/1 = SubResource("TileSetAtlasSource_3d1i3")
+sources/2 = SubResource("TileSetAtlasSource_syayi")
+sources/3 = SubResource("TileSetAtlasSource_j0rr4")
 
 [node name="ZonaTutorial" type="Node2D"]
 position = Vector2(52, -290)
@@ -2738,17 +2801,17 @@ script = ExtResource("2_mdpm6")
 
 [node name="PlataformasNeutrales" type="TileMapLayer" parent="Plataformas"]
 position = Vector2(400, 329)
-tile_map_data = PackedByteArray("AAD//wsAAgAAAAAAAAD8/wkAAgAAAAAAAAAAAAcAAgAAAAAAAAD7/wAAAgAAAAAAAAD///H/AgAAAAAAAAAAAAUAAgAAAAAAAAAEAAMAAgAEAAAAAAADAAMAAgAEAAAAAAAEAPz/AgAEAAAAAAAAAPX/AgADAAAAAAD7//P/AgAAAAAAAAD7/wsAAgAAAAAAAAADAAsAAgAAAAAAAAD9/wsAAgAEAAAAAAABAAsAAgAEAAAAAAAFAAsAAgAAAAAAAAD5/wsAAgAAAAAAAAAFAAMAAgAEAAAAAAAAAP7/AgAAAAAAAAACAP7/AgAAAAAAAAAEAP7/AgAAAAAAAAD6/+v/AgAAAAAAAAD+/+v/AgAAAAAAAAACAOv/AgAAAAAAAAAGAOv/AgAAAAAAAAAEAOv/AgAAAAAAAAAAAOv/AgAAAAAAAAD8/+v/AgAAAAAAAAD//+3/AgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8/wkAAwAAAAAAAAAAAAcAAwAAAAAAAAD7/wAAAwAAAAAAAAD///H/AwAAAAAAAAAAAAUAAwAAAAAAAAAEAAMAAwAEAAAAAAADAAMAAwAEAAAAAAAEAPz/AwAEAAAAAAAAAPX/AwADAAAAAAD7//P/AwAAAAAAAAAFAAMAAwAEAAAAAAAAAP7/AwAAAAAAAAACAP7/AwAAAAAAAAAEAP7/AwAAAAAAAAD6/+v/AwAAAAAAAAD+/+v/AwAAAAAAAAACAOv/AwAAAAAAAAAGAOv/AwAAAAAAAAAAAOv/AwAAAAAAAAD8/+v/AwAAAAAAAAD//+3/AwAAAAAAAAD6/wsAAwAAAAAAAAD8/wsAAwAAAAAAAAD+/wsAAwAAAAAAAAAAAAsAAwAAAAAAAAACAAsAAwAAAAAAAAAEAAsAAwAAAAAAAAAGAAsAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_0l6i4")
 rendering_quadrant_size = 1
 
 [node name="PlataformasSol" type="TileMapLayer" parent="Plataformas"]
-tile_map_data = PackedByteArray("AAAXAAoABAAEAAIAAAATAOn/AgAGAAAAAAAXAOX/AgAGAAAAAAAFAOn/AQAGAAIAAAALAA4AAgAAAAAAAAARAP7/BAAEAAIAAAASAP7/BAAEAAIAAAAVAPv/BAAEAAIAAAAWAPv/BAAEAAIAAAASAPj/BAAEAAIAAAARAPj/BAAEAAIAAAA=")
+tile_map_data = PackedByteArray("AAAXAAoABQAEAAIAAAATAOn/AwAGAAAAAAAXAOX/AwAGAAAAAAAFAOn/BQAEAAIAAAALAA4AAwAAAAAAAAARAP7/BQAEAAIAAAASAP7/BQAEAAIAAAAVAPv/BQAEAAIAAAAWAPv/BQAEAAIAAAASAPj/BQAEAAIAAAARAPj/BQAEAAIAAAA=")
 tile_set = SubResource("TileSet_i5dhe")
 
 [node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]
 position = Vector2(0, -1)
-tile_map_data = PackedByteArray("AAAXAAoAAQAEAAAAAAAFAOn/AQAEAAAAAAATAOn/AAAGAAIAAAAXAOX/AAAGAAIAAAALAA4AAAAAAAIAAAARAP7/AQAEAAAAAAASAP7/AQAEAAAAAAAVAPv/AQAEAAAAAAAWAPv/AQAEAAAAAAARAPj/AQAEAAAAAAASAPj/AQAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAAXAAoAAgAEAAAAAAAFAOn/AgAEAAAAAAATAOn/AwAGAAIAAAAXAOX/AwAGAAIAAAALAA4AAwAAAAIAAAARAP7/AgAEAAAAAAASAP7/AgAEAAAAAAAVAPv/AgAEAAAAAAAWAPv/AgAEAAAAAAARAPj/AgAEAAAAAAASAPj/AgAEAAAAAAA=")
 enabled = false
 tile_set = SubResource("TileSet_nxpyu")
 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://i7iin7824uqh"]
+[gd_scene load_steps=4 format=3 uid="uid://chmhubo35yx8p"]
 
-[ext_resource type="Script" uid="uid://f6tj1n5lmcsn" path="res://scenes/condor_spawned.gd" id="1_cbpf7"]
+[ext_resource type="Script" uid="uid://f6tj1n5lmcsn" path="res://scripts/condor_spawned.gd" id="1_cbpf7"]
 [ext_resource type="Texture2D" uid="uid://cgw0tarj6ufbk" path="res://assets/sprites/enemigos/Condor Andino.png" id="1_v5js5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyxsc"]

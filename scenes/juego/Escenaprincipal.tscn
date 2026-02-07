@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://csq01mdvy7en5" path="res://assets/sprites/personajes_tutorial/Espiritu-Zorro v2.png" id="16_d1ni3"]
 [ext_resource type="Texture2D" uid="uid://2et7q0huwt7e" path="res://assets/sprites/personajes_tutorial/Espiritu condor.png" id="17_q0ci4"]
 [ext_resource type="PackedScene" uid="uid://dqwxaw2qyo86v" path="res://scenes/juego/menu_pausa.tscn" id="23_2obws"]
-[ext_resource type="Script" uid="uid://dvft135dq6qa6" path="res://scripts/condor_teledirigido.gd" id="24_jagll"]
+[ext_resource type="Script" uid="uid://dvft135dq6qa6" path="res://scripts/condor_handler.gd" id="24_jagll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0bim"]
 size = Vector2(557.25, 34)

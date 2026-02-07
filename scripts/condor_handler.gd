@@ -12,8 +12,8 @@ func _ready():
 	CURRENT_SCENE.time_out_character.connect(spawn_enemy_at_position)
 
 func spawn_enemy_at_position():
-	print("spawneo condor")
+	#print("spawneo condor")
 	var enemy_instance = CONDOR_SCENE.instantiate()
 	enemy_instance.punto_b = CHARACTER.position
 	get_parent().add_child(enemy_instance)
-	print("CHARACTER.position", CHARACTER.position)
+	#print("CHARACTER.position", CHARACTER.position)

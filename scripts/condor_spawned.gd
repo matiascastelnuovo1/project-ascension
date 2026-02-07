@@ -33,7 +33,7 @@ func _process(delta):
 	progreso += velocidad_normalizada * delta
 
 	if progreso >= 1.0:
-		print("Cóndor llegó al final, eliminando...")
+		#print("Cóndor llegó al final, eliminando...")
 		queue_free()  # ← CAMBIO 1: Eliminar del árbol de escenas
 		return        # ← CAMBIO 2: Salir de la función
 

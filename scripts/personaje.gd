@@ -57,9 +57,9 @@ func _physics_process(delta):
 	
 	if is_on_floor() and direction == 0:	
 		character_not_moving.emit()
-		#print("esta quieto")
+		##print("esta quieto")
 	else:
-		#print("se esta moviendo")
+		##print("se esta moviendo")
 		character_moving.emit()
 	
 		

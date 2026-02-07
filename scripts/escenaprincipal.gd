@@ -26,14 +26,14 @@ func _input(event: InputEvent) -> void:
 func handle_timer():
 	if Global.curzo_cielo:
 		if not isTicking: 
-			print("arranco timeout")
+			#print("arranco timeout")
 			isTicking = true
 			timer_node.start()
 
 func handle_timer_stop():	
 	if Global.curzo_cielo:
 		if isTicking: 
-			print("freno timeout")
+			#print("freno timeout")
 			isTicking = false
 			timer_node.stop()
 
@@ -48,7 +48,7 @@ func show_pause():
 	menu_pausa.show()
 
 func _on_timer_timeout() -> void:
-	print("tiro timeout")
+	#print("tiro timeout")
 	time_out_character.emit()
 	pass # Replace with function body.
 
@@ -70,5 +70,6 @@ func _on_area_cielo_2d_body_entered(body: Node2D) -> void:
 	pass
 
 func _on_trigger_spawn_condor_body_entered(body: Node2D) -> void:
+	#print("cruzo cielo")
 	Global.curzo_cielo = true
 	pass # Replace with function body.

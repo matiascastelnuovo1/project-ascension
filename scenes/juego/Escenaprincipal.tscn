@@ -25,6 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://dqwxaw2qyo86v" path="res://scenes/juego/menu_pausa.tscn" id="23_2obws"]
 [ext_resource type="Script" uid="uid://dvft135dq6qa6" path="res://scripts/condor_handler.gd" id="24_jagll"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jagll"]
+size = Vector2(736, 9)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0bim"]
 size = Vector2(557.25, 34)
 
@@ -78,9 +81,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jagll"]
-size = Vector2(736, 9)
-
 [node name="EscenaPrincipal" type="Node2D"]
 script = ExtResource("1_o0bim")
 metadata/_edit_vertical_guides_ = [769.0, 923.0, -151.0, 0.0]
@@ -94,6 +94,16 @@ position = Vector2(1, -2215)
 
 [node name="ZonaTutorial" parent="." instance=ExtResource("1_oblc7")]
 position = Vector2(2, 7)
+
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="TriggerSpawnCondor" type="Area2D" parent="Triggers"]
+position = Vector2(387, -5038)
+collision_mask = 513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/TriggerSpawnCondor"]
+position = Vector2(-13, 61)
+shape = SubResource("RectangleShape2D_jagll")
 
 [node name="Sonido" type="Node2D" parent="."]
 
@@ -238,7 +248,7 @@ texture = ExtResource("17_q0ci4")
 position = Vector2(186, 6)
 
 [node name="Personaje" parent="Personajes" instance=ExtResource("1_t5kfq")]
-position = Vector2(463, 1044)
+position = Vector2(245, -4676)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personajes/Personaje"]
@@ -287,17 +297,8 @@ one_shot = true
 [node name="Condores" type="Node2D" parent="."]
 script = ExtResource("24_jagll")
 
-[node name="Triggers" type="Node2D" parent="."]
-
-[node name="TriggerSpawnCondor" type="Area2D" parent="Triggers"]
-position = Vector2(387, -5038)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/TriggerSpawnCondor"]
-position = Vector2(-13, 61)
-shape = SubResource("RectangleShape2D_jagll")
-
+[connection signal="body_entered" from="Triggers/TriggerSpawnCondor" to="." method="_on_trigger_spawn_condor_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaCielo/AreaCielo2D" to="." method="_on_area_cielo_2d_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaIntermedia/AreaIntermedia2D" to="." method="_on_area_intermedia_2d_body_entered"]
 [connection signal="timeout" from="Timers/TimerSpawnCondor" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Triggers/TriggerSpawnCondor" to="." method="_on_trigger_spawn_condor_body_entered"]

@@ -86,6 +86,9 @@ script = ExtResource("1_o0bim")
 metadata/_edit_vertical_guides_ = [769.0, 923.0, -151.0, 0.0]
 metadata/_edit_horizontal_guides_ = [1280.0]
 
+[node name="Condores" type="Node2D" parent="."]
+script = ExtResource("24_jagll")
+
 [node name="ZonaCielo" parent="." instance=ExtResource("2_t5kfq")]
 position = Vector2(-6, -5653)
 
@@ -245,10 +248,10 @@ position = Vector2(743, -3349)
 texture = ExtResource("17_q0ci4")
 
 [node name="Personajes" type="Node2D" parent="."]
-position = Vector2(186, 6)
+position = Vector2(-123, -5747)
 
 [node name="Personaje" parent="Personajes" instance=ExtResource("1_t5kfq")]
-position = Vector2(245, -4676)
+position = Vector2(549, 1032)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personajes/Personaje"]
@@ -293,9 +296,6 @@ transform = Transform2D(1, 0, 0, 1, 400, 400)
 [node name="TimerSpawnCondor" type="Timer" parent="Timers"]
 wait_time = 3.0
 one_shot = true
-
-[node name="Condores" type="Node2D" parent="."]
-script = ExtResource("24_jagll")
 
 [connection signal="body_entered" from="Triggers/TriggerSpawnCondor" to="." method="_on_trigger_spawn_condor_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]

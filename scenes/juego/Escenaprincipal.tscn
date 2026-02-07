@@ -165,16 +165,16 @@ shape = SubResource("RectangleShape2D_sfhxn")
 position = Vector2(-515, 0)
 
 [node name="Coleccionable1" parent="Coleccionables" instance=ExtResource("12_27rmh")]
-position = Vector2(1267, -925)
+position = Vector2(1264, -903)
 
 [node name="Coleccionable2" parent="Coleccionables" instance=ExtResource("13_norlk")]
 position = Vector2(573, -2684)
 
 [node name="Coleccionable3" parent="Coleccionables" instance=ExtResource("14_trypt")]
-position = Vector2(549, -3450)
+position = Vector2(546, -3427)
 
 [node name="Coleccionable4" parent="Coleccionables" instance=ExtResource("15_d1ni3")]
-position = Vector2(556, -4166)
+position = Vector2(545, -4173)
 
 [node name="Tutoriales" type="Node2D" parent="."]
 
@@ -196,7 +196,7 @@ tutorial_text = "A veces, el sol y la luna tienen que cooperar para enfrentar re
 
 [node name="Tutorial5" parent="Tutoriales" instance=ExtResource("10_h40go")]
 position = Vector2(671, -3384)
-tutorial_text = "Mis descendientes te pondrán a prueba. Debes demostrar que eres capaz de asumir esta responsabilidad."
+tutorial_text = "Mis descendientes te pondrán a prueba. Debes demostrar que eres capaz de asumir esta responsabilidad. No te quedes quieto mucho tiempo!"
 
 [node name="Tutorial6" parent="Tutoriales" instance=ExtResource("11_jqamj")]
 position = Vector2(369, -4760)
@@ -238,17 +238,16 @@ frame = 1
 frame_progress = 0.29542923
 
 [node name="EspirituZorroV2" type="Sprite2D" parent="NPCs"]
-position = Vector2(741, -1544)
-scale = Vector2(2.125, 2.109375)
+position = Vector2(732, -1537)
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("16_d1ni3")
-flip_h = true
 
 [node name="EspirituCondor" type="Sprite2D" parent="NPCs"]
 position = Vector2(743, -3349)
 texture = ExtResource("17_q0ci4")
 
 [node name="Personajes" type="Node2D" parent="."]
-position = Vector2(-123, -5747)
+position = Vector2(-131, -5955)
 
 [node name="Personaje" parent="Personajes" instance=ExtResource("1_t5kfq")]
 position = Vector2(549, 1032)

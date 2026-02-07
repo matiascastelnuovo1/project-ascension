@@ -2,10 +2,11 @@ extends Node2D
 @onready var sonido_condor_emitter: FmodEventEmitter2D = $FmodSonidoCondorEmitter2D
 
 @export var punto_b: Vector2
-@export var distancia_diagonal: float = 1200.0
-@export var angulo_diagonal: float = -45.0
+@export var distancia_diagonal: float = 800.0
+@export var angulo_diagonal: float = 135.0
 @export var velocidad: float = 400.0
-@export var debug_visual: bool = true
+@export var debug_visual: bool = false
+@export var offset_correcion: Vector2 = Vector2(60, 60) 
 
 var punto_a: Vector2
 var punto_c: Vector2
@@ -22,21 +23,9 @@ func calcular_recorrido_exacto():
 	var angulo_rad = deg_to_rad(angulo_diagonal)
 	var direccion_unitaria = Vector2(cos(angulo_rad), sin(angulo_rad))
 
-	# Calcular puntos extremos
-	punto_a = punto_b - direccion_unitaria * distancia_diagonal
-	punto_c = punto_b + direccion_unitaria * distancia_diagonal
+	punto_a = punto_b - direccion_unitaria * distancia_diagonal + offset_correcion
+	punto_c = punto_b + direccion_unitaria * distancia_diagonal + offset_correcion
 
-	# Verificación matemática
-	var distancia_ab = punto_a.distance_to(punto_b)
-	var distancia_bc = punto_b.distance_to(punto_c)
-	var distancia_ac = punto_a.distance_to(punto_c)
-
-	print("=== VERIFICACIÓN ===")
-	print("Distancia A-B: ", distancia_ab)
-	print("Distancia B-C: ", distancia_bc)
-	print("Distancia A-C: ", distancia_ac)
-	print("¿Son iguales A-B y B-C?: ", abs(distancia_ab - distancia_bc) < 0.001)
-	print("¿A-C es el doble?: ", abs(distancia_ac - (distancia_ab + distancia_bc)) < 0.001)
 
 func _process(delta):
 	var distancia_total = punto_a.distance_to(punto_c)
@@ -44,7 +33,9 @@ func _process(delta):
 	progreso += velocidad_normalizada * delta
 
 	if progreso >= 1.0:
-		progreso = 0.0
+		print("Cóndor llegó al final, eliminando...")
+		queue_free()  # ← CAMBIO 1: Eliminar del árbol de escenas
+		return        # ← CAMBIO 2: Salir de la función
 
 	# MÉTODO CORREGIDO: Usar interpolación exacta
 	position = interpolacion_exacta(progreso)

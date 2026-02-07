@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cjcyn0hedtufs"]
+[gd_scene load_steps=35 format=3 uid="uid://cjcyn0hedtufs"]
 
 [ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scripts/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
@@ -77,6 +77,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jagll"]
+size = Vector2(736, 9)
 
 [node name="EscenaPrincipal" type="Node2D"]
 script = ExtResource("1_o0bim")
@@ -277,14 +280,24 @@ transform = Transform2D(1, 0, 0, 1, 400, 400)
 
 [node name="Timers" type="Node2D" parent="."]
 
-[node name="Timer" type="Timer" parent="Timers"]
+[node name="TimerSpawnCondor" type="Timer" parent="Timers"]
 wait_time = 3.0
 one_shot = true
 
 [node name="Condores" type="Node2D" parent="."]
 script = ExtResource("24_jagll")
 
+[node name="Triggers" type="Node2D" parent="."]
+
+[node name="TriggerSpawnCondor" type="Area2D" parent="Triggers"]
+position = Vector2(387, -5038)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Triggers/TriggerSpawnCondor"]
+position = Vector2(-13, 61)
+shape = SubResource("RectangleShape2D_jagll")
+
 [connection signal="body_entered" from="Sonido/MusicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaCielo/AreaCielo2D" to="." method="_on_area_cielo_2d_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaIntermedia/AreaIntermedia2D" to="." method="_on_area_intermedia_2d_body_entered"]
-[connection signal="timeout" from="Timers/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timers/TimerSpawnCondor" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Triggers/TriggerSpawnCondor" to="." method="_on_trigger_spawn_condor_body_entered"]

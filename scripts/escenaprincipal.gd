@@ -10,7 +10,7 @@ signal time_out_character()
 @onready var collision_cielo_shape: CollisionShape2D = $Sonido/MusicaCielo/AreaCielo2D/CollisionCieloShape2D
 @onready var menu_pausa: Control = $CanvasLayerMenuPausa/MenuPausa
 @onready var character: CharacterBody2D = $Personajes/Personaje
-@onready var timer_node: Timer = $Timers/Timer
+@onready var timer_node: Timer = $Timers/TimerSpawnCondor
 
 var isTicking: bool = false
 
@@ -24,16 +24,18 @@ func _input(event: InputEvent) -> void:
 		show_pause()
 
 func handle_timer():
-	if not isTicking: 
-		print("arranco timeout")
-		isTicking = true
-		timer_node.start()
+	if Global.curzo_cielo:
+		if not isTicking: 
+			print("arranco timeout")
+			isTicking = true
+			timer_node.start()
 
-func handle_timer_stop():
-	if isTicking: 
-		print("freno timeout")
-		isTicking = false
-		timer_node.stop()
+func handle_timer_stop():	
+	if Global.curzo_cielo:
+		if isTicking: 
+			print("freno timeout")
+			isTicking = false
+			timer_node.stop()
 
 func hide_pause():
 	#Añado a hide_pause esta parte de codigo entre 
@@ -66,3 +68,7 @@ func _on_area_cielo_2d_body_entered(body: Node2D) -> void:
 	fmod_musica_intermedia_emitter.stop()
 	collision_cielo_shape.set_deferred("disabled", true)
 	pass
+
+func _on_trigger_spawn_condor_body_entered(body: Node2D) -> void:
+	Global.curzo_cielo = true
+	pass # Replace with function body.

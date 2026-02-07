@@ -15,7 +15,5 @@ func spawn_enemy_at_position():
 	print("spawneo condor")
 	var enemy_instance = CONDOR_SCENE.instantiate()
 	enemy_instance.punto_b = CHARACTER.position
-	#revisar como corregir curva y estamos
 	get_parent().add_child(enemy_instance)
 	print("CHARACTER.position", CHARACTER.position)
-	#enemy_instance.global_position = CHARACTER.position

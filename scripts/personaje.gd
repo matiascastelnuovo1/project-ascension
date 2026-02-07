@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+
+signal character_not_moving()
+signal character_moving()
+
 @export var base_speed = 300.0
 @export var  base_jump_velocity = -600
 @export var gravity := 1200.0
@@ -43,7 +47,7 @@ func _physics_process(delta):
 	
 	if direction != 0 and is_on_floor():
 		if footStepTimer <= 0:
-			fmod_walk_emitter.play()
+			character_moving.emit()
 			footStepTimer = footStepTimerReset
 		footStepTimer -= delta
 	
@@ -51,8 +55,14 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 		fmod_jump_emitter.play()
 	
-	#Seccion de animaciones
+	if is_on_floor() and direction == 0:	
+		character_not_moving.emit()
+		##print("esta quieto")
+	else:
+		##print("se esta moviendo")
+		character_moving.emit()
 	
+		
 	if is_on_floor():
 		if velocity.x != 0:
 			animated_sprite.play(str(mascara_actual_animaciones + "bailando"))

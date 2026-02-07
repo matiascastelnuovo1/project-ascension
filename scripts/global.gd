@@ -3,7 +3,7 @@ extends Node
 signal cambio_mascara(nueva_mascara: int)
 
 var mascaras_agarradas: int = 0
-var curzo_cielo: bool = false
+var curzo_cielo: bool = true
 enum ESTADOS_MASCARA {SOL,LUNA}
 var estado_mascara_actual = ESTADOS_MASCARA.SOL
 

@@ -55,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gyxsc"]
-size = Vector2(78.5, 55)
+size = Vector2(78.5, 64)
 
 [node name="Condor" type="Area2D"]
 position = Vector2(0, -15)
@@ -73,7 +73,7 @@ frame_progress = 0.18414877
 speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.25, 11.5)
+position = Vector2(-0.25, 7)
 shape = SubResource("RectangleShape2D_gyxsc")
 
 [node name="FmodSonidoCondorEmitter2D" type="FmodEventEmitter2D" parent="."]

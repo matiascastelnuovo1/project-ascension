@@ -146,7 +146,7 @@ func generate_tree(callable: Callable = Callable()):
 		copy_guid_button.visible = should_display_copy_buttons
 
 	if _current_select_callable != Callable():
-		print(_current_select_callable)
+		#print(_current_select_callable)
 		emit_path_and_guid.connect(_current_select_callable)
 
 	%SelectButton.visible = should_display_select_button and %GuidLabel.text != ""

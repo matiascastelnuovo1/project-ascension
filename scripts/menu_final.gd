@@ -2,6 +2,7 @@ extends Node2D
 
 var tween: Tween
 @onready var currentLabel = $MenuPrincipal/TextoFinal
+@onready var spriteAnimated = $AnimatedSprite2D2
 @export var duration: float = 0.8
 
 func _ready() -> void:
@@ -17,3 +18,7 @@ func _on_boton_jugar_pressed() -> void:
 
 func _on_boton_salir_pressed() -> void:
 	get_tree().quit()
+
+func _on_animated_sprite_2d_2_animation_finished() -> void:
+	#spriteAnimated.play_backwards("default")
+	pass # Replace with function body.

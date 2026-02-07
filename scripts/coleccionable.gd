@@ -11,6 +11,6 @@ func _on_body_entered(body: Node2D) -> void:
 		#collision_shape.disabled = true
 		#sprite_mask.visible = not $Sprite2D.visible
 		coleccionable_emitter.play()
-		print('mascaras agarradas: ', Global.mascaras_agarradas)
+		#print('mascaras agarradas: ', Global.mascaras_agarradas)
 		await get_tree().create_timer(0.4).timeout
 		queue_free()

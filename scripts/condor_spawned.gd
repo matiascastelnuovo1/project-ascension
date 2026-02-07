@@ -33,13 +33,13 @@ func _process(delta):
 	progreso += velocidad_normalizada * delta
 
 	if progreso >= 1.0:
-		print("Cóndor llegó al final, eliminando...")
+		#print("Cóndor llegó al final, eliminando...")
 		queue_free()  # ← CAMBIO 1: Eliminar del árbol de escenas
 		return        # ← CAMBIO 2: Salir de la función
 
 	# MÉTODO CORREGIDO: Usar interpolación exacta
 	position = interpolacion_exacta(progreso)
-	print("posicion condor", position)
+	#print("posicion condor", position)
 
 func interpolacion_exacta(t: float) -> Vector2:	
 	if abs(t - 0.5) < 0.001:  # Si está muy cerca del 50%

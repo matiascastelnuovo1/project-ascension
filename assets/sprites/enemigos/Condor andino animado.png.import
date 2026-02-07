@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1wm6y1mqptqc"
-path="res://.godot/imported/placeholdercielosol.png-949d375737bb9e0b1487690463f805c4.ctex"
+uid="uid://b4enhau5tv6w8"
+path="res://.godot/imported/Condor andino animado.png-c83353cd595e7a2845924a602da10a19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/placeholder/placeholdercielosol.png"
-dest_files=["res://.godot/imported/placeholdercielosol.png-949d375737bb9e0b1487690463f805c4.ctex"]
+source_file="res://assets/sprites/enemigos/Condor andino animado.png"
+dest_files=["res://.godot/imported/Condor andino animado.png-c83353cd595e7a2845924a602da10a19.ctex"]
 
 [params]
 

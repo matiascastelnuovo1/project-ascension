@@ -1,12 +1,12 @@
 [gd_scene load_steps=17 format=3 uid="uid://tk7lron16y5m"]
 
-[ext_resource type="Script" uid="uid://cme6wcw56xfh" path="res://scenes/niveles/zona_cielo.gd" id="1_075jw"]
+[ext_resource type="Script" uid="uid://cme6wcw56xfh" path="res://scripts/zona_cielo.gd" id="1_075jw"]
 [ext_resource type="Script" uid="uid://dtdcnwkx0d37n" path="res://scripts/swapCielo.gd" id="1_sp75x"]
 [ext_resource type="Script" uid="uid://dj1kylckhmqjh" path="res://scripts/plataformas.gd" id="2_1m77t"]
 [ext_resource type="Texture2D" uid="uid://cj6n0wwwv41dl" path="res://assets/sprites/logos/Sol 01.png" id="3_6vnsa"]
+[ext_resource type="Texture2D" uid="uid://b1wm6y1mqptqc" path="res://assets/sprites/logos/fondocielosol.png" id="3_tvx35"]
 [ext_resource type="Texture2D" uid="uid://1wx6mtufxrjp" path="res://assets/tiles/TSCieloSol.png" id="5_sp75x"]
 [ext_resource type="Texture2D" uid="uid://boqkn2p1dnjqp" path="res://assets/tiles/TSCieloLuna.png" id="6_6vnsa"]
-[ext_resource type="Texture2D" uid="uid://b1wm6y1mqptqc" path="res://assets/sprites/placeholder/placeholdercielosol.png" id="7_1m77t"]
 [ext_resource type="PackedScene" uid="uid://bca4rfx1kr3j3" path="res://scenes/pared_invisible.tscn" id="8_tvx35"]
 [ext_resource type="PackedScene" uid="uid://dg1m4q8lpl1xn" path="res://scenes/condor.tscn" id="8_v08ya"]
 
@@ -65,7 +65,7 @@ script = ExtResource("1_sp75x")
 z_index = -1
 position = Vector2(403, -770.00006)
 scale = Vector2(1.0390625, 1.6026087)
-texture = ExtResource("7_1m77t")
+texture = ExtResource("3_tvx35")
 
 [node name="Sol01" type="Sprite2D" parent="Fondo"]
 position = Vector2(404, -2610)

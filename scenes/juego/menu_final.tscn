@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcye7me0fnpxx"]
 
-[ext_resource type="Texture2D" uid="uid://b1wm6y1mqptqc" path="res://assets/sprites/placeholder/placeholdercielosol.png" id="1_wb74w"]
-[ext_resource type="Script" uid="uid://d0032sqyfssy2" path="res://scenes/juego/menu_final.gd" id="1_x3q58"]
+[ext_resource type="Texture2D" uid="uid://b1wm6y1mqptqc" path="res://assets/sprites/logos/fondocielosol.png" id="1_wb74w"]
+[ext_resource type="Script" uid="uid://d0032sqyfssy2" path="res://scripts/menu_final.gd" id="1_x3q58"]
 [ext_resource type="Texture2D" uid="uid://cf574r6i1n6qh" path="res://assets/sprites/logos/sol.png" id="6_xb6vt"]
 [ext_resource type="AudioStream" uid="uid://c0cfq207t8406" path="res://assets/sounds/Chaca Still pink.wav" id="7_53afd"]
 [ext_resource type="FontFile" uid="uid://c2fuxti4l5yqk" path="res://assets/fonts/Jersey10-Regular.ttf" id="7_jgjdv"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://cjcyn0hedtufs"]
 
-[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scenes/juego/escenaprincipal.gd" id="1_o0bim"]
+[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scripts/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
@@ -148,7 +148,7 @@ shape = SubResource("RectangleShape2D_sfhxn")
 position = Vector2(-515, 0)
 
 [node name="Coleccionable1" parent="Coleccionables" instance=ExtResource("12_27rmh")]
-position = Vector2(1267, -925)
+position = Vector2(1249, -896)
 
 [node name="Coleccionable2" parent="Coleccionables" instance=ExtResource("13_norlk")]
 position = Vector2(573, -2684)
@@ -157,7 +157,7 @@ position = Vector2(573, -2684)
 position = Vector2(549, -3450)
 
 [node name="Coleccionable4" parent="Coleccionables" instance=ExtResource("15_d1ni3")]
-position = Vector2(556, -4166)
+position = Vector2(544, -4178)
 
 [node name="Tutoriales" type="Node2D" parent="."]
 
@@ -231,7 +231,7 @@ position = Vector2(743, -3349)
 texture = ExtResource("17_q0ci4")
 
 [node name="Personaje" type="Node2D" parent="."]
-position = Vector2(186, 6)
+position = Vector2(87, -5187)
 
 [node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
 position = Vector2(463, 1044)

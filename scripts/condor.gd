@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 100.0
+@export var speed: float = 400.0
 @export var left_limit: float = -151.0
 @export var right_limit: float = 920.0
 var sprite
@@ -8,7 +8,7 @@ var direction = Vector2.RIGHT
 @onready var sonido_condor_emitter: FmodEventEmitter2D = $FmodSonidoCondorEmitter2D
 
 func _ready():
-	sprite = $Sprite2D
+	sprite = $AnimatedSprite2D
 	if direction == Vector2.RIGHT:
 		sprite.flip_h = true
 	if direction == Vector2.LEFT:

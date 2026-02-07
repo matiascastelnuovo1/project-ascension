@@ -18,6 +18,10 @@ var mascara_actual_animaciones
 var footStepTimerReset = .4
 var footStepTimer = 0
 
+#Añadi esta variable entre corchetes
+var frame_actual
+#
+
 func _ready():
 	add_to_group("pers_jugable")
 	match Global.estado_mascara_actual:
@@ -26,6 +30,7 @@ func _ready():
 		Global.ESTADOS_MASCARA.LUNA:
 			mascara_actual_animaciones = "luna_"
 	set_collision_layer_value(5, true)	
+
 
 func _physics_process(delta):
 	# Aplicar gravedad
@@ -47,6 +52,7 @@ func _physics_process(delta):
 		fmod_jump_emitter.play()
 	
 	#Seccion de animaciones
+	
 	if is_on_floor():
 		if velocity.x != 0:
 			animated_sprite.play(str(mascara_actual_animaciones + "bailando"))
@@ -55,7 +61,7 @@ func _physics_process(delta):
 	else:
 		if animated_sprite.animation != mascara_actual_animaciones + "saltando":
 			animated_sprite.play(mascara_actual_animaciones + "saltando")
-
+			animated_sprite.frame = 4
 
 	# Flip sprite
 	if direction > 0:

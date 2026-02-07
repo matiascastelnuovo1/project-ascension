@@ -1,6 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://cjcyn0hedtufs"]
+[gd_scene load_steps=34 format=3 uid="uid://cjcyn0hedtufs"]
 
-[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scenes/juego/escenaprincipal.gd" id="1_o0bim"]
+[ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scripts/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
 [ext_resource type="PackedScene" uid="uid://jjlq5pq8jsa5" path="res://scenes/personaje.tscn" id="1_t5kfq"]
 [ext_resource type="PackedScene" uid="uid://tk7lron16y5m" path="res://scenes/niveles/zona_cielo.tscn" id="2_t5kfq"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://csq01mdvy7en5" path="res://assets/sprites/personajes_tutorial/Espiritu-Zorro v2.png" id="16_d1ni3"]
 [ext_resource type="Texture2D" uid="uid://2et7q0huwt7e" path="res://assets/sprites/personajes_tutorial/Espiritu condor.png" id="17_q0ci4"]
 [ext_resource type="PackedScene" uid="uid://dqwxaw2qyo86v" path="res://scenes/juego/menu_pausa.tscn" id="23_2obws"]
+[ext_resource type="Script" uid="uid://dvft135dq6qa6" path="res://scripts/condor_teledirigido.gd" id="24_jagll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0bim"]
 size = Vector2(557.25, 34)
@@ -230,14 +231,14 @@ flip_h = true
 position = Vector2(743, -3349)
 texture = ExtResource("17_q0ci4")
 
-[node name="Personaje" type="Node2D" parent="."]
+[node name="Personajes" type="Node2D" parent="."]
 position = Vector2(186, 6)
 
-[node name="Personaje" parent="Personaje" instance=ExtResource("1_t5kfq")]
-position = Vector2(316, 1001)
+[node name="Personaje" parent="Personajes" instance=ExtResource("1_t5kfq")]
+position = Vector2(463, 1044)
 collision_mask = 3
 
-[node name="Camera2D" type="Camera2D" parent="Personaje/Personaje"]
+[node name="Camera2D" type="Camera2D" parent="Personajes/Personaje"]
 position = Vector2(-129, -138)
 limit_left = -1
 limit_top = -9999981
@@ -247,27 +248,25 @@ limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("11_q0ci4")
 
-[node name="FmodListener2D" type="FmodListener2D" parent="Personaje/Personaje/Camera2D"]
+[node name="FmodListener2D" type="FmodListener2D" parent="Personajes/Personaje/Camera2D"]
 position = Vector2(-4, -86)
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Personaje/Personaje/Camera2D"]
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Personajes/Personaje/Camera2D"]
 event_name = "event:/Fxs/Jump"
 event_guid = "{1d6394e6-cfd0-4530-8911-29c5d8d46d72}"
 volume = 0.1
 position = Vector2(-330, -958)
 
-[node name="StepsEmitter" type="FmodEventEmitter2D" parent="Personaje/Personaje"]
+[node name="StepsEmitter" type="FmodEventEmitter2D" parent="Personajes/Personaje"]
 event_name = "event:/Fxs/Step"
 event_guid = "{a95d0b0e-b8c7-4575-ab87-176361debfa1}"
 volume = 0.3
 position = Vector2(-330, -958)
 
-[node name="MaskChangeEmitter" type="FmodEventEmitter2D" parent="Personaje/Personaje"]
+[node name="MaskChangeEmitter" type="FmodEventEmitter2D" parent="Personajes/Personaje"]
 event_name = "event:/Fxs/Change mask"
 event_guid = "{508c6461-473e-434b-a862-7c2ba27aeb01}"
 volume = 0.5
-
-[node name="Tutoriales2" type="Node2D" parent="."]
 
 [node name="CanvasLayerMenuPausa" type="CanvasLayer" parent="."]
 process_mode = 2
@@ -276,6 +275,16 @@ transform = Transform2D(1, 0, 0, 1, 400, 400)
 
 [node name="MenuPausa" parent="CanvasLayerMenuPausa" instance=ExtResource("23_2obws")]
 
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="Timers"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Condores" type="Node2D" parent="."]
+script = ExtResource("24_jagll")
+
 [connection signal="body_entered" from="Sonido/MusicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaCielo/AreaCielo2D" to="." method="_on_area_cielo_2d_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaIntermedia/AreaIntermedia2D" to="." method="_on_area_intermedia_2d_body_entered"]
+[connection signal="timeout" from="Timers/Timer" to="." method="_on_timer_timeout"]

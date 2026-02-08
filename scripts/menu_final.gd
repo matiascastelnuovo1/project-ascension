@@ -17,10 +17,12 @@ func _ready() -> void:
 	tiempoFinal.text = "Tiempo: " + str(Global.tiempoJuego)
 
 
-func _on_boton_jugar_pressed() -> void:
+func _on_boton_jugar_pressed() -> void:	
+	Global.restaurar_estado_global()
 	get_tree().change_scene_to_file("res://scenes/juego/menu.tscn")
 
-func _on_boton_salir_pressed() -> void:
+func _on_boton_salir_pressed() -> void:	
+	Global.restaurar_estado_global()
 	get_tree().quit()
 
 func _on_animated_sprite_2d_2_animation_finished() -> void:

@@ -105,6 +105,8 @@ position = Vector2(2, 7)
 position = Vector2(397, -8506)
 
 [node name="Sprite2D" type="Sprite2D" parent="SolAbajo"]
+position = Vector2(-1, -29)
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("27_7ijly")
 
 [node name="Triggers" type="Node2D" parent="."]
@@ -311,7 +313,7 @@ visible = false
 [node name="Timers" type="Node2D" parent="."]
 
 [node name="TimerSpawnCondor" type="Timer" parent="Timers"]
-wait_time = 1.212
+wait_time = 1.5
 one_shot = true
 
 [node name="TimerFalling" type="Timer" parent="Timers"]

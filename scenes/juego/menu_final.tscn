@@ -222,7 +222,7 @@ position = Vector2(391, 260)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3wkvf")
 autoplay = "default"
-frame_progress = 0.48325178
+frame_progress = 0.9834677
 
 [node name="MenuPrincipal" type="Control" parent="."]
 layout_mode = 3

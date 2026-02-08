@@ -19,6 +19,14 @@ var mascaraFinalAgarrada = false
 func restaurar_estado_global():
 	mascaras_agarradas = 0
 	estado_mascara_actual = ESTADOS_MASCARA.SOL
+	curzo_cielo = false
+	caidas = 0
+	tiempoJuego = ""
+	mascara1Agarrada = false	
+	mascara2Agarrada = false	
+	mascara3Agarrada = false	
+	mascara4Agarrada = false	
+	mascaraFinalAgarrada = false	
 
 func cambiar_mascara():
 	match estado_mascara_actual:

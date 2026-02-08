@@ -2699,7 +2699,7 @@ tile_set = SubResource("TileSet_0l6i4")
 rendering_quadrant_size = 1
 
 [node name="PlataformasSol" type="TileMapLayer" parent="Plataformas"]
-tile_map_data = PackedByteArray("AAAXAAoABQAEAAIAAAATAOn/AwAGAAAAAAAXAOX/AwAGAAAAAAAFAOn/BQAEAAIAAAALAA4AAwAAAAAAAAARAP7/BQAEAAIAAAASAP7/BQAEAAIAAAAVAPv/BQAEAAIAAAAWAPv/BQAEAAIAAAASAPj/BQAEAAIAAAARAPj/BQAEAAIAAAA=")
+tile_map_data = PackedByteArray("AAAXAAoABQAEAAIAAAATAOn/AwAGAAAAAAAFAOn/BQAEAAIAAAALAA4AAwAAAAAAAAARAP7/BQAEAAIAAAASAP7/BQAEAAIAAAAVAPv/BQAEAAIAAAAWAPv/BQAEAAIAAAASAPj/BQAEAAIAAAARAPj/BQAEAAIAAAAWAOX/AwAGAAAAAAA=")
 tile_set = SubResource("TileSet_i5dhe")
 
 [node name="PlataformasLuna" type="TileMapLayer" parent="Plataformas"]
@@ -2709,7 +2709,7 @@ enabled = false
 tile_set = SubResource("TileSet_nxpyu")
 
 [node name="ParedInvisibleDerecha" parent="." instance=ExtResource("8_mxc42")]
-position = Vector2(810, -805)
+position = Vector2(777, -802)
 scale = Vector2(1, 7.2)
 
 [node name="ParedInvisibleIzquierda" parent="." instance=ExtResource("8_mxc42")]

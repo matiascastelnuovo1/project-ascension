@@ -8,9 +8,17 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Global.mascaras_agarradas += 1
-		#collision_shape.disabled = true
-		#sprite_mask.visible = not $Sprite2D.visible
+		match self.name:
+			"Coleccionable1":
+				Global.mascara1Agarrada = true
+			"Coleccionable2":
+				Global.mascara2Agarrada = true
+			"Coleccionable3":
+				Global.mascara3Agarrada = true
+			"Coleccionable4":
+				Global.mascara4Agarrada = true
+				
+		print("Some other number")
 		coleccionable_emitter.play()
-		#print('mascaras agarradas: ', Global.mascaras_agarradas)
 		await get_tree().create_timer(0.4).timeout
 		queue_free()

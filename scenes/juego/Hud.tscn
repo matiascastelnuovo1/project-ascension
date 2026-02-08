@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://b7l7an2dct406"]
+
+[ext_resource type="Script" uid="uid://ce3go2afad7lw" path="res://scripts/playtime.gd" id="1_4gii4"]
+[ext_resource type="FontFile" uid="uid://c2fuxti4l5yqk" path="res://assets/fonts/Jersey10-Regular.ttf" id="2_ga1pd"]
+[ext_resource type="Texture2D" uid="uid://oj0vpewgab0e" path="res://assets/sprites/coleccionables/piezaMascara1.png" id="3_083rj"]
+[ext_resource type="Script" uid="uid://cn7os2iw1ucjo" path="res://scenes/juego/mascara_piezas.gd" id="3_bcbuk"]
+[ext_resource type="Script" uid="uid://cbdfqnitf0o43" path="res://scenes/juego/caidas.gd" id="3_d0xlk"]
+[ext_resource type="Texture2D" uid="uid://ctreov7x4eaa4" path="res://assets/sprites/coleccionables/piezaMascara2.png" id="4_bcbuk"]
+[ext_resource type="Texture2D" uid="uid://hxfxu61k837q" path="res://assets/sprites/coleccionables/piezaMascara3.png" id="5_d0xlk"]
+[ext_resource type="Texture2D" uid="uid://3jm751lmjw73" path="res://assets/sprites/coleccionables/piezaMascara4.png" id="6_eqlc1"]
+[ext_resource type="Texture2D" uid="uid://bv48wmji2e6so" path="res://assets/sprites/coleccionables/Mascara_coleccionable.png" id="7_14sqg"]
+
+[node name="Hud" type="Node2D"]
+
+[node name="Playtime" type="Node2D" parent="."]
+script = ExtResource("1_4gii4")
+
+[node name="Label" type="Label" parent="Playtime"]
+custom_minimum_size = Vector2(20, 0)
+offset_left = 301.0
+offset_top = 2.0
+offset_right = 466.0
+offset_bottom = 72.0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.49019608, 0.1254902, 0.1254902, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ga1pd")
+theme_override_font_sizes/font_size = 40
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Playtime"]
+autostart = true
+
+[node name="Caidas" type="Node2D" parent="."]
+script = ExtResource("3_d0xlk")
+
+[node name="Label" type="Label" parent="Caidas"]
+custom_minimum_size = Vector2(20, 0)
+offset_left = 9.0
+offset_top = 15.0
+offset_right = 215.0
+offset_bottom = 59.0
+theme_override_colors/font_outline_color = Color(0.49019608, 0.1254902, 0.1254902, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_ga1pd")
+theme_override_font_sizes/font_size = 40
+text = "Caidas: 0"
+vertical_alignment = 1
+
+[node name="MascaraPiezas" type="Node2D" parent="."]
+script = ExtResource("3_bcbuk")
+
+[node name="Pieza1" type="Sprite2D" parent="MascaraPiezas"]
+visible = false
+position = Vector2(728, 40)
+texture = ExtResource("3_083rj")
+
+[node name="Pieza2" type="Sprite2D" parent="MascaraPiezas"]
+visible = false
+position = Vector2(728, 40)
+texture = ExtResource("4_bcbuk")
+
+[node name="Pieza3" type="Sprite2D" parent="MascaraPiezas"]
+visible = false
+position = Vector2(728, 40)
+texture = ExtResource("5_d0xlk")
+
+[node name="Pieza4" type="Sprite2D" parent="MascaraPiezas"]
+visible = false
+position = Vector2(728, 40)
+texture = ExtResource("6_eqlc1")
+
+[node name="MascaraColeccionable" type="Sprite2D" parent="MascaraPiezas"]
+visible = false
+position = Vector2(728, 40)
+texture = ExtResource("7_14sqg")
+
+[connection signal="timeout" from="Playtime/Timer" to="Playtime" method="_on_timer_timeout"]

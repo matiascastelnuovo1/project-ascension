@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cjcyn0hedtufs"]
+[gd_scene load_steps=38 format=3 uid="uid://cjcyn0hedtufs"]
 
 [ext_resource type="Script" uid="uid://bq0ebeh5ljw2i" path="res://scripts/escenaprincipal.gd" id="1_o0bim"]
 [ext_resource type="PackedScene" uid="uid://d0xa7bft3b1f" path="res://scenes/niveles/zona_tutorial.tscn" id="1_oblc7"]
@@ -23,7 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://csq01mdvy7en5" path="res://assets/sprites/personajes_tutorial/Espiritu-Zorro v2.png" id="16_d1ni3"]
 [ext_resource type="Texture2D" uid="uid://2et7q0huwt7e" path="res://assets/sprites/personajes_tutorial/Espiritu condor.png" id="17_q0ci4"]
 [ext_resource type="PackedScene" uid="uid://dqwxaw2qyo86v" path="res://scenes/juego/menu_pausa.tscn" id="23_2obws"]
+[ext_resource type="PackedScene" uid="uid://b7l7an2dct406" path="res://scenes/juego/Hud.tscn" id="24_gqjdg"]
 [ext_resource type="Script" uid="uid://dvft135dq6qa6" path="res://scripts/condor_handler.gd" id="24_jagll"]
+[ext_resource type="Texture2D" uid="uid://c1tgyxr87d47a" path="res://assets/sprites/logos/Sol arriba.png" id="26_ieixa"]
+[ext_resource type="Texture2D" uid="uid://cat2qacd4vwgq" path="res://assets/sprites/logos/Sol abajo.png" id="27_7ijly"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jagll"]
 size = Vector2(736, 9)
@@ -98,6 +101,12 @@ position = Vector2(1, -2215)
 [node name="ZonaTutorial" parent="." instance=ExtResource("1_oblc7")]
 position = Vector2(2, 7)
 
+[node name="SolAbajo" type="Node2D" parent="."]
+position = Vector2(397, -8506)
+
+[node name="Sprite2D" type="Sprite2D" parent="SolAbajo"]
+texture = ExtResource("27_7ijly")
+
 [node name="Triggers" type="Node2D" parent="."]
 
 [node name="TriggerSpawnCondor" type="Area2D" parent="Triggers"]
@@ -165,7 +174,7 @@ shape = SubResource("RectangleShape2D_sfhxn")
 position = Vector2(-515, 0)
 
 [node name="Coleccionable1" parent="Coleccionables" instance=ExtResource("12_27rmh")]
-position = Vector2(1264, -903)
+position = Vector2(1238, -905)
 
 [node name="Coleccionable2" parent="Coleccionables" instance=ExtResource("13_norlk")]
 position = Vector2(573, -2684)
@@ -204,7 +213,7 @@ tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la 
 
 [node name="Tutorial7" parent="Tutoriales" instance=ExtResource("15_trypt")]
 position = Vector2(369, -4760)
-tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirán avanzar a partir de ahora... Quizás te preguntes cómo he llegado hasta aquí. He usado el ascensor para chamanes, por supuesto."
+tutorial_text = "Ahora te encuentras en los últimos pasos de tu viaje, solo la ayuda del sol y la luna te permitirán avanzar a partir de ahora... Gracias por encontrar mi máscara, quizás te preguntes como he llegado hasta aquí tan rápido. He usado el ascensor para chamanes, por supuesto."
 
 [node name="NPCs" type="Node2D" parent="."]
 
@@ -243,14 +252,15 @@ scale = Vector2(1.3, 1.3)
 texture = ExtResource("16_d1ni3")
 
 [node name="EspirituCondor" type="Sprite2D" parent="NPCs"]
-position = Vector2(743, -3349)
+position = Vector2(736.00006, -3324)
+rotation = 0.31709576
 texture = ExtResource("17_q0ci4")
 
 [node name="Personajes" type="Node2D" parent="."]
-position = Vector2(112, -99)
+position = Vector2(483, 8641)
 
 [node name="Personaje" parent="Personajes" instance=ExtResource("1_t5kfq")]
-position = Vector2(549, 1032)
+position = Vector2(172, -7648)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Personajes/Personaje"]
@@ -283,18 +293,36 @@ event_name = "event:/Fxs/Change mask"
 event_guid = "{508c6461-473e-434b-a862-7c2ba27aeb01}"
 volume = 0.5
 
+[node name="SolArriba" type="Node2D" parent="."]
+position = Vector2(-67, 119)
+
+[node name="Sprite2D" type="Sprite2D" parent="SolArriba"]
+position = Vector2(464, -8625)
+texture = ExtResource("26_ieixa")
+
 [node name="CanvasLayerMenuPausa" type="CanvasLayer" parent="."]
 process_mode = 2
 offset = Vector2(400, 400)
 transform = Transform2D(1, 0, 0, 1, 400, 400)
 
 [node name="MenuPausa" parent="CanvasLayerMenuPausa" instance=ExtResource("23_2obws")]
+visible = false
 
 [node name="Timers" type="Node2D" parent="."]
 
 [node name="TimerSpawnCondor" type="Timer" parent="Timers"]
 wait_time = 3.0
 one_shot = true
+
+[node name="TimerFalling" type="Timer" parent="Timers"]
+wait_time = 1.5
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("24_gqjdg")]
+position = Vector2(5, -5)
 
 [connection signal="body_entered" from="Triggers/TriggerSpawnCondor" to="." method="_on_trigger_spawn_condor_body_entered"]
 [connection signal="body_entered" from="Sonido/MusicaInicio/AreaInicio2D" to="." method="_on_area_inicio_2d_body_entered"]

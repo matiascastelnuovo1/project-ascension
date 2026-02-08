@@ -302,7 +302,7 @@ position = Vector2(797, 732)
 position = Vector2(-18, 147)
 
 [node name="Condor3" parent="." instance=ExtResource("8_v08ya")]
-position = Vector2(806, -272)
+position = Vector2(806, -249)
 
 [node name="Condor4" parent="." instance=ExtResource("8_v08ya")]
 position = Vector2(-13, -1497)

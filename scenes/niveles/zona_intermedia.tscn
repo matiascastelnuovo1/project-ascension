@@ -849,7 +849,7 @@ tile_set = SubResource("TileSet_0ncv5")
 position = Vector2(777, -1472)
 
 [node name="Condor2" parent="." instance=ExtResource("6_42f5t")]
-position = Vector2(-8, -2054)
+position = Vector2(-8, -1960)
 
 [node name="ParedInvisibleIzquierda" parent="." instance=ExtResource("8_uaw7l")]
 position = Vector2(-10, -2212)

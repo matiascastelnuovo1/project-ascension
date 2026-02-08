@@ -311,7 +311,7 @@ visible = false
 [node name="Timers" type="Node2D" parent="."]
 
 [node name="TimerSpawnCondor" type="Timer" parent="Timers"]
-wait_time = 3.0
+wait_time = 1.212
 one_shot = true
 
 [node name="TimerFalling" type="Timer" parent="Timers"]

@@ -49,10 +49,11 @@ func _physics_process(delta):
 	var direction := Input.get_axis("moverse_izquierda", "moverse_derecha")
 	velocity.x = direction * speed
 	
-	if position.x < -100:
-		self.position = Vector2(-30, position.y)
-	elif position.x > 690:
-		self.position = Vector2(650, position.y)
+	print(position.x)
+	if position.x < -470:
+		self.position = Vector2(-454, position.y)
+	elif position.x > 275:
+		self.position = Vector2(250, position.y)
 	
 	if direction != 0 and is_on_floor():
 		if footStepTimer <= 0:

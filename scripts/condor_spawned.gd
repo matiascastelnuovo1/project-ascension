@@ -6,7 +6,7 @@ extends Node2D
 @export var angulo_diagonal: float = 135.0
 @export var velocidad: float = 400.0
 @export var debug_visual: bool = false
-@export var offset_correcion: Vector2 = Vector2(60, 60) 
+@export var offset_correcion: Vector2 = Vector2(-20, -20) 
 
 var punto_a: Vector2
 var punto_c: Vector2
@@ -39,6 +39,7 @@ func _process(delta):
 
 	# MÉTODO CORREGIDO: Usar interpolación exacta
 	position = interpolacion_exacta(progreso)
+	#print("posicion condor", position)
 
 func interpolacion_exacta(t: float) -> Vector2:	
 	if abs(t - 0.5) < 0.001:  # Si está muy cerca del 50%

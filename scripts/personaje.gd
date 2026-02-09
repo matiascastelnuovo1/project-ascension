@@ -21,6 +21,7 @@ var can_move
 var mascara_actual_animaciones
 var footStepTimerReset = .4
 var footStepTimer = 0
+var contarCaida = true
 
 #Añadi esta variable entre corchetes
 var frame_actual
@@ -41,9 +42,17 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	if velocity.y > 1000 && contarCaida:
+		Global.caidas += 1
+		contarCaida = false
 	# Movimiento horizontal
 	var direction := Input.get_axis("moverse_izquierda", "moverse_derecha")
 	velocity.x = direction * speed
+	
+	if position.x < -470:
+		self.position = Vector2(-454, position.y)
+	elif position.x > 275:
+		self.position = Vector2(250, position.y)
 	
 	if direction != 0 and is_on_floor():
 		if footStepTimer <= 0:
@@ -64,6 +73,7 @@ func _physics_process(delta):
 	
 		
 	if is_on_floor():
+		contarCaida = true
 		if velocity.x != 0:
 			animated_sprite.play(str(mascara_actual_animaciones + "bailando"))
 		else:

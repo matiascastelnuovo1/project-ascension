@@ -1,10 +1,199 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcye7me0fnpxx"]
+[gd_scene load_steps=43 format=3 uid="uid://bcye7me0fnpxx"]
 
 [ext_resource type="Texture2D" uid="uid://b1wm6y1mqptqc" path="res://assets/sprites/placeholder/placeholdercielosol.png" id="1_wb74w"]
-[ext_resource type="Script" uid="uid://d0032sqyfssy2" path="res://scenes/juego/menu_final.gd" id="1_x3q58"]
-[ext_resource type="Texture2D" uid="uid://cf574r6i1n6qh" path="res://assets/sprites/logos/sol.png" id="6_xb6vt"]
+[ext_resource type="Script" uid="uid://d0032sqyfssy2" path="res://scripts/menu_final.gd" id="1_x3q58"]
+[ext_resource type="Texture2D" uid="uid://p1lnak3lg5v8" path="res://assets/sprites/logos/Sol final - sin figura_0000.png" id="3_8skuw"]
+[ext_resource type="Texture2D" uid="uid://ciotel85c1e0n" path="res://assets/sprites/logos/spritesheet figura disolviendose.png" id="4_3bbkm"]
+[ext_resource type="Texture2D" uid="uid://befg7yvv6b038" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0000.png" id="5_x0kav"]
+[ext_resource type="Texture2D" uid="uid://cnfhmh7dbsbba" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0001.png" id="6_ebccf"]
 [ext_resource type="AudioStream" uid="uid://c0cfq207t8406" path="res://assets/sounds/Chaca Still pink.wav" id="7_53afd"]
+[ext_resource type="Texture2D" uid="uid://bqpkvp6yyrshi" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0002.png" id="7_euwyc"]
 [ext_resource type="FontFile" uid="uid://c2fuxti4l5yqk" path="res://assets/fonts/Jersey10-Regular.ttf" id="7_jgjdv"]
+[ext_resource type="Texture2D" uid="uid://c7twmydlicpkg" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0003.png" id="8_ka5t8"]
+[ext_resource type="Texture2D" uid="uid://ns0rp1fhog5o" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0004.png" id="9_8fhfv"]
+[ext_resource type="Texture2D" uid="uid://dan247t1kkd2s" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0005.png" id="10_t84sl"]
+[ext_resource type="Texture2D" uid="uid://btvp0njslrlug" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0006.png" id="11_qdb6n"]
+[ext_resource type="Texture2D" uid="uid://cc3qk3ntai0e1" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0007.png" id="12_a33ag"]
+[ext_resource type="Texture2D" uid="uid://trpel44vi8j1" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0008.png" id="13_132e4"]
+[ext_resource type="Texture2D" uid="uid://bh57fet11h1sa" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0009.png" id="14_phoq8"]
+[ext_resource type="Texture2D" uid="uid://ceue45gpd0qep" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0010.png" id="15_imqsq"]
+[ext_resource type="Texture2D" uid="uid://bx04l6fstntaj" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0011.png" id="16_3ohmu"]
+[ext_resource type="Texture2D" uid="uid://db1g51exnmque" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0012.png" id="17_hf308"]
+[ext_resource type="Texture2D" uid="uid://ccrulqgex8mdr" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0013.png" id="18_q67xl"]
+[ext_resource type="Texture2D" uid="uid://bvj6v3cukk3lc" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0014.png" id="19_l7rr4"]
+[ext_resource type="Texture2D" uid="uid://mypgrtqfk01x" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0015.png" id="20_weiqq"]
+[ext_resource type="Texture2D" uid="uid://c3tmd0kupv0py" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0016.png" id="21_71blk"]
+[ext_resource type="Texture2D" uid="uid://xf8anewcuylu" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0017.png" id="22_0hq8n"]
+[ext_resource type="Texture2D" uid="uid://bglyy7nwr2byb" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0018.png" id="23_uvhkt"]
+[ext_resource type="Texture2D" uid="uid://bh7oy25ngfvoa" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0019.png" id="24_kubam"]
+[ext_resource type="Texture2D" uid="uid://cjbt8pwb27api" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0020.png" id="25_ljpvd"]
+[ext_resource type="Texture2D" uid="uid://b2rdf88bf77js" path="res://assets/sprites/logos/animacion por frames/Animacion Sol Final - Loop_0021.png" id="26_c1q8h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fhfv"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(262, 393, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t84sl"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(131, 393, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdb6n"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(0, 393, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a33ag"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(262, 131, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_132e4"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(262, 262, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phoq8"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(131, 262, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imqsq"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(0, 262, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ohmu"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(262, 0, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf308"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(131, 131, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q67xl"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(131, 0, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7rr4"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(0, 131, 131, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weiqq"]
+atlas = ExtResource("4_3bbkm")
+region = Rect2(0, 0, 131, 131)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_71blk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fhfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t84sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdb6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a33ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_132e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phoq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imqsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ohmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf308")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q67xl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7rr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_weiqq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wkvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_x0kav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ebccf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_euwyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ka5t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8fhfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_t84sl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qdb6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a33ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_132e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_phoq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_imqsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3ohmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hf308")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_q67xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_l7rr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_weiqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_71blk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0hq8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uvhkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_kubam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ljpvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_c1q8h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_x3q58")
@@ -15,9 +204,25 @@ scale = Vector2(1.0992584, 1.0992584)
 texture = ExtResource("1_wb74w")
 
 [node name="Sprite2DSol" type="Sprite2D" parent="."]
-position = Vector2(385, 235)
+visible = false
+position = Vector2(390, 256)
 scale = Vector2(2.2262487, 2.2262487)
-texture = ExtResource("6_xb6vt")
+texture = ExtResource("3_8skuw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(391, 260)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_71blk")
+autoplay = "default"
+frame_progress = 0.9578069
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(391, 260)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3wkvf")
+autoplay = "default"
+frame_progress = 0.9834677
 
 [node name="MenuPrincipal" type="Control" parent="."]
 layout_mode = 3
@@ -56,9 +261,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 255.5
-offset_top = 531.5
+offset_top = 607.5
 offset_right = 472.5
-offset_bottom = 716.0
+offset_bottom = 792.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 25
@@ -71,11 +276,34 @@ text = "VOLVER A JUGAR"
 icon_alignment = 1
 
 [node name="BotonSalir" type="Button" parent="MenuPrincipal/VBoxContainerOpciones"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_jgjdv")
 theme_override_font_sizes/font_size = 29
 text = "SALIR"
 icon_alignment = 1
+
+[node name="TiempoFinal" type="Label" parent="MenuPrincipal"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 520.0
+offset_right = 418.0
+offset_bottom = 593.0
+theme_override_fonts/font = ExtResource("7_jgjdv")
+theme_override_font_sizes/font_size = 32
+text = "Tiempo Final
+"
+
+[node name="CaidasTotales" type="Label" parent="MenuPrincipal"]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 556.0
+offset_right = 443.0
+offset_bottom = 629.0
+theme_override_fonts/font = ExtResource("7_jgjdv")
+theme_override_font_sizes/font_size = 32
+text = "Caidas Totales
+"
 
 [node name="Sonido" type="Control" parent="."]
 layout_mode = 3
@@ -90,5 +318,6 @@ stream = ExtResource("7_53afd")
 volume_db = -5.0
 autoplay = true
 
+[connection signal="animation_finished" from="AnimatedSprite2D2" to="." method="_on_animated_sprite_2d_2_animation_finished"]
 [connection signal="pressed" from="MenuPrincipal/VBoxContainerOpciones/BotonJugar" to="." method="_on_boton_jugar_pressed"]
 [connection signal="pressed" from="MenuPrincipal/VBoxContainerOpciones/BotonSalir" to="." method="_on_boton_salir_pressed"]

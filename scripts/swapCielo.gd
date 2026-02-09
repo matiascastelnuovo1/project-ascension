@@ -4,12 +4,15 @@ extends Node2D
 
 func _ready():
 	Global.cambio_mascara.connect(_on_cambio_mascara)
+	fondo_luna.enabled = false
 	
 func _on_cambio_mascara(delta):
 	pass
 	if Global.estado_mascara_actual == Global.ESTADOS_MASCARA.LUNA:
+		#print("hizo switch a true")
 		fondo_luna.enabled = true
 	else:
+		#print("hizo switch a false")
 		fondo_luna.enabled = false
 		
 		

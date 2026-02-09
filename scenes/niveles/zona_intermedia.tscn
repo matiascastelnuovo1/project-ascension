@@ -832,7 +832,7 @@ script = ExtResource("2_xptrt")
 
 [node name="PlataformasNeutrales" type="TileMapLayer" parent="Plataformas"]
 position = Vector2(477, 591)
-tile_map_data = PackedByteArray("AADy/wgAAgAGAAAAAAAGAMz/AgAGAAAAAAAFAAQAAgAGAAAAAAAIAOP/AgAGAAAAAAAAAOD/AgAGAAAAAAD0/+D/AgAAAAAAAAD3/9H/AgAGAAAAAAAHANj/AgAGAAAAAAAHAMz/AgAGAAAAAAD//8H/AgAGAAAAAAAAALL/AgAAAAAAAAD//6z/AgAGAAAAAAD+/6z/AgAGAAAAAAD9/6P/AgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADy/wgAAgAGAAAAAAAGAMz/AgAGAAAAAAAIAOP/AgAGAAAAAAAAAOD/AgAGAAAAAAD0/+D/AgAAAAAAAAD3/9H/AgAGAAAAAAAHANj/AgAGAAAAAAAHAMz/AgAGAAAAAAD//8H/AgAGAAAAAAAAALL/AgAAAAAAAAD//6z/AgAGAAAAAAD+/6z/AgAGAAAAAAD9/6P/AgAAAAAAAAAGAAQAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_er76g")
 rendering_quadrant_size = 1
 
@@ -849,7 +849,7 @@ tile_set = SubResource("TileSet_0ncv5")
 position = Vector2(777, -1472)
 
 [node name="Condor2" parent="." instance=ExtResource("6_42f5t")]
-position = Vector2(-17, -1965)
+position = Vector2(-8, -1960)
 
 [node name="ParedInvisibleIzquierda" parent="." instance=ExtResource("8_uaw7l")]
 position = Vector2(-10, -2212)

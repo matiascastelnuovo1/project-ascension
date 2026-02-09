@@ -143,14 +143,14 @@ func _on_area_tutorial_5_body_exited(body: Node2D) -> void:
 	_handle_label_execution_hide(body)
 
 func _on_area_tutorial_6_body_entered(body: Node2D) -> void:
-	if Global.mascaras_agarradas != 4:
+	if not Global.mascaraFinalAgarrada:
 		_handle_label_execution(body)
 
 func _on_area_tutorial_6_body_exited(body: Node2D) -> void:
 	_handle_label_execution_hide(body)
 
 func _on_area_tutorial_7_body_entered(body: Node2D) -> void:	
-	if Global.mascaras_agarradas == 4:
+	if Global.mascaraFinalAgarrada:
 		_handle_label_execution(body)
 
 func _on_area_tutorial_7_body_exited(body: Node2D) -> void:

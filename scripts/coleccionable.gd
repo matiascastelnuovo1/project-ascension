@@ -11,14 +11,21 @@ func _on_body_entered(body: Node2D) -> void:
 		Global.mascaras_agarradas += 1
 		match self.name:
 			"Coleccionable1":
-				Global.mascara1Agarrada = true
+				print("Coleccionable1")
+				#Global.mascara1Agarrada = true
+				Global.agarrarMascara(1)
 			"Coleccionable2":
-				Global.mascara2Agarrada = true
+				print("Coleccionable2")
+				#Global.mascara2Agarrada = true
+				Global.agarrarMascara(2)
 			"Coleccionable3":
-				Global.mascara3Agarrada = true
+				print("Coleccionable3")
+				#Global.mascara3Agarrada = true
+				Global.agarrarMascara(3)
 			"Coleccionable4":
-				Global.mascara4Agarrada = true
+				print("Coleccionable4")
+				#Global.mascara4Agarrada = true
+				Global.agarrarMascara(4)
 				
-		print("Some other number")
 		await get_tree().create_timer(0.4).timeout
 		queue_free()
